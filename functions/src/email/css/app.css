@@ -1,0 +1,30 @@
+p {
+  color: #033a97;
+}
+
+h3 {
+  color: #00b3ee;
+}
+h4 {
+  color: #FF0000;
+}
+
+/* Base styling of the button */
+.button {
+  background-color: #00b3ee;
+  border-color: #033a97;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Style anchor tags inside the button td */
+.button a {
+  color: #ffffff;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.logo { width: 60px; height: 50px; display: block; }

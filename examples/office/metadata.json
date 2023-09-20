@@ -1,0 +1,108 @@
+{
+  "property": {
+    "type": "Apartment",
+    "address1": "Moshava of Ein Ya'akov",
+    "country": "Israel",
+    "description": " 38 sqm of luxurious balcony with open view, upgraded kitchen, living the highest standard of living in the best location in Beer Yaakov",
+    "pictures": [
+      "/Users/roilandshut/projects/real-stone/examples/office/office1.jpeg",
+      "/Users/roilandshut/projects/real-stone/examples/office/office2.jpeg",
+      "/Users/roilandshut/projects/real-stone/examples/office/office3.jpeg",
+      "/Users/roilandshut/projects/real-stone/examples/office/office4.jpeg",
+      "/Users/roilandshut/projects/real-stone/examples/office/office5.jpeg"
+    ],
+    "pictures_names": [
+      "office1.jpeg",
+      "office2.jpeg",
+      "office3.jpeg",
+      "office4.jpeg",
+      "office5.jpeg"
+    ],
+    "name": "Ein Ya'akov"
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project": {
+    "description": "A magnificent office tower in the heart of the business center of Tel-Aviv, adjacent to the Azrieli Towers, the Midtown Tower, the courts, the Kirya, museums and leading cultural centers. 3 minutes walk from Arlozorov Peace Train Stations, , A fully equipped kitchen and more",
+    "durationSecond": "2018-07-05",
+    "name": "TLV We Towers Second",
+    "startTimestamp": "2018-06-05",
+    "symbol": "WET",
+    "target": "2000000",
+    "reservedBid": "500000000",
+    "tradeMethod": "",
+    "currency": "ILS",
+    "maxOwners": 50,
+    "tradeDurationMonth": 3,
+    "structure": "Office",
+    "location": {
+      "lat": 32.077777,
+      "lng": 34.793834
+    },
+    "features": {
+      "floor": 5,
+      "Sqrt": 80,
+      "rented": 10500,
+      "secondMarket": true,
+      "type": "office",
+      "yield": "6.5%"
+    },
+    "lang": {
+      "He": {
+        "description": "מגדל משרדים מפואר בלב מרכז העסקים של ,תל אביב צמוד למגדלי עזריאלי, מגדל מידטאון, בתי המשפט, הקריה, מוזיאונים ומרכזי תרבות מובילים 3 דקות הליכה מתחנות הרכבת השלום וארלוזורוב, על ציר הרכבת הקלה, גישה מהירה לנתיבי איילון רמת גמר גבוהה ביותר הכוללת לובי מפואר, מטבח מאובזר ועוד",
+        "name": "משרד מגדלי we"
+      }
+    }
+  },
+  "estimation": {
+    "currency": "USD",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "6500",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "2000000",
+    "rental": "189000",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857"
+  },
+  "term": {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 0,
+    "sellPercentage": 0
+  },
+  "manager": {
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar": {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "israel",
+    "email": "Tabu.gov",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Israel Tabuo",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

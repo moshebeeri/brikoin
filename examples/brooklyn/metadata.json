@@ -1,0 +1,85 @@
+{
+  "property": {
+    "type": "Residential",
+    "address1": "Sunset Park Brooklyn NY",
+    "country": "USA",
+    "description": " 4th floor, Vacant, 3000 sf Office space, Recently built creative installation, 2 offices, conference room, large open area, reception and wet pantry, large bullpen area, 50 workstations, Central HVAC. Fully wired for voice and data, Excellent views and Light, Furniture, computers and phones available.",
+    "pictures": [
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/architecture-847659_1920.jpg?alt=media&token=5ab00935-6a77-465e-b00a-b2c6beaa2d03",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/office-space-1744803_1920%20(1).jpg?alt=media&token=19bfe540-3058-481e-acee-6a40a6a89f8a",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/office-space-1744803_1920%20(1).jpg?alt=media&token=19bfe540-3058-481e-acee-6a40a6a89f8a",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/workplace-1245776_1920.jpg?alt=media&token=b1f98e25-abc3-48dc-be36-43863acf37a9",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/building-91228_1920.jpg?alt=media&token=3f4961bf-5797-401f-bd38-32462d9b124c"
+    ],
+    "name": "Sunset Park Brooklyn NY"
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project": {
+    "description": " 4th floor, Vacant, 3000 sf Office space, Recently built creative installation, 2 offices, conference room, large open area, reception and wet pantry, large bullpen area, 50 workstations, Central HVAC. Fully wired for voice and data, Excellent views and Light, Furniture, computers and phones available.",
+    "durationSecond": "2018-07-05",
+    "name": "Sunset Park Brooklyn NY",
+    "startTimestamp": "2018-06-05",
+    "symbol": "PBN",
+    "target": "4500000",
+    "reservedBid": "500000000",
+    "tradeMethod": "auction",
+    "currency": "USD",
+    "tradeDurationMonth": 3,
+    "lang": {
+      "He": {
+        "description": "  מרווחת & משופצת באלגנטיות, זה 4 חדרי שינה הביתה תערובות מקסים פרטים w / נוחות מפואר. משופץ מטבח אפיקורי w / ארונות חדשים, קוורץ דלפקים, מכשירי SS חדש. סלון מלא אור, אוכל פורמלי אלגנטי, מטבח w / שטח אכילה + דן. במרתף סיים מלא עם תקרה גבוהה, תאורה הפסקה, חדר כביסה נוסף עם דלת האסם,ר סודי חדר משפחה,.",
+        "name": "פרויקט ברוקליין בפארק"
+      }
+    }
+  },
+  "estimation": {
+    "currency": "USD",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "4200",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "4500000",
+    "rental": "189000"
+  },
+  "term": {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 1500,
+    "sellPercentage": 10
+  },
+  "manager": {
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar": {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "New York",
+    "email": "Adam.Bello@monroecounty.gov",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Adam Bello",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

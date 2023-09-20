@@ -1,0 +1,15 @@
+service firebase.storage {
+  match /b/{bucket}/o {
+  match /legal/terms {
+  allow read;
+}
+match /{users=**} {
+  allow read, write: if true;
+}
+
+match /{allPaths=**} {
+  allow read, write: if false;
+}
+
+}
+}

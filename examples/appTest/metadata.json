@@ -1,0 +1,115 @@
+{
+  "property": {
+    "type":"Apartment",
+    "address1": "165 Tower Bridge Rd, London SE1 3LW, UK",
+    "country": "England",
+    "description": "Apartment ",
+    "pictures": [
+      "/Users/roilandshut/projects/real-stone/examples/appTest/app1.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest/app2.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest/app3.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest/app4.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest/app5.jpg"
+    ],
+    "pictures_names": [
+      "app1.jpg",
+      "app2.jpg",
+      "app3.jpg",
+      "app4.jpg",
+      "app5.jpg"
+    ],
+    "planDocument": "/Users/roilandshut/projects/real-stone/examples/appTest/appPlaning.jpg",
+    "planDocument_file": "appPlaning.jpg",
+    "name": "England Apartment",
+    "lang": {
+      "He": {
+        "address1": " לונדון"
+      }
+    }
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project":{
+    "description": "A stunning four-bedroom apartment offering five star living in the heart of London with uninterrupted views of one of the world's most iconic landmarks.The entertaining space in the apartment is spacious, bright and functional. A large reception area leading on to a balcony offers stunning views of some of London's most famous monuments. There is a separate kitchen/dining area which also offers views of the London Skyline and the river. The apartment comprises a spacious master-suite with the same stunning views across London and three further bedroom suits all of which have been designed to the highest of standards. The apartment was reconfigured post-completion to accommodate a fourth bedroom suite/study. Spanning over 2400 square feet, the property is luxuriously proportioned and is an exemplary unit at One Tower BridgeThe development itself offers luxury living with 24-hour Harrods Estates concierge, gym, sauna 20m plunge pool and underground car parking. There is a plethora of exciting new retail and commercial quarters, including The Bridge Theatre and The Ivy Restaurant.",
+    "durationSecond": "2018-07-05",
+    "name": "London Apartment",
+    "startTimestamp": "2018-06-05",
+    "symbol": "MEY",
+    "target": "7000000",
+    "reservedBid": "500000000",
+    "tradeMethod": "auction",
+    "tradeDurationMonth": 3,
+    "currency": "EUR",
+    "firstBidPercentages": 10,
+    "structure": "SingleApartment",
+    "location":{
+        "lat":51.503893, "lng":-0.076389
+    },,
+    "features": {
+      "floor": 5,
+      "Sqrt": 200,
+      "rooms": 4,
+      "balcony": true,
+      "storage": true,
+    },
+    "lang": {
+      "He": {
+        "description":"דירת ארבעה חדרים מדהימה המציעה חמישה כוכבים המתגוררים בלב לונדון עם נוף בלתי פוסק של אחד מציוני הדרך האיקוניים ביותר בעולם.החלל הבידור בדירה מרווח, בהיר ופונקציונלי. אזור הקבלה הגדול המוביל אל המרפסת מציע נופים מדהימים של כמה מהמונומנטים המפורסמים ביותר של לונדון. יש מטבח / פינת אוכל נפרדים, המציעה גם נופים של קו הרקיע של לונדון ושל הנהר.הדירה כוללת יחידת הורים מרווחת עם נופים מדהימים של לונדון ושלוש חדרי שינה נוספים, אשר עוצבו בסטנדרטים הגבוהים ביותר. הדירה עוצבה מחדש לאחר השלמתה כדי להתאים לחדר שינה רביעי / חדר עבודה רביעי. המלון משתרע על שטח של 2400 מטר מרובע, והינו יחידה מופתית בגשר מגדל אחד.הפיתוח עצמו מציע מגורים יוקרתיים עם 24 שעות Harrods Estates קונסיירז ', חדר כושר, סאונה 20m צולל בריכה וחניון תת קרקעי. יש שפע של קמעונאים חדשים ומסחריים חדשים ומרגשים, כולל תיאטרון גשר ומסעדת אייבי.",
+        "name": "דירת מטורפת בלוונדון"
+      }
+    }
+  },
+  "estimation" : {
+    "currency": "EUR",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "4200",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "2000000",
+    "rental": "189000",
+    "document": "/Users/roilandshut/projects/real-stone/examples/app1/appEstimation.doc",
+    "document_file": "appEstimation.doc"
+  },
+  "term" : {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 0,
+    "sellPercentage": 0
+  },
+  "manager":{
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar" : {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "israel",
+    "email": "Tabu.gov",
+    "document": "/Users/roilandshut/projects/real-stone/examples/app1/tabu.jpg",
+    "document_file": "tabu.jpg",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Israel Tabuo",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

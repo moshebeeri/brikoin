@@ -1,0 +1,3193 @@
+{
+  "contractName": "SignedDocumentFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "SignedDocument",
+          "type": "address"
+        }
+      ],
+      "name": "SignedDocumentCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_admin",
+          "type": "bool"
+        },
+        {
+          "name": "_url",
+          "type": "bytes32"
+        },
+        {
+          "name": "_urlMD5",
+          "type": "bytes32"
+        }
+      ],
+      "name": "createSignedDocument",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "signedDocument",
+          "type": "address"
+        },
+        {
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "name": "_role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "shouldSign",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "signedDocument",
+          "type": "address"
+        }
+      ],
+      "name": "sign",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "signedDocument",
+          "type": "address"
+        }
+      ],
+      "name": "isSign",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008054600160a060020a03191633179055610f20806100256000396000f3006080604052600436106100825763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663347c2d2c8114610087578063715018a6146100c55780638da5cb5b146100dc578063edd9fcbc1461010d578063f2fde38b1461012e578063f71be8371461014f578063fe8b831914610170575b600080fd5b34801561009357600080fd5b506100b1600160a060020a0360043581169060243516604435610190565b604080519115158252519081900360200190f35b3480156100d157600080fd5b506100da610235565b005b3480156100e857600080fd5b506100f16102a1565b60408051600160a060020a039092168252519081900360200190f35b34801561011957600080fd5b506100b1600160a060020a03600435166102b0565b34801561013a57600080fd5b506100da600160a060020a0360043516610340565b34801561015b57600080fd5b506100b1600160a060020a0360043516610363565b34801561017c57600080fd5b506100f160043515156024356044356103c8565b604080517ff58d924b000000000000000000000000000000000000000000000000000000008152600160a060020a03848116600483015260248201849052915160009286929083169163f58d924b9160448082019260209290919082900301818887803b15801561020057600080fd5b505af1158015610214573d6000803e3d6000fd5b505050506040513d602081101561022a57600080fd5b505195945050505050565b600054600160a060020a0316331461024c57600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b60008082905080600160a060020a031663c8e0b2a96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561030d57600080fd5b505af1158015610321573d6000803e3d6000fd5b505050506040513d602081101561033757600080fd5b50519392505050565b600054600160a060020a0316331461035757600080fd5b61036081610453565b50565b604080517ff71be83700000000000000000000000000000000000000000000000000000000815233600482015290516000918391600160a060020a0383169163f71be83791602480830192602092919082900301818887803b15801561030d57600080fd5b6000808483856103d66104d0565b921515835260208301919091526040808301919091525190819003606001906000f08015801561040a573d6000803e3d6000fd5b5060408051600160a060020a038316815290519192507ffba353b90f7ff8a62cba1f619a1dc8ebd65e4898c5bba55376a331580d16cc5f919081900360200190a1949350505050565b600160a060020a038116151561046857600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b604051610a14806104e1833901905600608060405234801561001057600080fd5b50604051606080610a1483398101604090815281516020830151919092015160008054600160a060020a031916331790556000805460a860020a60ff0219941515740100000000000000000000000000000000000000000260a060020a60ff02199091161793909316909255600155600255610983806100916000396000f3006080604052600436106100fb5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630c4f5534811461010057806319d40b08146101295780632ca151221461013e57806333cce661146101535780633baa8c56146101685780635600f04f14610189578063715018a6146101b05780637f91fb7d146101c757806389d84af5146101e85780638da5cb5b146101fd578063c19b7a041461022e578063c792f36d14610246578063c8e0b2a914610297578063da4de743146102ac578063e0d17fe7146102c1578063f2fde38b146102e2578063f58d924b14610303578063f71be83714610327575b600080fd5b34801561010c57600080fd5b50610115610348565b604080519115158252519081900360200190f35b34801561013557600080fd5b5061011561036a565b34801561014a57600080fd5b506101156103bc565b34801561015f57600080fd5b5061011561043c565b34801561017457600080fd5b50610115600160a060020a036004351661045d565b34801561019557600080fd5b5061019e610497565b60408051918252519081900360200190f35b3480156101bc57600080fd5b506101c561049d565b005b3480156101d357600080fd5b50610115600160a060020a0360043516610509565b3480156101f457600080fd5b5061019e610527565b34801561020957600080fd5b5061021261052d565b60408051600160a060020a039092168252519081900360200190f35b34801561023a57600080fd5b5061021260043561053c565b34801561025257600080fd5b50610267600160a060020a0360043516610564565b604080519415158552600160a060020a039093166020850152838301919091526060830152519081900360800190f35b3480156102a357600080fd5b50610115610598565b3480156102b857600080fd5b5061019e6106ca565b3480156102cd57600080fd5b50610115600160a060020a03600435166106d0565b3480156102ee57600080fd5b506101c5600160a060020a036004351661072b565b34801561030f57600080fd5b50610115600160a060020a036004351660243561074e565b34801561033357600080fd5b50610115600160a060020a036004351661084d565b6000547501000000000000000000000000000000000000000000900460ff1681565b6000610374610598565b151561037f57600080fd5b506000805475ff00000000000000000000000000000000000000000019167501000000000000000000000000000000000000000000179055600190565b336000818152600460205260408120549091610100909104600160a060020a0316146103e757600080fd5b33600081815260046020908152604091829020805460ff19166001179055815192835290517ff5f1a1247aa8d2a5ca47f8c104886e2df9ac31612408cd09314472006efafa9b9281900390910190a150600190565b60005474010000000000000000000000000000000000000000900460ff1681565b600160a060020a03808216600081815260046020526040812054909261010090910416141561048e57506001610492565b5060005b919050565b60015481565b600054600160a060020a031633146104b457600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600160a060020a031660009081526004602052604090205460ff1690565b60035490565b600054600160a060020a031681565b600380548290811061054a57fe5b600091825260209091200154600160a060020a0316905081565b60046020526000908152604090208054600182015460029092015460ff821692610100909204600160a060020a0316919084565b600080600080600060159054906101000a900460ff16156105bc57600093506106c4565b506001915060009050805b60035481101561068a57600460006003838154811015156105e457fe5b6000918252602080832090910154600160a060020a0316835282019290925260400190205460ff16151561061b57600093506106c4565b6004600060038381548110151561062e57fe5b6000918252602080832090910154600160a060020a031683528201929092526040019020600101547f41444d494e000000000000000000000000000000000000000000000000000000141561068257600191505b6001016105c7565b60005474010000000000000000000000000000000000000000900460ff1680156106b2575081155b156106c057600093506106c4565b8293505b50505090565b60025481565b60035460009015156106e457506000610492565b600160a060020a03821660008181526004602052604090206002015460038054909190811061070f57fe5b600091825260209091200154600160a060020a03161492915050565b600054600160a060020a0316331461074257600080fd5b61074b816108da565b50565b60008054600160a060020a0316331461076657600080fd5b61076f836106d0565b1561077957600080fd5b600160a060020a038316600081815260046020908152604091829020805474ffffffffffffffffffffffffffffffffffffffff001916610100850217815560018082018790556003805491820190557fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b8101805473ffffffffffffffffffffffffffffffffffffffff1916861790556002909101558151928352820184905280517faafad92ab2bdab3d1a8c119c523f2ecdaeeb618b561d447e8d87afeb8b029a559281900390910190a150600192915050565b600160a060020a038082166000818152600460205260408120549092610100909104161461087a57600080fd5b600160a060020a038216600081815260046020908152604091829020805460ff19166001179055815192835290517ff5f1a1247aa8d2a5ca47f8c104886e2df9ac31612408cd09314472006efafa9b9281900390910190a1506001919050565b600160a060020a03811615156108ef57600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820e0bf7322b960e5ebba3cf97c1f80adddcff4aad8bfa42666e579cd071b19be610029a165627a7a72305820b3703a41ede89930b88aee6e3848b68dac2f9847b45a9634d30fbaee84b25dfa0029",
+  "deployedBytecode": "0x6080604052600436106100825763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663347c2d2c8114610087578063715018a6146100c55780638da5cb5b146100dc578063edd9fcbc1461010d578063f2fde38b1461012e578063f71be8371461014f578063fe8b831914610170575b600080fd5b34801561009357600080fd5b506100b1600160a060020a0360043581169060243516604435610190565b604080519115158252519081900360200190f35b3480156100d157600080fd5b506100da610235565b005b3480156100e857600080fd5b506100f16102a1565b60408051600160a060020a039092168252519081900360200190f35b34801561011957600080fd5b506100b1600160a060020a03600435166102b0565b34801561013a57600080fd5b506100da600160a060020a0360043516610340565b34801561015b57600080fd5b506100b1600160a060020a0360043516610363565b34801561017c57600080fd5b506100f160043515156024356044356103c8565b604080517ff58d924b000000000000000000000000000000000000000000000000000000008152600160a060020a03848116600483015260248201849052915160009286929083169163f58d924b9160448082019260209290919082900301818887803b15801561020057600080fd5b505af1158015610214573d6000803e3d6000fd5b505050506040513d602081101561022a57600080fd5b505195945050505050565b600054600160a060020a0316331461024c57600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b60008082905080600160a060020a031663c8e0b2a96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561030d57600080fd5b505af1158015610321573d6000803e3d6000fd5b505050506040513d602081101561033757600080fd5b50519392505050565b600054600160a060020a0316331461035757600080fd5b61036081610453565b50565b604080517ff71be83700000000000000000000000000000000000000000000000000000000815233600482015290516000918391600160a060020a0383169163f71be83791602480830192602092919082900301818887803b15801561030d57600080fd5b6000808483856103d66104d0565b921515835260208301919091526040808301919091525190819003606001906000f08015801561040a573d6000803e3d6000fd5b5060408051600160a060020a038316815290519192507ffba353b90f7ff8a62cba1f619a1dc8ebd65e4898c5bba55376a331580d16cc5f919081900360200190a1949350505050565b600160a060020a038116151561046857600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b604051610a14806104e1833901905600608060405234801561001057600080fd5b50604051606080610a1483398101604090815281516020830151919092015160008054600160a060020a031916331790556000805460a860020a60ff0219941515740100000000000000000000000000000000000000000260a060020a60ff02199091161793909316909255600155600255610983806100916000396000f3006080604052600436106100fb5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630c4f5534811461010057806319d40b08146101295780632ca151221461013e57806333cce661146101535780633baa8c56146101685780635600f04f14610189578063715018a6146101b05780637f91fb7d146101c757806389d84af5146101e85780638da5cb5b146101fd578063c19b7a041461022e578063c792f36d14610246578063c8e0b2a914610297578063da4de743146102ac578063e0d17fe7146102c1578063f2fde38b146102e2578063f58d924b14610303578063f71be83714610327575b600080fd5b34801561010c57600080fd5b50610115610348565b604080519115158252519081900360200190f35b34801561013557600080fd5b5061011561036a565b34801561014a57600080fd5b506101156103bc565b34801561015f57600080fd5b5061011561043c565b34801561017457600080fd5b50610115600160a060020a036004351661045d565b34801561019557600080fd5b5061019e610497565b60408051918252519081900360200190f35b3480156101bc57600080fd5b506101c561049d565b005b3480156101d357600080fd5b50610115600160a060020a0360043516610509565b3480156101f457600080fd5b5061019e610527565b34801561020957600080fd5b5061021261052d565b60408051600160a060020a039092168252519081900360200190f35b34801561023a57600080fd5b5061021260043561053c565b34801561025257600080fd5b50610267600160a060020a0360043516610564565b604080519415158552600160a060020a039093166020850152838301919091526060830152519081900360800190f35b3480156102a357600080fd5b50610115610598565b3480156102b857600080fd5b5061019e6106ca565b3480156102cd57600080fd5b50610115600160a060020a03600435166106d0565b3480156102ee57600080fd5b506101c5600160a060020a036004351661072b565b34801561030f57600080fd5b50610115600160a060020a036004351660243561074e565b34801561033357600080fd5b50610115600160a060020a036004351661084d565b6000547501000000000000000000000000000000000000000000900460ff1681565b6000610374610598565b151561037f57600080fd5b506000805475ff00000000000000000000000000000000000000000019167501000000000000000000000000000000000000000000179055600190565b336000818152600460205260408120549091610100909104600160a060020a0316146103e757600080fd5b33600081815260046020908152604091829020805460ff19166001179055815192835290517ff5f1a1247aa8d2a5ca47f8c104886e2df9ac31612408cd09314472006efafa9b9281900390910190a150600190565b60005474010000000000000000000000000000000000000000900460ff1681565b600160a060020a03808216600081815260046020526040812054909261010090910416141561048e57506001610492565b5060005b919050565b60015481565b600054600160a060020a031633146104b457600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600160a060020a031660009081526004602052604090205460ff1690565b60035490565b600054600160a060020a031681565b600380548290811061054a57fe5b600091825260209091200154600160a060020a0316905081565b60046020526000908152604090208054600182015460029092015460ff821692610100909204600160a060020a0316919084565b600080600080600060159054906101000a900460ff16156105bc57600093506106c4565b506001915060009050805b60035481101561068a57600460006003838154811015156105e457fe5b6000918252602080832090910154600160a060020a0316835282019290925260400190205460ff16151561061b57600093506106c4565b6004600060038381548110151561062e57fe5b6000918252602080832090910154600160a060020a031683528201929092526040019020600101547f41444d494e000000000000000000000000000000000000000000000000000000141561068257600191505b6001016105c7565b60005474010000000000000000000000000000000000000000900460ff1680156106b2575081155b156106c057600093506106c4565b8293505b50505090565b60025481565b60035460009015156106e457506000610492565b600160a060020a03821660008181526004602052604090206002015460038054909190811061070f57fe5b600091825260209091200154600160a060020a03161492915050565b600054600160a060020a0316331461074257600080fd5b61074b816108da565b50565b60008054600160a060020a0316331461076657600080fd5b61076f836106d0565b1561077957600080fd5b600160a060020a038316600081815260046020908152604091829020805474ffffffffffffffffffffffffffffffffffffffff001916610100850217815560018082018790556003805491820190557fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b8101805473ffffffffffffffffffffffffffffffffffffffff1916861790556002909101558151928352820184905280517faafad92ab2bdab3d1a8c119c523f2ecdaeeb618b561d447e8d87afeb8b029a559281900390910190a150600192915050565b600160a060020a038082166000818152600460205260408120549092610100909104161461087a57600080fd5b600160a060020a038216600081815260046020908152604091829020805460ff19166001179055815192835290517ff5f1a1247aa8d2a5ca47f8c104886e2df9ac31612408cd09314472006efafa9b9281900390910190a1506001919050565b600160a060020a03811615156108ef57600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820e0bf7322b960e5ebba3cf97c1f80adddcff4aad8bfa42666e579cd071b19be610029a165627a7a72305820b3703a41ede89930b88aee6e3848b68dac2f9847b45a9634d30fbaee84b25dfa0029",
+  "sourceMap": "193:1145:25:-;;;567:5:82;:18;;-1:-1:-1;;;;;;567:18:82;575:10;567:18;;;193:1145:25;;;;;;",
+  "deployedSourceMap": "193:1145:25:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;654:257;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;654:257:25;-1:-1:-1;;;;;654:257:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:111:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:82;;;;;;238:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:82;;;;;;;;-1:-1:-1;;;;;238:20:82;;;;;;;;;;;;;;1134:201:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1134:201:25;-1:-1:-1;;;;;1134:201:25;;;;;1274:103:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1274:103:82;-1:-1:-1;;;;;1274:103:82;;;;;918:210:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;918:210:25;-1:-1:-1;;;;;918:210:25;;;;;298:350;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;298:350:25;;;;;;;;;;;654:257;857:47;;;;;;-1:-1:-1;;;;;857:47:25;;;;;;;;;;;;;;;744:12;;824:14;;857:33;;;;;;:47;;;;;;;;;;;;;;;744:12;857:33;:47;;;5:2:-1;;;;30:1;27;20:12;5:2;857:47:25;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;857:47:25;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;857:47:25;;654:257;-1:-1:-1;;;;;654:257:25:o;1001:111:82:-;719:5;;-1:-1:-1;;;;;719:5:82;705:10;:19;697:28;;;;;;1077:5;;;1058:25;;-1:-1:-1;;;;;1077:5:82;;;;1058:25;;;1105:1;1089:18;;-1:-1:-1;;1089:18:82;;;1001:111::o;238:20::-;;;-1:-1:-1;;;;;238:20:82;;:::o;1134:201:25:-;1194:4;1210:37;1265:14;1210:70;;1297:22;-1:-1:-1;;;;;1297:29:25;;:31;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1297:31:25;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1297:31:25;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1297:31:25;;1134:201;-1:-1:-1;;;1134:201:25:o;1274:103:82:-;719:5;;-1:-1:-1;;;;;719:5:82;705:10;:19;697:28;;;;;;1343:29;1362:9;1343:18;:29::i;:::-;1274:103;:::o;918:210:25:-;1082:39;;;;;;1110:10;1082:39;;;;;;971:12;;1050:14;;-1:-1:-1;;;;;1082:27:25;;;;;:39;;;;;;;;;;;;;;971:12;1082:27;:39;;;5:2:-1;;;;30:1;27;20:12;298:350:25;433:7;452:26;500:6;520:7;541:4;481:65;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;561:43:25;;;-1:-1:-1;;;;;561:43:25;;;;;;452:94;;-1:-1:-1;561:43:25;;;;;;;;;;629:11;298:350;-1:-1:-1;;;;298:350:25:o;1512:171:82:-;-1:-1:-1;;;;;1582:23:82;;;;1574:32;;;;;;1638:5;;;1617:38;;-1:-1:-1;;;;;1617:38:82;;;;1638:5;;;1617:38;;;1661:5;:17;;-1:-1:-1;;1661:17:82;-1:-1:-1;;;;;1661:17:82;;;;;;;;;;1512:171::o;193:1145:25:-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.24;\nimport \"openzeppelin-solidity/contracts/ownership/Ownable.sol\";\nimport 'openzeppelin-solidity/contracts/math/SafeMath.sol';\nimport '../structures/SignedDocument.sol';\n\ncontract SignedDocumentFactory is Ownable{\n    event SignedDocumentCreated(address SignedDocument);\n\n    function createSignedDocument (\n        bool      _admin,\n        bytes32      _url,\n        bytes32      _urlMD5\n    ) public returns(address){\n\n        SignedDocument newContract = new SignedDocument(_admin,\n            _urlMD5,\n            _url);\n        emit SignedDocumentCreated(address(newContract));\n        return address(newContract);\n    }\n\n    function shouldSign(address signedDocument , address _user, bytes32 _role) public returns(bool success) {\n         SignedDocument signedDocumentContract = SignedDocument(signedDocument);\n         return signedDocumentContract.shouldSign(_user, _role);\n    }\n\n\n    function sign(address signedDocument) public returns(bool success) {\n        SignedDocument signedDocumentContract = SignedDocument(signedDocument);\n        return signedDocumentContract.sign(msg.sender);\n    }\n\n    function isSign(address signedDocument) public view returns(bool) {\n        SignedDocument signedDocumentContract = SignedDocument(signedDocument);\n        return signedDocumentContract.isSign();\n    }\n\n}\n",
+  "sourcePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/SignedDocumentFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/SignedDocumentFactory.sol",
+    "exportedSymbols": {
+      "SignedDocumentFactory": [
+        13149
+      ]
+    },
+    "id": 13150,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13046,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:25"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 13047,
+        "nodeType": "ImportDirective",
+        "scope": 13150,
+        "sourceUnit": 24244,
+        "src": "25:63:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 13048,
+        "nodeType": "ImportDirective",
+        "scope": 13150,
+        "sourceUnit": 24158,
+        "src": "89:59:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/structures/SignedDocument.sol",
+        "file": "../structures/SignedDocument.sol",
+        "id": 13049,
+        "nodeType": "ImportDirective",
+        "scope": 13150,
+        "sourceUnit": 22033,
+        "src": "149:42:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13050,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24243,
+              "src": "227:7:25",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$24243",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 13051,
+            "nodeType": "InheritanceSpecifier",
+            "src": "227:7:25"
+          }
+        ],
+        "contractDependencies": [
+          22032,
+          24243
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 13149,
+        "linearizedBaseContracts": [
+          13149,
+          24243
+        ],
+        "name": "SignedDocumentFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13055,
+            "name": "SignedDocumentCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13054,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13053,
+                  "indexed": false,
+                  "name": "SignedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13055,
+                  "src": "268:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13052,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "268:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "267:24:25"
+            },
+            "src": "240:52:25"
+          },
+          {
+            "body": {
+              "id": 13085,
+              "nodeType": "Block",
+              "src": "441:207:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13067
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13067,
+                      "name": "newContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13086,
+                      "src": "452:26:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13066,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "452:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13074,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13070,
+                        "name": "_admin",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13057,
+                        "src": "500:6:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 13071,
+                        "name": "_urlMD5",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13061,
+                        "src": "520:7:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 13072,
+                        "name": "_url",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13059,
+                        "src": "541:4:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 13069,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "481:18:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_bool_$_t_bytes32_$_t_bytes32_$returns$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "function (bool,bytes32,bytes32) returns (contract SignedDocument)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13068,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "485:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      }
+                    },
+                    "id": 13073,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "481:65:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "452:94:25"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 13077,
+                            "name": "newContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13067,
+                            "src": "591:11:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                              "typeString": "contract SignedDocument"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                              "typeString": "contract SignedDocument"
+                            }
+                          ],
+                          "id": 13076,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "583:7:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 13078,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "583:20:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13075,
+                      "name": "SignedDocumentCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13055,
+                      "src": "561:21:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 13079,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "561:43:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13080,
+                  "nodeType": "EmitStatement",
+                  "src": "556:48:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13082,
+                        "name": "newContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13067,
+                        "src": "629:11:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      ],
+                      "id": 13081,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "621:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 13083,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "621:20:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 13065,
+                  "id": 13084,
+                  "nodeType": "Return",
+                  "src": "614:27:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13086,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createSignedDocument",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13062,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13057,
+                  "name": "_admin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "338:16:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13056,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "338:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13059,
+                  "name": "_url",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "364:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13058,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13061,
+                  "name": "_urlMD5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "391:20:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13060,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "391:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "328:89:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13065,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13064,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "433:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13063,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "433:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "432:9:25"
+            },
+            "scope": 13149,
+            "src": "298:350:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13109,
+              "nodeType": "Block",
+              "src": "758:153:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13098
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13098,
+                      "name": "signedDocumentContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13110,
+                      "src": "769:37:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13097,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "769:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13102,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13100,
+                        "name": "signedDocument",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13088,
+                        "src": "824:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13099,
+                      "name": "SignedDocument",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22032,
+                      "src": "809:14:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "type(contract SignedDocument)"
+                      }
+                    },
+                    "id": 13101,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "809:30:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "769:70:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13105,
+                        "name": "_user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13090,
+                        "src": "891:5:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 13106,
+                        "name": "_role",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13092,
+                        "src": "898:5:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13103,
+                        "name": "signedDocumentContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13098,
+                        "src": "857:22:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "id": 13104,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "shouldSign",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 21852,
+                      "src": "857:33:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (address,bytes32) external returns (bool)"
+                      }
+                    },
+                    "id": 13107,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "857:47:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13096,
+                  "id": 13108,
+                  "nodeType": "Return",
+                  "src": "850:54:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13110,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "shouldSign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13093,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13088,
+                  "name": "signedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "674:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13087,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "674:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13090,
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "699:13:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13089,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "699:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13092,
+                  "name": "_role",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "714:13:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13091,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "714:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "673:55:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13096,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13095,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "744:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13094,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "744:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "743:14:25"
+            },
+            "scope": 13149,
+            "src": "654:257:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13129,
+              "nodeType": "Block",
+              "src": "985:143:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13118
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13118,
+                      "name": "signedDocumentContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13130,
+                      "src": "995:37:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13117,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "995:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13122,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13120,
+                        "name": "signedDocument",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13112,
+                        "src": "1050:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13119,
+                      "name": "SignedDocument",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22032,
+                      "src": "1035:14:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "type(contract SignedDocument)"
+                      }
+                    },
+                    "id": 13121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1035:30:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "995:70:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 13125,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 24676,
+                          "src": "1110:3:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 13126,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1110:10:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13123,
+                        "name": "signedDocumentContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13118,
+                        "src": "1082:22:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "id": 13124,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sign",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 21914,
+                      "src": "1082:27:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_bool_$",
+                        "typeString": "function (address) external returns (bool)"
+                      }
+                    },
+                    "id": 13127,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1082:39:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13116,
+                  "id": 13128,
+                  "nodeType": "Return",
+                  "src": "1075:46:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13130,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13113,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13112,
+                  "name": "signedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13130,
+                  "src": "932:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13111,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "932:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "931:24:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13116,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13115,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13130,
+                  "src": "971:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13114,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "971:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "970:14:25"
+            },
+            "scope": 13149,
+            "src": "918:210:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13147,
+              "nodeType": "Block",
+              "src": "1200:135:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13138
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13138,
+                      "name": "signedDocumentContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13148,
+                      "src": "1210:37:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13137,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "1210:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13142,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13140,
+                        "name": "signedDocument",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13132,
+                        "src": "1265:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13139,
+                      "name": "SignedDocument",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22032,
+                      "src": "1250:14:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "type(contract SignedDocument)"
+                      }
+                    },
+                    "id": 13141,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1250:30:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1210:70:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13143,
+                        "name": "signedDocumentContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13138,
+                        "src": "1297:22:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "id": 13144,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "isSign",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 21999,
+                      "src": "1297:29:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                        "typeString": "function () view external returns (bool)"
+                      }
+                    },
+                    "id": 13145,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1297:31:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13136,
+                  "id": 13146,
+                  "nodeType": "Return",
+                  "src": "1290:38:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13148,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isSign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13133,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13132,
+                  "name": "signedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13148,
+                  "src": "1150:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13131,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1150:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1149:24:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13136,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13135,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13148,
+                  "src": "1194:4:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13134,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1194:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1193:6:25"
+            },
+            "scope": 13149,
+            "src": "1134:201:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13150,
+        "src": "193:1145:25"
+      }
+    ],
+    "src": "0:1339:25"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/SignedDocumentFactory.sol",
+    "exportedSymbols": {
+      "SignedDocumentFactory": [
+        13149
+      ]
+    },
+    "id": 13150,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13046,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:25"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 13047,
+        "nodeType": "ImportDirective",
+        "scope": 13150,
+        "sourceUnit": 24244,
+        "src": "25:63:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 13048,
+        "nodeType": "ImportDirective",
+        "scope": 13150,
+        "sourceUnit": 24158,
+        "src": "89:59:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/structures/SignedDocument.sol",
+        "file": "../structures/SignedDocument.sol",
+        "id": 13049,
+        "nodeType": "ImportDirective",
+        "scope": 13150,
+        "sourceUnit": 22033,
+        "src": "149:42:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13050,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24243,
+              "src": "227:7:25",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$24243",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 13051,
+            "nodeType": "InheritanceSpecifier",
+            "src": "227:7:25"
+          }
+        ],
+        "contractDependencies": [
+          22032,
+          24243
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 13149,
+        "linearizedBaseContracts": [
+          13149,
+          24243
+        ],
+        "name": "SignedDocumentFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13055,
+            "name": "SignedDocumentCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13054,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13053,
+                  "indexed": false,
+                  "name": "SignedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13055,
+                  "src": "268:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13052,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "268:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "267:24:25"
+            },
+            "src": "240:52:25"
+          },
+          {
+            "body": {
+              "id": 13085,
+              "nodeType": "Block",
+              "src": "441:207:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13067
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13067,
+                      "name": "newContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13086,
+                      "src": "452:26:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13066,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "452:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13074,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13070,
+                        "name": "_admin",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13057,
+                        "src": "500:6:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 13071,
+                        "name": "_urlMD5",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13061,
+                        "src": "520:7:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 13072,
+                        "name": "_url",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13059,
+                        "src": "541:4:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 13069,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "481:18:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_bool_$_t_bytes32_$_t_bytes32_$returns$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "function (bool,bytes32,bytes32) returns (contract SignedDocument)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13068,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "485:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      }
+                    },
+                    "id": 13073,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "481:65:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "452:94:25"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 13077,
+                            "name": "newContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13067,
+                            "src": "591:11:25",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                              "typeString": "contract SignedDocument"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                              "typeString": "contract SignedDocument"
+                            }
+                          ],
+                          "id": 13076,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "583:7:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 13078,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "583:20:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13075,
+                      "name": "SignedDocumentCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13055,
+                      "src": "561:21:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 13079,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "561:43:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13080,
+                  "nodeType": "EmitStatement",
+                  "src": "556:48:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13082,
+                        "name": "newContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13067,
+                        "src": "629:11:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      ],
+                      "id": 13081,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "621:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 13083,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "621:20:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 13065,
+                  "id": 13084,
+                  "nodeType": "Return",
+                  "src": "614:27:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13086,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createSignedDocument",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13062,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13057,
+                  "name": "_admin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "338:16:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13056,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "338:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13059,
+                  "name": "_url",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "364:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13058,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13061,
+                  "name": "_urlMD5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "391:20:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13060,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "391:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "328:89:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13065,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13064,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13086,
+                  "src": "433:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13063,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "433:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "432:9:25"
+            },
+            "scope": 13149,
+            "src": "298:350:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13109,
+              "nodeType": "Block",
+              "src": "758:153:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13098
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13098,
+                      "name": "signedDocumentContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13110,
+                      "src": "769:37:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13097,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "769:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13102,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13100,
+                        "name": "signedDocument",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13088,
+                        "src": "824:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13099,
+                      "name": "SignedDocument",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22032,
+                      "src": "809:14:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "type(contract SignedDocument)"
+                      }
+                    },
+                    "id": 13101,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "809:30:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "769:70:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13105,
+                        "name": "_user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13090,
+                        "src": "891:5:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 13106,
+                        "name": "_role",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13092,
+                        "src": "898:5:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13103,
+                        "name": "signedDocumentContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13098,
+                        "src": "857:22:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "id": 13104,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "shouldSign",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 21852,
+                      "src": "857:33:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (address,bytes32) external returns (bool)"
+                      }
+                    },
+                    "id": 13107,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "857:47:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13096,
+                  "id": 13108,
+                  "nodeType": "Return",
+                  "src": "850:54:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13110,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "shouldSign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13093,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13088,
+                  "name": "signedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "674:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13087,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "674:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13090,
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "699:13:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13089,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "699:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13092,
+                  "name": "_role",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "714:13:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13091,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "714:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "673:55:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13096,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13095,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13110,
+                  "src": "744:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13094,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "744:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "743:14:25"
+            },
+            "scope": 13149,
+            "src": "654:257:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13129,
+              "nodeType": "Block",
+              "src": "985:143:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13118
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13118,
+                      "name": "signedDocumentContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13130,
+                      "src": "995:37:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13117,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "995:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13122,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13120,
+                        "name": "signedDocument",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13112,
+                        "src": "1050:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13119,
+                      "name": "SignedDocument",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22032,
+                      "src": "1035:14:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "type(contract SignedDocument)"
+                      }
+                    },
+                    "id": 13121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1035:30:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "995:70:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 13125,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 24676,
+                          "src": "1110:3:25",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 13126,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1110:10:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13123,
+                        "name": "signedDocumentContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13118,
+                        "src": "1082:22:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "id": 13124,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sign",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 21914,
+                      "src": "1082:27:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_bool_$",
+                        "typeString": "function (address) external returns (bool)"
+                      }
+                    },
+                    "id": 13127,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1082:39:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13116,
+                  "id": 13128,
+                  "nodeType": "Return",
+                  "src": "1075:46:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13130,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "sign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13113,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13112,
+                  "name": "signedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13130,
+                  "src": "932:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13111,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "932:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "931:24:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13116,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13115,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13130,
+                  "src": "971:12:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13114,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "971:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "970:14:25"
+            },
+            "scope": 13149,
+            "src": "918:210:25",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13147,
+              "nodeType": "Block",
+              "src": "1200:135:25",
+              "statements": [
+                {
+                  "assignments": [
+                    13138
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13138,
+                      "name": "signedDocumentContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13148,
+                      "src": "1210:37:25",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                        "typeString": "contract SignedDocument"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13137,
+                        "name": "SignedDocument",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 22032,
+                        "src": "1210:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13142,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13140,
+                        "name": "signedDocument",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13132,
+                        "src": "1265:14:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13139,
+                      "name": "SignedDocument",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22032,
+                      "src": "1250:14:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_SignedDocument_$22032_$",
+                        "typeString": "type(contract SignedDocument)"
+                      }
+                    },
+                    "id": 13141,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1250:30:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                      "typeString": "contract SignedDocument"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1210:70:25"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13143,
+                        "name": "signedDocumentContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13138,
+                        "src": "1297:22:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SignedDocument_$22032",
+                          "typeString": "contract SignedDocument"
+                        }
+                      },
+                      "id": 13144,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "isSign",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 21999,
+                      "src": "1297:29:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                        "typeString": "function () view external returns (bool)"
+                      }
+                    },
+                    "id": 13145,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1297:31:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13136,
+                  "id": 13146,
+                  "nodeType": "Return",
+                  "src": "1290:38:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13148,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isSign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13133,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13132,
+                  "name": "signedDocument",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13148,
+                  "src": "1150:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13131,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1150:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1149:24:25"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13136,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13135,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13148,
+                  "src": "1194:4:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13134,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1194:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1193:6:25"
+            },
+            "scope": 13149,
+            "src": "1134:201:25",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13150,
+        "src": "193:1145:25"
+      }
+    ],
+    "src": "0:1339:25"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "1539850201869": {
+      "events": {},
+      "links": {},
+      "address": "0x6e979bafe64c038daba4748edb979dddf973831f",
+      "transactionHash": "0x363f59d6df2cc440201069f4f00d01e768532c18cd54bc47f83454f4593e2b17"
+    },
+    "1539851972827": {
+      "events": {},
+      "links": {},
+      "address": "0xcd9cd9699ac0ea1d5bbad593e7ca249178c1f30c",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1539864054456": {
+      "events": {},
+      "links": {},
+      "address": "0x5c9526e64f5ccc3602218d0ec3c9d935508a1b98",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540103616690": {
+      "events": {},
+      "links": {},
+      "address": "0x7583b0cd2b5bf0f7f5104d9e628c505267d19b8e",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540103742973": {
+      "events": {},
+      "links": {},
+      "address": "0x469801809d34577a6f7f1c7e12fba519c78b0081",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540104784043": {
+      "events": {},
+      "links": {},
+      "address": "0xa3171ca4630d58037d104bba43be8652a074f6e1",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540104908192": {
+      "events": {},
+      "links": {},
+      "address": "0x5373a8e265548e3fd1b94c429c9167956f5b26cd",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540105766271": {
+      "events": {},
+      "links": {},
+      "address": "0x7cdbc774866fa10fed2585fad9dda6db62ff5208",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540108185901": {
+      "events": {},
+      "links": {},
+      "address": "0x5aea56304d1e001ff274033aaf4a22b9f7de300a",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540108661277": {
+      "events": {},
+      "links": {},
+      "address": "0x5bbed801d13b83d725ab861fc521cf0808e72c43",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540191192350": {
+      "events": {},
+      "links": {},
+      "address": "0xb2a45f68482ef8a400c2cd6dbb6175dd3bef36b5",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540443932376": {
+      "events": {},
+      "links": {},
+      "address": "0x10262ff1eef444185cb442ebb9f6f5db1f9e7bf0",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540446429330": {
+      "events": {},
+      "links": {},
+      "address": "0x01b0df06c392a1358b700bda53f7cba225c1a9d9",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540446889248": {
+      "events": {},
+      "links": {},
+      "address": "0x6dd606957f2190f97d3fcc157d4737665d8ab988",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540447669110": {
+      "events": {},
+      "links": {},
+      "address": "0x1cb587ed3b28096cea623e4471187935618901e5",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540449165619": {
+      "events": {},
+      "links": {},
+      "address": "0x4f395c05cbc51f6e17ff8dff7d99525680b0d495",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540450221185": {
+      "events": {},
+      "links": {},
+      "address": "0xc55e96857fa75ee2b652fdbbb6b2d55e59e2c1f3",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540451367928": {
+      "events": {},
+      "links": {},
+      "address": "0x4c93e739ae8b14653513857d19d00c892e72e707",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540454618268": {
+      "events": {},
+      "links": {},
+      "address": "0x002ea58f1b1a895155b0fb9fc8050465a089feeb",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540455801954": {
+      "events": {},
+      "links": {},
+      "address": "0x30e08df969354ddd261c706948d5c4ccf1aba2fe",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540456902003": {
+      "events": {},
+      "links": {},
+      "address": "0x4876b8f8a00eb97ede5eb53072a9d19df57d4a17",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1540754292670": {
+      "events": {},
+      "links": {},
+      "address": "0xcd0605bedb56a42ae8af1f6874f2e91b7a42d88b",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1541329441155": {
+      "events": {},
+      "links": {},
+      "address": "0xcca0006347dd7b07457ba2d324087eace75f2d6f",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1541329572547": {
+      "events": {},
+      "links": {},
+      "address": "0x364e7c47c77e6f2cc8519e012228da368a039090",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1541331028810": {
+      "events": {},
+      "links": {},
+      "address": "0x859ac6a567ff2498189d43cb5e3bc436ce12c8cf",
+      "transactionHash": "0x19b2773948a2ed03ac29985abffb9f1ea9b0ca6753bd60150ce5b93b88c08a00"
+    },
+    "1541779207684": {
+      "events": {},
+      "links": {},
+      "address": "0x6b488a727f634428beb853632b8073632bfa1f52",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1542035718254": {
+      "events": {},
+      "links": {},
+      "address": "0x01f5d734bf03ca705ea0bf76350d8388680091f4",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1542039244742": {
+      "events": {},
+      "links": {},
+      "address": "0x08146a1dfbb35c3ee017f8217661ba542f840cf1",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1542286740204": {
+      "events": {},
+      "links": {},
+      "address": "0x8d92ac3486c96371a4751d9caad53edb90c2dcef",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1542286871891": {
+      "events": {},
+      "links": {},
+      "address": "0x2928433b9bc676884bc6097b2ef2fc6e23479e9c",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1542292100556": {
+      "events": {},
+      "links": {},
+      "address": "0xeab9ab0cb11612d7861fa4ef948ac48b1dc18b8d",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1542902659735": {
+      "events": {},
+      "links": {},
+      "address": "0x54b56b29e0b3d7be1ae8f6b04130ed5c4e1b9b6a",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1543409395515": {
+      "events": {},
+      "links": {},
+      "address": "0xf614cc95cc8f5e11f0dbb89ee32e6e0f4210472f",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1543737497290": {
+      "events": {},
+      "links": {},
+      "address": "0x2c6422d0da5f9e7d4ece5651c2b644fe507dac71",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1543758396406": {
+      "events": {},
+      "links": {},
+      "address": "0xe64b11081836dc8a9520201172b4e209340ce10b",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1544075430083": {
+      "events": {},
+      "links": {},
+      "address": "0x3714c0bc8169d541e1c69325ffa56f85bda87a31",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1544420482702": {
+      "events": {},
+      "links": {},
+      "address": "0xf1a51bc3732c77c4ad53b8edbb5c270c9ec7241f",
+      "transactionHash": "0x6a491b51d11456b033ccc8885c610fb85b602639f933f830be97cc112447b0fe"
+    },
+    "1545311010723": {
+      "events": {},
+      "links": {},
+      "address": "0x5784c7daef0f89f486012735990dd263d9e41658",
+      "transactionHash": "0x1705d92dd82c38bbbab29e2d656149b37bbdca3472f419313ff880d924f90803"
+    },
+    "1545311507411": {
+      "events": {},
+      "links": {},
+      "address": "0xb826d4f665be061f01b5594b097a1e94b16bc97b",
+      "transactionHash": "0x1705d92dd82c38bbbab29e2d656149b37bbdca3472f419313ff880d924f90803"
+    },
+    "1545315286659": {
+      "events": {},
+      "links": {},
+      "address": "0x031092e72f93c2d11a1332c70033a01c845e576e",
+      "transactionHash": "0x1705d92dd82c38bbbab29e2d656149b37bbdca3472f419313ff880d924f90803"
+    },
+    "1545315439070": {
+      "events": {},
+      "links": {},
+      "address": "0x6c69e16743814d46ae9db2961ddaa7485cf6e4cb",
+      "transactionHash": "0x1705d92dd82c38bbbab29e2d656149b37bbdca3472f419313ff880d924f90803"
+    },
+    "1545380710389": {
+      "events": {},
+      "links": {},
+      "address": "0x09641acb1f5938e8b143925be80a3dc02ba6a1b4",
+      "transactionHash": "0x1705d92dd82c38bbbab29e2d656149b37bbdca3472f419313ff880d924f90803"
+    },
+    "1547106567857": {
+      "events": {},
+      "links": {},
+      "address": "0xd6bf8510c22c8f638826497e6e16a2132267e02c",
+      "transactionHash": "0x1705d92dd82c38bbbab29e2d656149b37bbdca3472f419313ff880d924f90803"
+    },
+    "1568816181260": {
+      "events": {},
+      "links": {},
+      "address": "0x579652230525e9bd901036206da931df433b026f",
+      "transactionHash": "0x8a009098de3d0ce6cb1a5c4438bbbbd4985c4920a68abbeff9b8c6a89c09e424"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-10-27T14:12:11.005Z"
+}

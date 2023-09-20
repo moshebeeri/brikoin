@@ -1,0 +1,50 @@
+{
+  "name": {
+    "type": "bytes32",
+    "name": "name"
+  },
+  "manager": {
+    "type": "address",
+    "name": "manager"
+  },
+  "trustees": {
+    "type": "address[]",
+    "name": "trustees"
+  },
+  "registrar": {
+    "type": "address",
+    "name": "registrar"
+  },
+  "estimations": {
+    "type": "address[]",
+    "name": "estimations"
+  },
+  "country": {
+    "type": "bytes32",
+    "name": "country"
+  },
+  "address1": {
+    "type": "bytes32",
+    "name": "address1"
+  },
+  "address2": {
+    "type": "bytes32",
+    "name": "address2"
+  },
+  "lat": {
+    "type": "bytes32",
+    "name": "lat"
+  },
+  "lon": {
+    "type": "bytes32",
+    "name": "lon"
+  },
+  "uri": {
+    "type": "bytes32",
+    "name": "uri"
+  },
+  "uriMD5": {
+    "type": "bytes32",
+    "name": "uriMD5"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "firestone-1",
+    "staging": "firestone-1",
+    "prod": "cornerstone-1",
+    "production": "brikoinprod"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "price$": {
+    "type": "uint256",
+    "name": "price ($)"
+  },
+  "currency": {
+    "type": "bytes32",
+    "name": "currency"
+  },
+  "timestamp": {
+    "type": "uint256",
+    "name": "current time"
+  },
+  "rental": {
+    "type": "bytes32",
+    "name": "expected rental"
+  },
+  "expectedYield": {
+    "type": "uint256",
+    "name": "expected yield"
+  },
+  "estimatorName": {
+    "type": "bytes32",
+    "name": "estimator name"
+  },
+  "estimatorFirstName": {
+    "type": "bytes32",
+    "name": "estimator first name"
+  },
+  "estimatorSecondName": {
+    "type": "bytes32",
+    "name": "estimator second name"
+  },
+  "phoneNumber": {
+    "type": "bytes32",
+    "name": "estimator second name"
+  },
+  "email": {
+    "type": "bytes32",
+    "name": "estimator email address"
+  },
+  "url": {
+    "type": "bytes32",
+    "name": "link to pdf"
+  },
+  "urlMD5": {
+    "type": "bytes32",
+    "name": "pdf md5 digest"
+  }
+}

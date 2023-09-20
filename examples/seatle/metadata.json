@@ -1,0 +1,86 @@
+{
+  "property": {
+    "type": "Residential",
+    "address1": "8056 Sunnyside ",
+    "country": "USA",
+    "description": "Spacious & elegantly renovated, this 4 bedroom home blends charming details w/ luxurious convenience. Remodeled epicurean kitchen w/ new cabinets, quartz counters, new ss appliances. Light filled living room, elegant formal dining, kitchen w/ eating space + den. Fully finished basement w/ high ceilings, recessed lighting, added laundry room w/ barn door, “secret room”, family room, new French doors to walk out patio. Updated plumbing & electrical, French drain, new roof,  added off street parking.",
+    "name": "Sunnyside Ave N",
+    "pictures": [
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/architecture-22039_1920.jpg?alt=media&token=000a83f5-8a50-4b1e-a5a4-0a1208c736b3",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/office-space-1744801_1920.jpg?alt=media&token=249451c0-46af-4120-a1e0-075aa776d99f",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/student-849824_1920.jpg?alt=media&token=43c5e57a-29ae-4c2e-a2d8-db5afd0fade9",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/workplace-1245776_1920.jpg?alt=media&token=b1f98e25-abc3-48dc-be36-43863acf37a9",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/building-91228_1920.jpg?alt=media&token=3f4961bf-5797-401f-bd38-32462d9b124c"
+    ]
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project": {
+    "description": "Spacious & elegantly renovated, this 4 bedroom home blends charming details w/ luxurious convenience. Remodeled epicurean kitchen w/ new cabinets, quartz counters, new ss appliances. Light filled living room, elegant formal dining, kitchen w/ eating space + den. Fully finished basement w/ high ceilings, recessed lighting, added laundry room w/ barn door, “secret room”, family room, new French doors to walk out patio. Updated plumbing & electrical, French drain, new roof,  added off street parking.",
+    "durationSecond": "2018-07-05",
+    "name": "Sunnyside Ave N",
+    "startTimestamp": "2018-06-05",
+    "symbol": "SET",
+    "target": "1049000",
+    "loanDuration": 24,
+    "fundingProject": true,
+    "projectInterest": 60,
+    "reservedBid": "500000000",
+    "currency": "USD",
+    "lang": {
+      "He": {
+        "description": "מרווחת & משופצת באלגנטיות, זה 4 חדרי שינה הביתה תערובות מקסים פרטים w / נוחות מפואר. משופץ מטבח אפיקורי w / ארונות חדשים, קוורץ דלפקים, מכשירי SS חדש. סלון מלא אור, אוכל פורמלי אלגנטי, מטבח w / שטח אכילה + דן. במרתף סיים מלא עם תקרה גבוהה, תאורה הפסקה, חדר כביסה נוסף עם דלת האסם, \"חדר סודי\", חדר משפחה, דלתות צרפתית חדשה כדי לצאת פטיו. אינסטלציה עודכן & חשמל, בריחה צרפתית, גג חדש, הוסיף מחוץ לחניה ברחוב.",
+        "name": "שדרות Sunnyside"
+      }
+    }
+  },
+  "estimation": {
+    "currency": "USD",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "3200",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "1049000",
+    "rental": "189000"
+  },
+  "term": {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 1500,
+    "sellPercentage": 10
+  },
+  "manager": {
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar": {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "New York",
+    "email": "Adam.Bello@monroecounty.gov",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Adam Bello",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

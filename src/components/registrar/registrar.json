@@ -1,0 +1,26 @@
+{
+  "name": {
+    "type": "bytes32",
+    "name": "name"
+  },
+  "licenseNumber": {
+    "type": "bytes32",
+    "name": "License/ID"
+  },
+  "country": {
+    "type": "bytes32",
+    "name": "Country"
+  },
+  "address1": {
+    "type": "bytes32",
+    "name": "Address"
+  },
+  "address2": {
+    "type": "bytes32",
+    "name": "Address"
+  },
+  "url": {
+    "type": "bytes32",
+    "name": "URL"
+  }
+}

@@ -1,0 +1,4 @@
+.media-container,
+.media-container > video {
+  max-width: 270px;
+}

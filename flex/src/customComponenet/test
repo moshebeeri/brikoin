@@ -1,0 +1,58 @@
+https://webhooks.twilio.com/v1/Accounts/ACde9becade1257930f33203e0cfaaa26d/Proxy/KS47bea5b786cbf087168eddbf0f9a1f2e/Webhooks/Messagehttps://webhooks.twilio.com/v1/Accounts/ACde9becade1257930f33203e0cfaaa26d/Proxy/KS47bea5b786cbf087168eddbf0f9a1f2e/Webhooks/Message
+
+FW217cb4380945ff37636a977f82e1ffe8
+
+IS6c564facb33746e197516ca6ee2418e0
+
+b05780609ebf102e89da27a3785b4d46
+
+ACde9becade1257930f33203e0cfaaa26d
+
+ curl -XPOST 'https://video.twilio.com/v1/Rooms' \
+ -u 'SK1ffbad909d9e9241b7f862b3f0edd8a9:P9xt8GFTrvj2cRDIBzfQ6MA5QnpyG9vs' \
+ -d 'UniqueName=UserRoi'
+
+curl -X POST 'https://preview.twilio.com/Flex/FlexFlows' \
+--data-urlencode 'ChannelType=whatsapp' \
+--data-urlencode 'Enabled=true' \
+--data-urlencode 'ContactIdentity=whatsapp:+14155238886' \
+--data-urlencode 'FriendlyName=Flex WhatsApp FlexFlow' \
+--data-urlencode 'StudioFlowSid=FW217cb4380945ff37636a977f82e1ffe8' \
+--data-urlencode 'ChatServiceSid=IS6c564facb33746e197516ca6ee2418e0' \
+-u ACde9becade1257930f33203e0cfaaa26d:b05780609ebf102e89da27a3785b4d46
+
+{"name": "{{trigger.message.ChannelAttributes.from}}", "channelType": "{{trigger.message.ChannelAttributes.channel_type}}", "channelSid": "{{trigger.message.ChannelSid}}"}
+
+
+curl -X POST "https://studio.twilio.com/v1/Flows/FW548c9b2b5f9e6ed30ad6b7020c4034ca/Executions" -d "To=+1646221xxxx" -d "From=+1331481xxxx" -u ACde9becade1257930f33203e0cfaaa26d:b05780609ebf102e89da27a3785b4d46
+
+
+ curl -X POST "https://studio.twilio.com/v1/Flows/FW548c9b2b5f9e6ed30ad6b7020c4034ca/Executions" -d "To=agent" -d "From=roi" -d "parameters={'name': 'roi'}" -u ACde9becade1257930f33203e0cfaaa26d:b05780609ebf102e89da27a3785b4d46
+
+
+ curl -X POST https://studio.twilio.com/v1/Flows/FW548c9b2b5f9e6ed30ad6b7020c4034ca/Executions \
+ --data-urlencode "To=+972544402680" \
+ --data-urlencode "From=+972544402680" \
+ --data-urlencode "Parameters={\"patient\":\"Jon\",\"time\":\"8AM\"}" \
+ -u "ACde9becade1257930f33203e0cfaaa26d:b05780609ebf102e89da27a3785b4d46"
+
+ SKe5d1b696a70de25705c4fcc747dec2a4
+
+ 1l2LqzTezCCGgRsjb8h3myEFqTmckKMn
+
+ bank leumi
+ AC543f4b30bb47df63e7d799a7def67729
+ 6147f127f33516d6a2012acebd6aa0ef
+
+ https://webhooks.twilio.com/v1/Accounts/AC543f4b30bb47df63e7d799a7def67729/Proxy/KSc055018739190e48d57f371d1f7920ba/Webhooks/Message
+ +1 415 523 8886
+ message: FWa5b6a79ee0be5263054dd1ee5868b66e
+ chat: IS356897ff9f944ac295316c580b49f9cd
+curl -X POST 'https://preview.twilio.com/Flex/FlexFlows' \
+--data-urlencode 'ChannelType=whatsapp' \
+--data-urlencode 'Enabled=true' \
+--data-urlencode 'ContactIdentity=whatsapp:+14155238886' \
+--data-urlencode 'FriendlyName=Flex WhatsApp FlexFlow' \
+--data-urlencode 'StudioFlowSid=FWa5b6a79ee0be5263054dd1ee5868b66e' \
+--data-urlencode 'ChatServiceSid=IS356897ff9f944ac295316c580b49f9cd' \
+-u AC543f4b30bb47df63e7d799a7def67729:6147f127f33516d6a2012acebd6aa0ef

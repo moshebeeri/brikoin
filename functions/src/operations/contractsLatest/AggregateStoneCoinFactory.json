@@ -1,0 +1,2343 @@
+{
+  "contractName": "AggregateStoneCoinFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "Aggregator",
+          "type": "address"
+        }
+      ],
+      "name": "AggregatedStoneCoinsCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "name": "_symbol",
+          "type": "bytes32"
+        },
+        {
+          "name": "_startTimestamp",
+          "type": "uint256"
+        },
+        {
+          "name": "_durationSeconds",
+          "type": "uint256"
+        },
+        {
+          "name": "_assetManager",
+          "type": "address"
+        },
+        {
+          "name": "_organization",
+          "type": "address"
+        },
+        {
+          "name": "key",
+          "type": "uint256"
+        }
+      ],
+      "name": "createAggregateStoneCoins",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "key",
+          "type": "uint256"
+        }
+      ],
+      "name": "getContractAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008054600160a060020a03191633179055610b08806100256000396000f30060806040526004361061006c5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a681146100715780638da5cb5b14610088578063a3844886146100c6578063aefa7d9814610109578063f2fde38b14610121575b600080fd5b34801561007d57600080fd5b5061008661014f565b005b34801561009457600080fd5b5061009d6101d5565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100d257600080fd5b5061009d60043560243560443560643573ffffffffffffffffffffffffffffffffffffffff60843581169060a4351660c4356101f1565b34801561011557600080fd5b5061009d60043561032a565b34801561012d57600080fd5b5061008673ffffffffffffffffffffffffffffffffffffffff60043516610352565b60005473ffffffffffffffffffffffffffffffffffffffff16331461017357600080fd5b6000805460405173ffffffffffffffffffffffffffffffffffffffff909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60008054819073ffffffffffffffffffffffffffffffffffffffff16331461021857600080fd5b88888888888833610227610426565b9687526020870195909552604080870194909452606086019290925273ffffffffffffffffffffffffffffffffffffffff908116608086015290811660a08501529190911660c0830152519081900360e001906000f08015801561028f573d6000803e3d6000fd5b506040805173ffffffffffffffffffffffffffffffffffffffff8316815290519192507f293674b1dbdf1dd0c57122efca5a3101564c0d480576d55aeef6d686cdc52a4c919081900360200190a1600092835260016020526040909220805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff8416179055509695505050505050565b60009081526001602052604090205473ffffffffffffffffffffffffffffffffffffffff1690565b60005473ffffffffffffffffffffffffffffffffffffffff16331461037657600080fd5b61037f81610382565b50565b73ffffffffffffffffffffffffffffffffffffffff811615156103a457600080fd5b6000805460405173ffffffffffffffffffffffffffffffffffffffff808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b6040516106a68061043783390190560060806040527f53746f6e65436f696e41475200000000000000000000000000000000000000006004557f53544300000000000000000000000000000000000000000000000000000000006005556293a80060085560098054600160a060020a031916905534801561006f57600080fd5b5060405160e0806106a683398101604090815281516020830151918301516060840151608085015160a086015160c0909601516000805460049690965560059690965560079390935560089190915560068054600160a060020a03928316600160a060020a031991821617909155928316339081178416179093556009805494841694831694909417909355600a805492909316911617905561058f806101176000396000f3006080604052600436106100f05763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306fdde0381146100f557806309173f9e1461011c5780630f4ee32f146101395780631d9821cd1461015157806323bd4d7a14610169578063349d82b11461019a57806362db90c3146101b2578063715018a6146101c75780638da5cb5b146101dc57806394217ad1146101f157806395d89b41146102065780639acba2af1461021b578063b6fd585114610230578063ce606ee014610251578063e6fd48bc14610266578063f2fde38b1461027b578063fa80be901461029c575b600080fd5b34801561010157600080fd5b5061010a6102b1565b60408051918252519081900360200190f35b34801561012857600080fd5b506101376004356024356102b7565b005b34801561014557600080fd5b5061010a600435610333565b34801561015d57600080fd5b5061010a600435610352565b34801561017557600080fd5b5061017e610360565b60408051600160a060020a039092168252519081900360200190f35b3480156101a657600080fd5b5061017e60043561036f565b3480156101be57600080fd5b5061010a610397565b3480156101d357600080fd5b5061013761039d565b3480156101e857600080fd5b5061017e610409565b3480156101fd57600080fd5b5061017e610418565b34801561021257600080fd5b5061010a610427565b34801561022757600080fd5b5061010a61042d565b34801561023c57600080fd5b50610137600160a060020a0360043516610433565b34801561025d57600080fd5b5061017e6104a8565b34801561027257600080fd5b5061010a6104b7565b34801561028757600080fd5b50610137600160a060020a03600435166104bd565b3480156102a857600080fd5b5061010a6104e0565b60045481565b600a54600160a060020a031633146102ce57600080fd5b6002805460018181019092557f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace01929092556003805492830181556000527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b90910155565b600380548290811061034157fe5b600091825260209091200154905081565b600280548290811061034157fe5b600954600160a060020a031681565b600180548290811061037d57fe5b600091825260209091200154600160a060020a0316905081565b60035490565b600054600160a060020a031633146103b457600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600654600160a060020a031681565b60055481565b60085481565b600a54600160a060020a0316331461044a57600080fd5b6001805480820182556000919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600a54600160a060020a031681565b60075481565b600054600160a060020a031633146104d457600080fd5b6104dd816104e6565b50565b60015490565b600160a060020a03811615156104fb57600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820759fe2a4ccd2a0cc70f7f97f9ed45579dd6e2d73b588a123101b34933c2b22af0029a165627a7a72305820622d7d91b9d791523f4fc459002ccc7d7b07ce6dec4f809859e5c000a1b335a60029",
+  "deployedBytecode": "0x60806040526004361061006c5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a681146100715780638da5cb5b14610088578063a3844886146100c6578063aefa7d9814610109578063f2fde38b14610121575b600080fd5b34801561007d57600080fd5b5061008661014f565b005b34801561009457600080fd5b5061009d6101d5565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100d257600080fd5b5061009d60043560243560443560643573ffffffffffffffffffffffffffffffffffffffff60843581169060a4351660c4356101f1565b34801561011557600080fd5b5061009d60043561032a565b34801561012d57600080fd5b5061008673ffffffffffffffffffffffffffffffffffffffff60043516610352565b60005473ffffffffffffffffffffffffffffffffffffffff16331461017357600080fd5b6000805460405173ffffffffffffffffffffffffffffffffffffffff909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60008054819073ffffffffffffffffffffffffffffffffffffffff16331461021857600080fd5b88888888888833610227610426565b9687526020870195909552604080870194909452606086019290925273ffffffffffffffffffffffffffffffffffffffff908116608086015290811660a08501529190911660c0830152519081900360e001906000f08015801561028f573d6000803e3d6000fd5b506040805173ffffffffffffffffffffffffffffffffffffffff8316815290519192507f293674b1dbdf1dd0c57122efca5a3101564c0d480576d55aeef6d686cdc52a4c919081900360200190a1600092835260016020526040909220805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff8416179055509695505050505050565b60009081526001602052604090205473ffffffffffffffffffffffffffffffffffffffff1690565b60005473ffffffffffffffffffffffffffffffffffffffff16331461037657600080fd5b61037f81610382565b50565b73ffffffffffffffffffffffffffffffffffffffff811615156103a457600080fd5b6000805460405173ffffffffffffffffffffffffffffffffffffffff808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b6040516106a68061043783390190560060806040527f53746f6e65436f696e41475200000000000000000000000000000000000000006004557f53544300000000000000000000000000000000000000000000000000000000006005556293a80060085560098054600160a060020a031916905534801561006f57600080fd5b5060405160e0806106a683398101604090815281516020830151918301516060840151608085015160a086015160c0909601516000805460049690965560059690965560079390935560089190915560068054600160a060020a03928316600160a060020a031991821617909155928316339081178416179093556009805494841694831694909417909355600a805492909316911617905561058f806101176000396000f3006080604052600436106100f05763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306fdde0381146100f557806309173f9e1461011c5780630f4ee32f146101395780631d9821cd1461015157806323bd4d7a14610169578063349d82b11461019a57806362db90c3146101b2578063715018a6146101c75780638da5cb5b146101dc57806394217ad1146101f157806395d89b41146102065780639acba2af1461021b578063b6fd585114610230578063ce606ee014610251578063e6fd48bc14610266578063f2fde38b1461027b578063fa80be901461029c575b600080fd5b34801561010157600080fd5b5061010a6102b1565b60408051918252519081900360200190f35b34801561012857600080fd5b506101376004356024356102b7565b005b34801561014557600080fd5b5061010a600435610333565b34801561015d57600080fd5b5061010a600435610352565b34801561017557600080fd5b5061017e610360565b60408051600160a060020a039092168252519081900360200190f35b3480156101a657600080fd5b5061017e60043561036f565b3480156101be57600080fd5b5061010a610397565b3480156101d357600080fd5b5061013761039d565b3480156101e857600080fd5b5061017e610409565b3480156101fd57600080fd5b5061017e610418565b34801561021257600080fd5b5061010a610427565b34801561022757600080fd5b5061010a61042d565b34801561023c57600080fd5b50610137600160a060020a0360043516610433565b34801561025d57600080fd5b5061017e6104a8565b34801561027257600080fd5b5061010a6104b7565b34801561028757600080fd5b50610137600160a060020a03600435166104bd565b3480156102a857600080fd5b5061010a6104e0565b60045481565b600a54600160a060020a031633146102ce57600080fd5b6002805460018181019092557f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace01929092556003805492830181556000527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b90910155565b600380548290811061034157fe5b600091825260209091200154905081565b600280548290811061034157fe5b600954600160a060020a031681565b600180548290811061037d57fe5b600091825260209091200154600160a060020a0316905081565b60035490565b600054600160a060020a031633146103b457600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600654600160a060020a031681565b60055481565b60085481565b600a54600160a060020a0316331461044a57600080fd5b6001805480820182556000919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600a54600160a060020a031681565b60075481565b600054600160a060020a031633146104d457600080fd5b6104dd816104e6565b50565b60015490565b600160a060020a03811615156104fb57600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820759fe2a4ccd2a0cc70f7f97f9ed45579dd6e2d73b588a123101b34933c2b22af0029a165627a7a72305820622d7d91b9d791523f4fc459002ccc7d7b07ce6dec4f809859e5c000a1b335a60029",
+  "sourceMap": "188:993:16:-;;;567:5:82;:18;;-1:-1:-1;;;;;;567:18:82;575:10;567:18;;;188:993:16;;;;;;",
+  "deployedSourceMap": "188:993:16:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:111:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:82;;;;;;238:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:82;;;;;;;;;;;;;;;;;;;;;;;384:665:16;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;384:665:16;;;;;;;;;;;;;;;;;;;;;;1055:121;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1055:121:16;;;;;1274:103:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1274:103:82;;;;;;;1001:111;719:5;;;;705:10;:19;697:28;;;;;;1077:5;;;1058:25;;1077:5;;;;;1058:25;;;1105:1;1089:18;;-1:-1:-1;;1089:18:82;;;1001:111::o;238:20::-;;;;;;:::o;384:665:16:-;648:7;719:5:82;;648:7:16;;719:5:82;;705:10;:19;697:28;;;;;;727:5:16;746:7;767:15;796:16;826:13;849;872:10;702:181;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;898:49:16;;;;;;;;;;667:216;;-1:-1:-1;898:49:16;;;;;;;;;;957:25;;;;:20;:25;;;;;;:48;;-1:-1:-1;;957:48:16;;;;;;;-1:-1:-1;957:48:16;384:665;-1:-1:-1;;;;;;384:665:16:o;1055:121::-;1118:7;1144:25;;;:20;:25;;;;;;;;;1055:121::o;1274:103:82:-;719:5;;;;705:10;:19;697:28;;;;;;1343:29;1362:9;1343:18;:29::i;:::-;1274:103;:::o;1512:171::-;1582:23;;;;;1574:32;;;;;;1638:5;;;1617:38;;;;;;;1638:5;;;1617:38;;;1661:5;:17;;-1:-1:-1;;1661:17:82;;;;;;;;;;;;1512:171::o;188:993:16:-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport 'openzeppelin-solidity/contracts/ownership/Ownable.sol';\nimport 'openzeppelin-solidity/contracts/math/SafeMath.sol';\nimport \"../AggregatedStoneCoin.sol\";\n\ncontract AggregateStoneCoinFactory is Ownable{\n    using SafeMath for uint256;\n    event AggregatedStoneCoinsCreated(address Aggregator);\n    mapping(uint256 => address) keyToContractAddress;\n    function createAggregateStoneCoins(\n        bytes32 _name,\n        bytes32 _symbol,\n        uint256 _startTimestamp,\n        uint256 _durationSeconds,\n        address _assetManager,\n        address _organization,\n        uint256 key\n    ) public onlyOwner returns(address){\n\n        AggregatedStoneCoins newContract = new AggregatedStoneCoins(_name,\n            _symbol,\n            _startTimestamp,\n            _durationSeconds,\n            _assetManager,\n        _organization,\n        msg.sender);\n        emit AggregatedStoneCoinsCreated(address(newContract));\n        keyToContractAddress[key] = address(newContract);\n        return address(newContract);\n    }\n\n    function getContractAddress( uint256 key) public view returns (address) {\n        return keyToContractAddress[key];\n    }\n\n\n\n}\n",
+  "sourcePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/AggregatedStoneCoinFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/AggregatedStoneCoinFactory.sol",
+    "exportedSymbols": {
+      "AggregateStoneCoinFactory": [
+        11622
+      ]
+    },
+    "id": 11623,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11539,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:16"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 11540,
+        "nodeType": "ImportDirective",
+        "scope": 11623,
+        "sourceUnit": 24244,
+        "src": "26:63:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 11541,
+        "nodeType": "ImportDirective",
+        "scope": 11623,
+        "sourceUnit": 24158,
+        "src": "90:59:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/AggregatedStoneCoin.sol",
+        "file": "../AggregatedStoneCoin.sol",
+        "id": 11542,
+        "nodeType": "ImportDirective",
+        "scope": 11623,
+        "sourceUnit": 163,
+        "src": "150:36:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11543,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24243,
+              "src": "226:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$24243",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 11544,
+            "nodeType": "InheritanceSpecifier",
+            "src": "226:7:16"
+          }
+        ],
+        "contractDependencies": [
+          162,
+          24243
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11622,
+        "linearizedBaseContracts": [
+          11622,
+          24243
+        ],
+        "name": "AggregateStoneCoinFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 11547,
+            "libraryName": {
+              "contractScope": null,
+              "id": 11545,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24157,
+              "src": "245:8:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$24157",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "239:27:16",
+            "typeName": {
+              "id": 11546,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "258:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 11551,
+            "name": "AggregatedStoneCoinsCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11549,
+                  "indexed": false,
+                  "name": "Aggregator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11551,
+                  "src": "305:18:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11548,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "305:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "304:20:16"
+            },
+            "src": "271:54:16"
+          },
+          {
+            "constant": false,
+            "id": 11555,
+            "name": "keyToContractAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 11622,
+            "src": "330:48:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 11554,
+              "keyType": {
+                "id": 11552,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "338:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "330:27:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 11553,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "349:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 11608,
+              "nodeType": "Block",
+              "src": "656:393:16",
+              "statements": [
+                {
+                  "assignments": [
+                    11577
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 11577,
+                      "name": "newContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 11609,
+                      "src": "667:32:16",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                        "typeString": "contract AggregatedStoneCoins"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 11576,
+                        "name": "AggregatedStoneCoins",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 162,
+                        "src": "667:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 11589,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 11580,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11557,
+                        "src": "727:5:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11581,
+                        "name": "_symbol",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11559,
+                        "src": "746:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11582,
+                        "name": "_startTimestamp",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11561,
+                        "src": "767:15:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11583,
+                        "name": "_durationSeconds",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11563,
+                        "src": "796:16:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11584,
+                        "name": "_assetManager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11565,
+                        "src": "826:13:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11585,
+                        "name": "_organization",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11567,
+                        "src": "849:13:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 11586,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 24676,
+                          "src": "872:3:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 11587,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "872:10:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 11579,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "702:24:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_bytes32_$_t_bytes32_$_t_uint256_$_t_uint256_$_t_address_$_t_address_$_t_address_$returns$_t_contract$_AggregatedStoneCoins_$162_$",
+                        "typeString": "function (bytes32,bytes32,uint256,uint256,address,address,address) returns (contract AggregatedStoneCoins)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 11578,
+                        "name": "AggregatedStoneCoins",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 162,
+                        "src": "706:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      }
+                    },
+                    "id": 11588,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "702:181:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                      "typeString": "contract AggregatedStoneCoins"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "667:216:16"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 11592,
+                            "name": "newContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 11577,
+                            "src": "934:11:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                              "typeString": "contract AggregatedStoneCoins"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                              "typeString": "contract AggregatedStoneCoins"
+                            }
+                          ],
+                          "id": 11591,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "926:7:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 11593,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "926:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 11590,
+                      "name": "AggregatedStoneCoinsCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11551,
+                      "src": "898:27:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 11594,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "898:49:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11595,
+                  "nodeType": "EmitStatement",
+                  "src": "893:54:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11602,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 11596,
+                        "name": "keyToContractAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11555,
+                        "src": "957:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                          "typeString": "mapping(uint256 => address)"
+                        }
+                      },
+                      "id": 11598,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 11597,
+                        "name": "key",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11569,
+                        "src": "978:3:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "957:25:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 11600,
+                          "name": "newContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 11577,
+                          "src": "993:11:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                            "typeString": "contract AggregatedStoneCoins"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                            "typeString": "contract AggregatedStoneCoins"
+                          }
+                        ],
+                        "id": 11599,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "985:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 11601,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "985:20:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "957:48:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 11603,
+                  "nodeType": "ExpressionStatement",
+                  "src": "957:48:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 11605,
+                        "name": "newContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11577,
+                        "src": "1030:11:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      ],
+                      "id": 11604,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1022:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 11606,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1022:20:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 11575,
+                  "id": 11607,
+                  "nodeType": "Return",
+                  "src": "1015:27:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11609,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 11572,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 11571,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 24191,
+                  "src": "630:9:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "630:9:16"
+              }
+            ],
+            "name": "createAggregateStoneCoins",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11570,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11557,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "428:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11556,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "428:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11559,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "451:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11558,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "451:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11561,
+                  "name": "_startTimestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "476:23:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11560,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "476:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11563,
+                  "name": "_durationSeconds",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "509:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11562,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "509:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11565,
+                  "name": "_assetManager",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "543:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11564,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11567,
+                  "name": "_organization",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "574:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11566,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "574:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11569,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "605:11:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11568,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "605:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "418:204:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11575,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11574,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "648:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11573,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "648:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "647:9:16"
+            },
+            "scope": 11622,
+            "src": "384:665:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11620,
+              "nodeType": "Block",
+              "src": "1127:49:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 11616,
+                      "name": "keyToContractAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11555,
+                      "src": "1144:20:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                        "typeString": "mapping(uint256 => address)"
+                      }
+                    },
+                    "id": 11618,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 11617,
+                      "name": "key",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11611,
+                      "src": "1165:3:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1144:25:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 11615,
+                  "id": 11619,
+                  "nodeType": "Return",
+                  "src": "1137:32:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11621,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getContractAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11612,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11611,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11621,
+                  "src": "1084:11:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11610,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1084:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1082:14:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11615,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11614,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11621,
+                  "src": "1118:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11613,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1118:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1117:9:16"
+            },
+            "scope": 11622,
+            "src": "1055:121:16",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11623,
+        "src": "188:993:16"
+      }
+    ],
+    "src": "0:1182:16"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/AggregatedStoneCoinFactory.sol",
+    "exportedSymbols": {
+      "AggregateStoneCoinFactory": [
+        11622
+      ]
+    },
+    "id": 11623,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11539,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:16"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 11540,
+        "nodeType": "ImportDirective",
+        "scope": 11623,
+        "sourceUnit": 24244,
+        "src": "26:63:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 11541,
+        "nodeType": "ImportDirective",
+        "scope": 11623,
+        "sourceUnit": 24158,
+        "src": "90:59:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/AggregatedStoneCoin.sol",
+        "file": "../AggregatedStoneCoin.sol",
+        "id": 11542,
+        "nodeType": "ImportDirective",
+        "scope": 11623,
+        "sourceUnit": 163,
+        "src": "150:36:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11543,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24243,
+              "src": "226:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$24243",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 11544,
+            "nodeType": "InheritanceSpecifier",
+            "src": "226:7:16"
+          }
+        ],
+        "contractDependencies": [
+          162,
+          24243
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11622,
+        "linearizedBaseContracts": [
+          11622,
+          24243
+        ],
+        "name": "AggregateStoneCoinFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 11547,
+            "libraryName": {
+              "contractScope": null,
+              "id": 11545,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24157,
+              "src": "245:8:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$24157",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "239:27:16",
+            "typeName": {
+              "id": 11546,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "258:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 11551,
+            "name": "AggregatedStoneCoinsCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11549,
+                  "indexed": false,
+                  "name": "Aggregator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11551,
+                  "src": "305:18:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11548,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "305:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "304:20:16"
+            },
+            "src": "271:54:16"
+          },
+          {
+            "constant": false,
+            "id": 11555,
+            "name": "keyToContractAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 11622,
+            "src": "330:48:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 11554,
+              "keyType": {
+                "id": 11552,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "338:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "330:27:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 11553,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "349:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 11608,
+              "nodeType": "Block",
+              "src": "656:393:16",
+              "statements": [
+                {
+                  "assignments": [
+                    11577
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 11577,
+                      "name": "newContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 11609,
+                      "src": "667:32:16",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                        "typeString": "contract AggregatedStoneCoins"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 11576,
+                        "name": "AggregatedStoneCoins",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 162,
+                        "src": "667:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 11589,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 11580,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11557,
+                        "src": "727:5:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11581,
+                        "name": "_symbol",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11559,
+                        "src": "746:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11582,
+                        "name": "_startTimestamp",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11561,
+                        "src": "767:15:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11583,
+                        "name": "_durationSeconds",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11563,
+                        "src": "796:16:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11584,
+                        "name": "_assetManager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11565,
+                        "src": "826:13:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11585,
+                        "name": "_organization",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11567,
+                        "src": "849:13:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 11586,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 24676,
+                          "src": "872:3:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 11587,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "872:10:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 11579,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "702:24:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_bytes32_$_t_bytes32_$_t_uint256_$_t_uint256_$_t_address_$_t_address_$_t_address_$returns$_t_contract$_AggregatedStoneCoins_$162_$",
+                        "typeString": "function (bytes32,bytes32,uint256,uint256,address,address,address) returns (contract AggregatedStoneCoins)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 11578,
+                        "name": "AggregatedStoneCoins",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 162,
+                        "src": "706:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      }
+                    },
+                    "id": 11588,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "702:181:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                      "typeString": "contract AggregatedStoneCoins"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "667:216:16"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 11592,
+                            "name": "newContract",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 11577,
+                            "src": "934:11:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                              "typeString": "contract AggregatedStoneCoins"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                              "typeString": "contract AggregatedStoneCoins"
+                            }
+                          ],
+                          "id": 11591,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "926:7:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 11593,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "926:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 11590,
+                      "name": "AggregatedStoneCoinsCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11551,
+                      "src": "898:27:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 11594,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "898:49:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11595,
+                  "nodeType": "EmitStatement",
+                  "src": "893:54:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11602,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 11596,
+                        "name": "keyToContractAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11555,
+                        "src": "957:20:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                          "typeString": "mapping(uint256 => address)"
+                        }
+                      },
+                      "id": 11598,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 11597,
+                        "name": "key",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11569,
+                        "src": "978:3:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "957:25:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 11600,
+                          "name": "newContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 11577,
+                          "src": "993:11:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                            "typeString": "contract AggregatedStoneCoins"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                            "typeString": "contract AggregatedStoneCoins"
+                          }
+                        ],
+                        "id": 11599,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "985:7:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 11601,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "985:20:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "957:48:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 11603,
+                  "nodeType": "ExpressionStatement",
+                  "src": "957:48:16"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 11605,
+                        "name": "newContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11577,
+                        "src": "1030:11:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_AggregatedStoneCoins_$162",
+                          "typeString": "contract AggregatedStoneCoins"
+                        }
+                      ],
+                      "id": 11604,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1022:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 11606,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1022:20:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 11575,
+                  "id": 11607,
+                  "nodeType": "Return",
+                  "src": "1015:27:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11609,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 11572,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 11571,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 24191,
+                  "src": "630:9:16",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "630:9:16"
+              }
+            ],
+            "name": "createAggregateStoneCoins",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11570,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11557,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "428:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11556,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "428:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11559,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "451:15:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11558,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "451:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11561,
+                  "name": "_startTimestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "476:23:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11560,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "476:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11563,
+                  "name": "_durationSeconds",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "509:24:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11562,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "509:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11565,
+                  "name": "_assetManager",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "543:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11564,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11567,
+                  "name": "_organization",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "574:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11566,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "574:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11569,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "605:11:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11568,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "605:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "418:204:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11575,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11574,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11609,
+                  "src": "648:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11573,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "648:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "647:9:16"
+            },
+            "scope": 11622,
+            "src": "384:665:16",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11620,
+              "nodeType": "Block",
+              "src": "1127:49:16",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 11616,
+                      "name": "keyToContractAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11555,
+                      "src": "1144:20:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                        "typeString": "mapping(uint256 => address)"
+                      }
+                    },
+                    "id": 11618,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 11617,
+                      "name": "key",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11611,
+                      "src": "1165:3:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1144:25:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 11615,
+                  "id": 11619,
+                  "nodeType": "Return",
+                  "src": "1137:32:16"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11621,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getContractAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11612,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11611,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11621,
+                  "src": "1084:11:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11610,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1084:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1082:14:16"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11615,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11614,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11621,
+                  "src": "1118:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11613,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1118:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1117:9:16"
+            },
+            "scope": 11622,
+            "src": "1055:121:16",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11623,
+        "src": "188:993:16"
+      }
+    ],
+    "src": "0:1182:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "1568816181260": {
+      "events": {},
+      "links": {},
+      "address": "0xcce90f838aadfc41c6305015005f6f0acc3169b1",
+      "transactionHash": "0x95c3099f151c050fae9ed6ccdde6f871f5c1ac97fa3895e3aaabe0addcdae138"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-10-27T14:12:10.952Z"
+}

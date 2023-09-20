@@ -1,0 +1,5 @@
+creating developer enviorment:
+1. fire
+
+
+ firebase functions:config:set index.env="test"

@@ -1,0 +1,46 @@
+{
+  "name": {
+    "type": "bytes32",
+    "name": "Name"
+  },
+  "symbol": {
+    "type": "bytes32",
+    "name": "Symbol"
+  },
+  "target": {
+    "type": "uint256",
+    "name": "Target in USD"
+  },
+  "startTimestamp": {
+    "type": "uint256",
+    "name": "Start Date"
+  },
+  "durationSecond": {
+    "type": "uint256",
+    "name": "End Date"
+  },
+  "estimations": {
+    "type": "address[]",
+    "name": "Estimations"
+  },
+  "managers": {
+    "type": "address[]",
+    "name": "Managers"
+  },
+  "properties": {
+    "type": "address[]",
+    "name": "Properties"
+  },
+  "registrar": {
+    "type": "address",
+    "name": "Registrar"
+  },
+  "terms": {
+    "type": "address",
+    "name": "Terms"
+  },
+  "trustees": {
+    "type": "address[]",
+    "name": "Trustees"
+  }
+}

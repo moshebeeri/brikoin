@@ -1,0 +1,117 @@
+{
+  "property": {
+    "type": "Apartment",
+    "address1": "Moshava of Ein Ya'akov",
+    "country": "Israel",
+    "description": " 38 sqm of luxurious balcony with open view, upgraded kitchen, living the highest standard of living in the best location in Beer Yaakov",
+    "pictures": [
+      "/Users/roilandshut/projects/real-stone/examples/app1/app1.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/app1/app2.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/app1/app3.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/app1/app4.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/app1/app5.jpg"
+    ],
+    "pictures_names": [
+      "app1.jpg",
+      "app2.jpg",
+      "app3.jpg",
+      "app4.jpg",
+      "app5.jpg"
+    ],
+    "planDocument": "/Users/roilandshut/projects/real-stone/examples/app1/appPlaning.jpg",
+    "planDocument_file": "appPlaning.jpg",
+    "name": "Ein Ya'akov",
+    "lang": {
+      "He": {
+        "address1": " המושבה עין יעקוב"
+      }
+    }
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project": {
+    "description": " 38 sqm of luxurious balcony with open view, upgraded kitchen, living the highest standard of living in the best location in Beer Yaakov",
+    "durationSecond": "2018-07-05",
+    "name": "Moshava of Ein Ya'akov",
+    "startTimestamp": "2018-06-05",
+    "symbol": "MEY",
+    "target": "2000000",
+    "reservedBid": "500000000",
+    "tradeMethod": "auction",
+    "tradeDurationMonth": 3,
+    "currency": "ILS",
+    "firstBidPercentages": 10,
+    "structure": "SingleApartment",
+    "location": {
+      "lat": 33.009337,
+      "lng": 35.229213
+    },
+    "features": {
+      "floor": 5,
+      "Sqrt": 140,
+      "rooms": 4,
+      "balcony": true,
+      "storage": true,
+      "shelter": true
+    },
+    "lang": {
+      "He": {
+        "description": "38 מר של מרפסת מפנקת לנוף פתוח, מטבח משודרג, לחיות בסטנדרט מגורים הגבוהה ביותר במיקום הטוב בבאר יעקב ",
+        "name": "דירת צמרת המושבה עין יעקוב"
+      }
+    }
+  },
+  "estimation": {
+    "currency": "USD",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "4200",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "2000000",
+    "rental": "189000",
+    "document": "/Users/roilandshut/projects/real-stone/examples/app1/appEstimation.doc",
+    "document_file": "appEstimation.doc"
+  },
+  "term": {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 0,
+    "sellPercentage": 0
+  },
+  "manager": {
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar": {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "israel",
+    "email": "Tabu.gov",
+    "document": "/Users/roilandshut/projects/real-stone/examples/app1/tabu.jpg",
+    "document_file": "tabu.jpg",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Israel Tabuo",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "property": {
+    "type": "Office",
+    "address1": "Varick St, New York, ",
+    "country": "USA",
+    "description": "3,000 - 26,000 sf, Hi floors, Lease term 5-15 yrs, Vacant, Office space, Industrial Loft building Full floor of White Boxed Open Office space. High 14 ft Ceilings. Four full exposure: N/E/S/W. Large windows with tons of lights. Separate Electric meter. Space can be divided from a minimum of 3000 Sq ft. Rent includes Tax - No tax increases. Full Lobby Upgrade Planned.",
+    "name": "Varick NY Office space ",
+    "pictures": [
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/architecture-1138967_1920.jpg?alt=media&token=09c87fe9-8b24-4b64-a9f0-514ca47bcc53",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/office-space-1744801_1920.jpg?alt=media&token=249451c0-46af-4120-a1e0-075aa776d99f",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/student-849824_1920.jpg?alt=media&token=43c5e57a-29ae-4c2e-a2d8-db5afd0fade9",
+      "https://firebasestorage.googleapis.com/v0/b/firestone-1.appspot.com/o/office-space-1744803_1920.jpg?alt=media&token=8075dd01-ef38-4fbb-aa68-3121d56cfde1"
+    ]
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project": {
+    "description": "3,000 - 26,000 sf, Hi floors, Lease term 5-15 yrs, Vacant, Office space, Industrial Loft building Full floor of White Boxed Open Office space. High 14 ft Ceilings. Four full exposure: N/E/S/W. Large windows with tons of lights. Separate Electric meter. Space can be divided from a minimum of 3000 Sq ft. Rent includes Tax - No tax increases. Full Lobby Upgrade Planned.",
+    "durationSecond": "2018-07-05",
+    "name": "Varick NY Office space ",
+    "startTimestamp": "2018-06-05",
+    "symbol": "VNY",
+    "target": "20000000",
+    "reservedBid": "500000000",
+    "currency": "USD",
+    "lang": {
+      "He": {
+        "description": "3,000 - 26,000 sf, קומה גבוהה, תקופת חכירה ל 5-15 שנים, פנוי, שטח משרדים, בניין לופט תעשייתי קומה מלאה של חלל פתוח Office Office פתוח.גבוהה 14 מטרים תקרה 4. ארבעה חשיפה מלאה: N / E / S / W. חלונות גדולים עם טונות של אורות. ממונה חשמל נפרד. החלל יכול להיות מחולק מינימום של 3000 רגל רבוע, שכר דירה - לא כולל מסים.שדרוג לובי מלא מתוכנן.",
+        "name": "Varick NY משרדים"
+      }
+    }
+  },
+  "estimation": {
+    "currency": "USD",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "5500",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "20000000",
+    "rental": "189000"
+  },
+  "term": {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 1500,
+    "sellPercentage": 10
+  },
+  "manager": {
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar": {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "New York",
+    "email": "Adam.Bello@monroecounty.gov",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Adam Bello",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

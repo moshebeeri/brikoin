@@ -1,0 +1,116 @@
+{
+  "property": {
+    "type": "Apartment",
+    "address1": "Venice",
+    "country": "Italy",
+    "description": "Apartment ",
+    "pictures": [
+      "/Users/roilandshut/projects/real-stone/examples/appTest2/app1.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest2/app2.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest2/app3.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest2/app4.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/appTest2/app5.jpg"
+    ],
+    "pictures_names": [
+      "app1.jpg",
+      "app2.jpg",
+      "app3.jpg",
+      "app4.jpg",
+      "app5.jpg"
+    ],
+    "planDocument": "/Users/roilandshut/projects/real-stone/examples/appTest2/appPlaning.jpg",
+    "planDocument_file": "appPlaning.jpg",
+    "name": "England Apartment",
+    "lang": {
+      "He": {
+        "address1": " לונדון"
+      }
+    }
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project": {
+    "description": "Taking centre stage amongst our expanding galaxy of fabulous properties - a splendid 3 bedroom/3 bathroom apartment with furnished 'altana' roof terrace offering exceptional accommodation and a carefully considered mélange of the very best in Italian styling, hand-crafted furnishings, classic simplicity and luxury fittings, all very much at home within the unquestionable charm and convenience of its central yet tranquil upmarket location.",
+    "durationSecond": "2018-07-05",
+    "name": "Veince Apartment",
+    "startTimestamp": "2018-06-05",
+    "symbol": "MEY",
+    "target": "4000000",
+    "reservedBid": "500000000",
+    "tradeMethod": "auction",
+    "tradeDurationMonth": 3,
+    "currency": "EUR",
+    "firstBidPercentages": 10,
+    "structure": "SingleApartment",
+    "location": {
+      "lat": 45.434248,
+      "lng": 12.316883
+    },
+    "features": {
+      "floor": 3,
+      "Sqrt": 140,
+      "rooms": 3,
+      "balcony": true,
+      "storage": true
+    },
+    "lang": {
+      "He": {
+        "description": "לוקח את הבמה במרכז הגלקסיה המתרחבת שלנו של נכסים נפלאים - דירת 3 חדרים מדהימה 3/3 אמבטיה עם מרפסת גג אלטנה מרוהטת המציעה לינה יוצאת דופן ו מלאכת מחשבה בזהירות של מיטב בעיצוב איטלקי, ריהוט בעבודת יד, הפשטות הקלאסית אביזרי יוקרה, הכל מאוד בבית בתוך הקסם ללא ספק ואת הנוחות של מיקום מרכזי עדיין שלו בשלווה.",
+        "name": "ונציה הייטס"
+      }
+    }
+  },
+  "estimation": {
+    "currency": "EUR",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "4200",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "2000000",
+    "rental": "189000",
+    "document": "/Users/roilandshut/projects/real-stone/examples/app1/appEstimation.doc",
+    "document_file": "appEstimation.doc"
+  },
+  "term": {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 0,
+    "sellPercentage": 0
+  },
+  "manager": {
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar": {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "israel",
+    "email": "Tabu.gov",
+    "document": "/Users/roilandshut/projects/real-stone/examples/app1/tabu.jpg",
+    "document_file": "tabu.jpg",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Israel Tabuo",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

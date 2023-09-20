@@ -1,0 +1,839 @@
+{
+  "rules": {
+
+    "server": {
+      "documents": {
+        ".read": true,
+      },
+      "Forms": {
+        ".read": true,
+      },
+      "legalDocuments": {
+        ".read": "query.orderByChild == 'owner' && query.equalTo == auth.uid",
+        ".write": "auth != null && newData.child('owner').val() == auth.uid",
+        "$id": {
+          ".read": "query.orderByChild == 'owner' && query.equalTo == auth.uid || root.child('server/legalDocuments/'+$id+'/users/'+auth.uid).exists()",
+          ".write": "auth != null && newData.child('owner').val() == auth.uid"
+        },
+
+      },
+
+
+      "operationHub": {
+        ".read": true,
+        ".write": true,
+        "calendar": {
+          "$id": {
+            ".read": "auth != null",
+            ".write": "$id == auth.uid"
+          },
+        }
+      },
+
+
+      "administrator": {
+        ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+        ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+      },
+      "registerUser": {
+        ".read": "auth != null && auth.uid != null",
+        ".write": "auth != null && auth.uid != null"
+      },
+      "groups": {
+        "changed": {
+          ".read": true
+        },
+      },
+      "flex": {
+        ".read": "auth != null && auth.uid != null",
+        ".write": "auth != null && auth.uid != null"
+      },
+      "loadingProperties": {
+        ".read": "query.orderByChild == 'userId' && query.equalTo == auth.uid || root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists() ||  root.child('server/usersRoles/admin/'+auth.uid).exists() ||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+        "$id": {
+          ".write": "auth != null && newData.child('userId').val() == auth.uid || data.child('userId').val() == auth.uid"
+        }
+      },
+      "organization": {
+        ".read": "auth != null && auth.uid != null"
+      },
+      "projectsCollections": {
+        ".read": true,
+        ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+      },
+      "mortgages": {
+        ".read": true,
+        "$id": {
+          ".write": "auth != null && newData.child('user').val() == auth.uid"
+        }
+      },
+      "changes": {
+        ".read": true
+      },
+      "mortgagesPayment": {
+        ".read": "auth != null && auth.uid != null"
+      },
+
+      "projects": {
+        "pendingOrders": {
+          ".read": true,
+          "$projectId": {
+            ".read": "query.orderByChild == 'userId' && query.equalTo == auth.uid",
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid"
+            }
+
+          }
+        },
+        "holders": {
+          "$projectId": {
+            ".read": "query.orderByChild == 'holder' && query.equalTo == auth.uid || root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists() ||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".write": "auth != null && newData.child('userId').val() == auth.uid"
+
+          }
+        },
+        "orders": {
+
+          "$projectId": {
+            "ask": {
+              ".read": true,
+              "$id": {
+                ".write": "auth != null && newData.child('user').val() == auth.uid"
+              }
+            },
+            "bid": {
+              ".read": true,
+              "$id": {
+                ".write": "auth != null && newData.child('user').val() == auth.uid"
+              }
+            },
+            "askMortgage": {
+              ".read": true,
+              "$id": {
+                ".write": "auth != null && newData.child('user').val() == auth.uid"
+              }
+            },
+            "bidMortgage": {
+              ".read": true,
+              "$id": {
+                ".write": "auth != null && newData.child('user').val() == auth.uid"
+              }
+            }
+          }
+        },
+        "events": {
+          ".read": true,
+          "orders": {
+            ".write": "auth != null "
+          },
+          "ordersDone": {
+            ".read": true,
+            ".write": "auth != null "
+          }
+        },
+        "trades": {
+          ".read": "auth != null && auth.uid != null"
+        },
+        "mortgagees": {
+          ".read": "auth != null && auth.uid != null"
+        },
+        "tradesHistory": {
+          ".read": true
+        }
+      },
+      "cases": {
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": "auth != null && auth.uid == $uid",
+          "$caseId": {
+            "bankAccount": {
+              ".read": "auth != null && auth.uid != null"
+            }
+          }
+        }
+      },
+      "userRoleRequest": {
+        ".read": " auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": "auth != null && auth.uid == $uid"
+        }
+
+      },
+      "notifications": {
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": "auth != null && auth.uid == $uid"
+        }
+      },
+      "usersPublic": {
+        ".read": true,
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": "auth != null && auth.uid == $uid"
+        }
+
+      },
+      "users": {
+        "logos": {
+          "$id": {
+            ".write": "auth != null && newData.child('user').val() == auth.uid"
+          },
+          ".read": "auth != null && auth.uid != null"
+        },
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          "activeAccount": {
+
+            ".write": "auth != null && auth.uid == $uid"
+          },
+          "accounts": {
+
+            ".write": "auth != null && auth.uid == $uid"
+          },
+          "payments": {
+            ".read": "auth != null && auth.uid == $uid || root.child('server/usersRoles/financialOfficer/'+auth.uid).exists() ",
+            ".write": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()"
+          },
+          "mortgagee": {
+            ".write": "auth != null && auth.uid == $uid",
+            ".read": "auth != null && auth.uid == $uid"
+
+          },
+          "ledger": {
+            ".read": "auth != null && auth.uid == $uid"
+
+          },
+          "kyc": {
+            ".write": "auth != null && auth.uid == $uid",
+            ".read": "auth != null && auth.uid == $uid || root.child('server/usersRoles/financialInstitute/'+auth.uid).exists() "
+
+          }
+        }
+      },
+      "operations": {
+        "events": {
+          "internalTradeRequest": {
+            ".read": "auth != null && auth.uid != null",
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+          },
+          "internalTradeTriggerEvent": {
+            ".write": "auth != null "
+          },
+          "signPdf": {
+            ".read": "auth != null && auth.uid != null",
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+          },
+          "signPdfTriggerEvent": {
+            ".write": "auth != null "
+          },
+
+          "cancelTradeRequest": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+          },
+          "smsPhoneValidation": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "smsPhoneValidationTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "groupRepresented": {
+            "$id": {
+              ".write": "auth != null && newData.child('creator').val() == auth.uid "
+            }
+
+          },
+          "groupRepresentedTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "flexVideoToken": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+
+          },
+          "flexVideoTokenTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "inviteUser": {
+            "$id": {
+              ".write": "auth != null && newData.child('creator').val() == auth.uid "
+            }
+
+          },
+          "inviteUserTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "acceptInvitation": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "acceptInvitationTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "createGroup": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "createGroupTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "joinGroup": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "joinGroupTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "bidReserved": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "bidReservedTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "processOrder": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "triggerProcessOrder": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "cancelGroupPendingOrder": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+
+          },
+          "triggerCancelGroupPendingOrder": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "syncCase": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+
+          },
+          "syncCaseTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "cancelBidReserved": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "cancelBidReservedTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "checkPhoneValidation": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "checkPhoneValidationTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "selectAppointment": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+
+          },
+          "selectAppointmentTrigger": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+
+
+          "acceptBuyerOffer": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "triggerAcceptBuyerOffer": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+
+          "rejectBuyerOffer": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "triggerRejectBuyerOffer": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+
+          "initialDocumentSignedBuyer": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "triggerInitialDocumentSignedBuyer": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+
+          "signKyc": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "triggerSignKyc": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "initialDocumentSignedSeller": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "triggerInitialDocumentSignedSeller": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+
+          "counterBuyerOffer": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+
+          },
+          "triggerCounterBuyerOffer": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "cancelTradeTriggerEvent": {
+            ".write": "auth != null "
+          },
+          "internalMortgageeRequest": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+
+          },
+          "internalMortgageeTriggerEvent": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+
+          },
+
+          "reserveAndDeposit": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists() ||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "triggerReserveAndDeposit": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+          "cancelAllOrder": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "cancelAllOrderTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+          "withdrawProjectFund": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "withdrawProjectFundTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "withdrawANoReserved": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "withdrawANoReservedTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+
+          "triggerApproveFundDeposit": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "approveFundDeposit": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+
+          "triggerApprovePendingOrder": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "approvePendingOrder": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+          "triggerApprovePendingOrderSecond": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "approvePendingOrderSecond": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+          "triggerCancelPendingOrder": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "cancelPendingOrder": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+
+          "triggerApproveProject": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "approveProject": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+
+
+
+          "triggerUpdateProjectTarget": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "updateProjectTarget": {
+            ".write": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/TRUSTEE/'+auth.uid).exists()||  root.child('server/usersRoles/LAWYER/'+auth.uid).exists()"
+
+          },
+          "internalMortgageRequest": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+
+          },
+          "internalMortgageTriggerEvent": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "cancelMortgageRequest": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+
+          },
+          "cancelMortgageRequestTriggerEvent": {
+            ".write": "auth != null && auth.uid != null",
+            ".read": "auth != null && auth.uid != null"
+
+          },
+          "internalMortgageeTradeRequest": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+          },
+          "internalMortgageTradeTriggerEvent": {
+            ".write": "auth != null "
+          },
+          "internalMortgageRequestOpr": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+          },
+          "internalMortgageOprTriggerEvent": {
+            ".write": "auth != null "
+          },
+          "internalMortgageCondition": {
+            "$id": {
+              ".write": "auth != null && newData.child('user').val() == auth.uid "
+            }
+          },
+          "internalMortgageConditionTriggerEvent": {
+            ".write": "auth != null "
+          },
+          "addInternalAccount": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+          },
+          "addInternalAccountTrigger": {
+            ".write": "auth != null "
+          },
+          "payMortgageSchedulePayment": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+          },
+          "payMortgageSchedulePaymentTrigger": {
+            ".write": "auth != null "
+          },
+          "clearMortgage": {
+            "$id": {
+              ".write": "auth != null && newData.child('userId').val() == auth.uid "
+            }
+          },
+          "clearMortgageTrigger": {
+            ".write": "auth != null "
+          },
+          "assignUserToProjectTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "assignUserToProject": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "loadProjectTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "loadProject": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "loadingPropertiesSyncTrigger": {
+            ".write": "auth != null",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "loadingPropertiesSync": {
+            ".write": "auth != null",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+
+          "syncUserLedgerTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "syncUserLedger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "withdrawCoinTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "withdrawCoin": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "receivedPayment": {
+            ".write": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()"
+          },
+          "triggerPaymentsCheck": {
+            ".write": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()"
+          },
+          "dispositionTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "dispositionRequest": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "approveRoleRequestTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "approveRoleRequest": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "mortgagesPaymentTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "mortgagesPayment": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "feeTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "feeRequest": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "clearFeesTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "clearFeeRequest": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "setFeeTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "setFeeRequest": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "triggerAssignBrokerCheck": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "assignBroker": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "triggerAssignProjectOrg": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "assignProjectToOrg": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "triggerAddOrganization": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "addOrganization": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+
+          "triggerPayBrokerCheck": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "payBroker": {
+            ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+          },
+          "payYieldRequest": {
+            ".write": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()"
+          },
+          "payYieldRequestTrigger": {
+            ".write": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()",
+            ".read": "auth != null && root.child('server/usersRoles/financialOfficer/'+auth.uid).exists()"
+          }
+        },
+        "sendMail": {
+          ".write": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()",
+          ".read": "auth != null && root.child('server/usersRoles/admin/'+auth.uid).exists()"
+        },
+        "payments": {
+          "pending": {
+            "$id": {
+              ".read": "auth != null && $id == auth.uid ",
+              ".write": "auth != null && $id == auth.uid "
+            }
+          },
+          "requests": {
+            "$id": {
+              "$externalId": {
+                ".read": "auth != null && $id == auth.uid ",
+                ".write": "auth != null && $id == auth.uid "
+              }
+            }
+          }
+        }
+      },
+      "usersRoles": {
+        ".read": "auth != null && auth.uid != null"
+      }
+
+
+    },
+    "server2": {
+      ".read": true,
+      ".write": true
+    },
+    "flex": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}

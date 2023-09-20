@@ -1,0 +1,1988 @@
+{
+  "advocate": {
+    "operations": {
+      "current": [null, {
+        "name": "negotiation",
+        "operationId": 1,
+        "userRole": "CUSTOMER"
+      }, {
+        "name ": "negotiation",
+        "operationId": 2,
+        "userRole": "SELLER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "selectAdvocate",
+          "userRole": "SELLER"
+        }, {
+          "name": "selectAdvocate",
+          "userRole": "CUSTOMER"
+        }],
+        "next": {
+          "current": {
+            "1": {
+              "name": "agreementNegotiation",
+              "params": [null, {
+                "name": "clientType"
+              }],
+              "userRole": "LAWYERCUSTOMER"
+            },
+            "next": {
+              "current": [null, {
+                "name": "signAgreement",
+                "userRole": "CUSTOMER"
+              }, {
+                "name": "signAgreement",
+                "userRole": "SELLER"
+              }],
+              "next": {
+                "currnet": {
+                  "1": {
+                    "name": "investment",
+                    "type": "transferFirstPayments"
+                  },
+                  "next": {
+                    "current": {
+                      "1": {
+                        "name": "validatePayment",
+                        "userRole": "LAWYERSELLER"
+                      },
+                      "2": {
+                        "name": "warningRemark",
+                        "userRole": "LAWYERSELLER"
+                      },
+                      "next": {
+                        "current": {
+                          "name": "validateMidPayments",
+                          "userRole": "SELLER"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "firstHandApp": {
+    "operations": {
+      "current": [null, {
+        "name": "phoneValidation",
+        "operationId": 1,
+        "operationValidation": {
+          "validationTask": "phoneNumberValidation"
+        },
+        "params": [null, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }, {
+          "name": "project",
+          "value": "order.project"
+        }],
+        "status": "new",
+        "type": "validateSmsOperation",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "saleSimpleDealAgrement",
+          "operationId": 2,
+          "params": [null, {
+            "name": "orderId",
+            "value": "order.id"
+          }, {
+            "name": "documentPath",
+            "type": "filesCopy",
+            "value": "/public/legalDocuments/select1b.html"
+          }, {
+            "name": "project",
+            "value": "order.project"
+          }, null, {
+            "name": "userRole",
+            "value": "BUYER"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }],
+          "status": "new",
+          "type": "signDocument",
+          "userRole": "CUSTOMER"
+        }, {
+          "name": "investment",
+          "operationId": 3,
+          "params": [null, {
+            "name": "orderId",
+            "value": "order.id"
+          }, {
+            "name": "bankAccount",
+            "type": "bankAccount",
+            "value": 34234234
+          }, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }],
+          "status": "new",
+          "type": "transferReserved",
+          "userRole": "CUSTOMER"
+        }],
+        "next": {
+          "current": [null, {
+            "name": "validateTransferOperation",
+            "operationId": 4,
+            "params": [null, {
+              "name": "orderId",
+              "value": "order.id"
+            }, {
+              "name": "bankAccount",
+              "type": "bankAccount",
+              "value": 34234234
+            }, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }],
+            "status": "new",
+            "type": "validateTransfer",
+            "userRole": "LAWYERSELLER"
+          }],
+          "next": {
+            "current": [null, {
+              "name": "chooseLawyer",
+              "operationId": 5,
+              "params": [null, {
+                "name": "project",
+                "value": "order.project"
+              }, {
+                "name": "flowInstance",
+                "value": "flowInstance.id"
+              }, {
+                "name": "operationId",
+                "value": "operation.operationId"
+              }, {
+                "name": "side",
+                "value": "BUYER"
+              }],
+              "status": "new",
+              "type": "selectLawyer",
+              "userRole": "CUSTOMER"
+            }],
+            "next": {
+              "current": [null, {
+                "name": "salePropertyDocument",
+                "operationId": 6,
+                "params": [null, {
+                  "name": "project",
+                  "value": "order.project"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }, {
+                  "name": "buyerId",
+                  "type": "userRole",
+                  "value": "CUSTOMER"
+                }, null, {
+                  "name": "buyerLawyerId",
+                  "type": "userRole",
+                  "value": "LAWYERBUYER"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }],
+                "status": "new",
+                "type": "uploadDocument",
+                "userRole": "LAWYERSELLER"
+              }, {
+                "name": "dealTransactionDefinitions",
+                "operationId": 7,
+                "params": [null, {
+                  "name": "project",
+                  "value": "order.project"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }, {
+                  "name": "buyerId",
+                  "type": "userRole",
+                  "value": "CUSTOMER"
+                }, null, {
+                  "name": "buyerLawyerId",
+                  "type": "userRole",
+                  "value": "LAWYERBUYER"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }],
+                "status": "new",
+                "type": "dealTransaction",
+                "userRole": "LAWYERSELLER"
+              }],
+              "next": {
+                "current": [null, {
+                  "name": "saleSimpleDealAgrement",
+                  "operationId": 8,
+                  "params": [null, {
+                    "name": "orderId",
+                    "value": "order.id"
+                  }, {
+                    "name": "documentPath",
+                    "type": "operationHtmlDocument",
+                    "value": 6
+                  }, {
+                    "name": "project",
+                    "value": "order.project"
+                  }, null, {
+                    "name": "userRole",
+                    "value": "BUYER"
+                  }, {
+                    "name": "operationId",
+                    "value": "operation.operationId"
+                  }, {
+                    "name": "flowInstance",
+                    "value": "flowInstance.id"
+                  }],
+                  "status": "new",
+                  "type": "signDocument",
+                  "userRole": "CUSTOMER"
+                }],
+                "next": {
+                  "current": [null, {
+                    "name": "saleSimpleDealAgrement",
+                    "operationId": 9,
+                    "params": [null, {
+                      "name": "orderId",
+                      "value": "order.id"
+                    }, {
+                      "name": "documentPath",
+                      "type": "operationHtmlDocument",
+                      "value": 6
+                    }, {
+                      "name": "project",
+                      "value": "order.project"
+                    }, null, {
+                      "name": "userRole",
+                      "value": "LAWYERSELLER"
+                    }, {
+                      "name": "operationId",
+                      "value": "operation.operationId"
+                    }, {
+                      "name": "flowInstance",
+                      "value": "flowInstance.id"
+                    }],
+                    "status": "new",
+                    "type": "signDocument",
+                    "userRole": "LAWYERSELLER"
+                  }],
+                  "next": {
+                    "current": [null, {
+                      "name": "investment",
+                      "operationId": 10,
+                      "params": [null, {
+                        "name": "orderId",
+                        "value": "order.id"
+                      }, {
+                        "name": "bankAccount",
+                        "type": "bankAccount",
+                        "value": 34234234
+                      }, {
+                        "name": "project",
+                        "value": "order.project"
+                      }, {
+                        "name": "operationId",
+                        "value": "operation.operationId"
+                      }, {
+                        "name": "flowInstance",
+                        "value": "flowInstance.id"
+                      }],
+                      "status": "new",
+                      "type": "transferFirstPayment",
+                      "userRole": "CUSTOMER"
+                    }, {
+                      "name": "sendDocument",
+                      "operationId": 16,
+                      "status": "new",
+                      "task": {
+                        "params": [null, {
+                          "name": "project",
+                          "value": "order.project"
+                        }, {
+                          "name": "userId",
+                          "value": "order.userId"
+                        }, {
+                          "name": "flowInstance",
+                          "value": "flowInstance.id"
+                        }, {
+                          "name": "operationId",
+                          "value": "operation.operationId"
+                        }, {
+                          "name": "documentPath",
+                          "type": "operationHtmlDocument",
+                          "value": 6
+                        }, {
+                          "name": "orderId",
+                          "value": "order.id"
+                        }],
+                        "type": "sendFinalDocumentTask",
+                        "userRole": "ADMIN"
+                      },
+                      "type": "sellDone",
+                      "userRole": "ADMIN"
+                    }],
+                    "next": {
+                      "current": [null, {
+                        "name": "ApartmentRecived",
+                        "operationId": 11,
+                        "params": [null, {
+                          "name": "project",
+                          "value": "order.project"
+                        }, {
+                          "name": "flowInstance",
+                          "value": "flowInstance.id"
+                        }, null, null, {
+                          "name": "sellerLawyerId",
+                          "type": "userRole",
+                          "value": "LAWYERSELLER"
+                        }, {
+                          "name": "operationId",
+                          "value": "operation.operationId"
+                        }],
+                        "status": "new",
+                        "type": "aproveOperation",
+                        "userRole": "CUSTOMER"
+                      }, {
+                        "name": "investment",
+                        "operationId": 12,
+                        "params": [null, {
+                          "name": "orderId",
+                          "value": "order.id"
+                        }, {
+                          "name": "bankAccount",
+                          "type": "bankAccount",
+                          "value": 34234234
+                        }, {
+                          "name": "project",
+                          "value": "order.project"
+                        }, {
+                          "name": "operationId",
+                          "value": "operation.operationId"
+                        }, {
+                          "name": "flowInstance",
+                          "value": "flowInstance.id"
+                        }],
+                        "status": "new",
+                        "type": "transferLastPayment",
+                        "userRole": "CUSTOMER"
+                      }, {
+                        "name": "validateTransferOperation",
+                        "operationId": 13,
+                        "params": [null, {
+                          "name": "orderId",
+                          "value": "order.id"
+                        }, {
+                          "name": "bankAccount",
+                          "type": "bankAccount",
+                          "value": 34234234
+                        }, {
+                          "name": "project",
+                          "value": "order.project"
+                        }, {
+                          "name": "operationId",
+                          "value": "operation.operationId"
+                        }, {
+                          "name": "flowInstance",
+                          "value": "flowInstance.id"
+                        }],
+                        "status": "new",
+                        "type": "validateTransfer",
+                        "userRole": "LAWYERSELLER"
+                      }],
+                      "next": {
+                        "current": [null, {
+                          "name": "validateTransferOperation",
+                          "operationId": 14,
+                          "params": [null, {
+                            "name": "orderId",
+                            "value": "order.id"
+                          }, {
+                            "name": "bankAccount",
+                            "type": "bankAccount",
+                            "value": 34234234
+                          }, {
+                            "name": "project",
+                            "value": "order.project"
+                          }, {
+                            "name": "operationId",
+                            "value": "operation.operationId"
+                          }, {
+                            "name": "flowInstance",
+                            "value": "flowInstance.id"
+                          }],
+                          "status": "new",
+                          "type": "validateTransfer",
+                          "userRole": "LAWYERSELLER"
+                        }],
+                        "next": {
+                          "current": [null, {
+                            "name": "realSingleEnd",
+                            "operationId": 15,
+                            "status": "new",
+                            "task": {
+                              "params": [null, {
+                                "name": "project",
+                                "value": "order.project"
+                              }, {
+                                "name": "userId",
+                                "value": "order.userId"
+                              }, {
+                                "name": "flowInstance",
+                                "value": "flowInstance.id"
+                              }, {
+                                "name": "operationId",
+                                "value": "operation.operationId"
+                              }],
+                              "type": "projectSingleBuyer",
+                              "userRole": "ADMIN"
+                            },
+                            "type": "sellDone",
+                            "userRole": "ADMIN"
+                          }]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "office": {
+    "operations": {
+      "current": [null, {
+        "name": "KYC",
+        "operaionId": 1,
+        "operationValidation": {
+          "validationTask": "signKycValidation"
+        },
+        "params": [null, {
+          "name": "document",
+          "type": "document",
+          "value": "document.kyc"
+        }],
+        "type": "signDocument",
+        "userRole": "CUSTOMER"
+      }, {
+        "name": "scheduleTime",
+        "operationId": 2,
+        "operationValidation": {
+          "validationTask": "trusteeScheduleValidation"
+        },
+        "type": "openHours",
+        "userRole": "TRUSTEE"
+      }, {
+        "name": "phoneValidation",
+        "operationId": 3,
+        "operationValidation": {
+          "validationTask": "phoneNumberValidation"
+        },
+        "type": "validateSmsOperation",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "scheduleTime",
+          "operationId": 4,
+          "task": {
+            "params": [null, {
+              "name": "project",
+              "type": "string",
+              "value": "project.id"
+            }, {
+              "name": "operationUserId",
+              "type": "string",
+              "value": "project.trustee"
+            }, {
+              "name": "user",
+              "type": "string",
+              "value": "order.user"
+            }],
+            "type": "videoConference"
+          },
+          "type": "orderAppoitment",
+          "userROle": "CUSTOMER"
+        }, {
+          "name": "videoCall",
+          "operationId": 5,
+          "trigger": "task",
+          "type": "videoOperation",
+          "userRole": "TRUSTEE"
+        }, {
+          "name": "videoCall",
+          "operationId": 6,
+          "trigger": "task",
+          "type": "videoOperation",
+          "userRole": "CUSTOMER"
+        }],
+        "next": {
+          "current": [null, {
+            "name": "trusteeAgrement",
+            "operationId": 7,
+            "params": [null, {
+              "name": "orderId",
+              "value": "order.id"
+            }, {
+              "name": "document",
+              "type": "document",
+              "value": "documents/trusteeAggrement"
+            }, {
+              "name": "project",
+              "value": "order.address"
+            }],
+            "task": {
+              "params": [null, {
+                "name": "trustee",
+                "type": "string",
+                "value": "project.trustee"
+              }, {
+                "name": "signUser",
+                "type": "string",
+                "value": "order.user"
+              }, {
+                "name": "signOperation",
+                "type": "operation",
+                "value": "operation"
+              }],
+              "type": "trusteeAgrement"
+            },
+            "type": "signDocument",
+            "userRole": "CUSTOMER"
+          }]
+        }
+      }
+    },
+    "user": [null, {
+      "operations": [null, {
+        "name": "KYC",
+        "operationValidation": {
+          "validationTask": "signKycValidation"
+        },
+        "params": [null, {
+          "name": "document",
+          "type": "document",
+          "value": "document/kyc"
+        }],
+        "type": "signDocument"
+      }, {
+        "name": "phoneValidation",
+        "operationValidation": {
+          "validationTask": "phoneNumberValidation"
+        },
+        "type": "validateSmsOperation"
+      }, {
+        "name": "scheduleTime",
+        "task": {
+          "params": [null, {
+            "name": "project",
+            "type": "string",
+            "value": "project.id"
+          }, {
+            "name": "operationUserId",
+            "type": "string",
+            "value": "project.trustee"
+          }, {
+            "name": "user",
+            "type": "string",
+            "value": "order.user"
+          }],
+          "type": "videoConference"
+        },
+        "type": "orderAppointment"
+      }]
+    }, {
+      "operations": [null, {
+        "name": "trusteeAgrement",
+        "params": [null, {
+          "name": "project",
+          "value": "order.address"
+        }, {
+          "name": "orderId",
+          "value": "order.id"
+        }, {
+          "name": "document",
+          "type": "document",
+          "value": "documents/trusteeAggrement"
+        }],
+        "task": {
+          "params": [null, {
+            "name": "signOperation",
+            "type": "operation",
+            "value": "operation"
+          }, {
+            "name": "signUser",
+            "type": "string",
+            "value": "order.user"
+          }, {
+            "name": "trustee",
+            "type": "string",
+            "value": "project.trustee"
+          }],
+          "type": "trusteeAgrement"
+        },
+        "type": "signDocument"
+      }]
+    }, {
+      "operations": [null, {
+        "name": "investment",
+        "params": [null, {
+          "name": "orderId",
+          "value": "order.id"
+        }, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "document",
+          "type": "documentNew"
+        }],
+        "type": "transferReserved"
+      }]
+    }, {
+      "operations": [null, {
+        "name": "investment",
+        "params": [null, {
+          "name": "orderId",
+          "value": "order.id"
+        }, {
+          "name": "project",
+          "value": "order.address"
+        }, {
+          "name": "doucmenmt",
+          "type": "documentNew"
+        }],
+        "type": "transferFirstPayment"
+      }]
+    }]
+  },
+  "officeMulti": {
+    "operations": {
+      "current": [null, {
+        "name": "offer",
+        "operationId": 111111,
+        "params": [null, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }],
+        "status": "new",
+        "type": "submitOffer",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": {
+          "2": {
+            "name": "phoneValidation",
+            "operationId": 2,
+            "operationValidation": {
+              "validationTask": "phoneNumberValidation"
+            },
+            "params": [null, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "project",
+              "value": "order.project"
+            }],
+            "status": "new",
+            "type": "validateSmsOperation",
+            "userRole": "CUSTOMER"
+          }
+        },
+        "next": {
+          "current": [null, {
+            "name": "saleSimpleDealAgrement",
+            "operationId": 33,
+            "params": [null, {
+              "name": "orderId",
+              "value": "order.id"
+            }, {
+              "name": "documentPath",
+              "type": "filesCopy",
+              "value": "/public/legalDocuments/office.html"
+            }, {
+              "name": "project",
+              "value": "order.project"
+            }, null, {
+              "name": "userRole",
+              "value": "BUYER"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }],
+            "status": "new",
+            "type": "signDocument",
+            "userRole": "CUSTOMER"
+          }],
+          "next": {
+            "current": [null, {
+              "name": "investment",
+              "operationId": 4,
+              "params": [null, {
+                "name": "orderId",
+                "value": "order.id"
+              }, {
+                "name": "bankAccount",
+                "type": "bankAccount",
+                "value": 34234234
+              }, {
+                "name": "project",
+                "value": "order.project"
+              }, {
+                "name": "operationId",
+                "value": "operation.operationId"
+              }, {
+                "name": "flowInstance",
+                "value": "flowInstance.id"
+              }],
+              "status": "new",
+              "type": "transferReserved",
+              "userRole": "CUSTOMER"
+            }],
+            "next": {
+              "current": [null, {
+                "name": "investment",
+                "operationId": 5,
+                "params": [null, {
+                  "name": "orderId",
+                  "value": "order.id"
+                }, {
+                  "name": "bankAccount",
+                  "type": "bankAccount",
+                  "value": 34234234
+                }, {
+                  "name": "project",
+                  "value": "order.project"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }],
+                "status": "new",
+                "type": "transferFirstPayment",
+                "userRole": "CUSTOMER"
+              }],
+              "next": {
+                "current": [null, {
+                  "name": "realMultiEnd",
+                  "operationId": 6,
+                  "status": "new",
+                  "task": {
+                    "params": [null, {
+                      "name": "project",
+                      "value": "order.project"
+                    }, {
+                      "name": "userId",
+                      "value": "order.userId"
+                    }, {
+                      "name": "flowInstance",
+                      "value": "flowInstance.id"
+                    }, {
+                      "name": "operationId",
+                      "value": "operation.operationId"
+                    }],
+                    "type": "projectMultiBuyers",
+                    "userRole": "ADMIN"
+                  },
+                  "type": "sellDone",
+                  "userRole": "ADMIN"
+                }]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "officeNew": {
+    "operations": {
+      "current": [null, {
+        "name": "offer",
+        "operationId": 111111,
+        "params": [null, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }],
+        "status": "new",
+        "type": "submitOffer",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": {
+          "2": {
+            "name": "phoneValidation",
+            "operationId": 2,
+            "operationValidation": {
+              "validationTask": "phoneNumberValidation"
+            },
+            "params": [null, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "project",
+              "value": "order.project"
+            }],
+            "status": "new",
+            "type": "validateSmsOperation",
+            "userRole": "CUSTOMER"
+          }
+        },
+        "next": {
+          "current": [null, {
+            "name": "officeDealAgrement",
+            "operationId": 3,
+            "params": [null, {
+              "name": "orderId",
+              "value": "order.id"
+            }, {
+              "name": "documentPath",
+              "type": "document",
+              "value": "officeAggrement"
+            }, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "formDescriptor",
+              "type": "json",
+              "value": {
+                "address": {
+                  "type": "text"
+                },
+                "date": {
+                  "fixed": true,
+                  "type": "date"
+                },
+                "name": {
+                  "type": "text"
+                },
+                "signature": {
+                  "type": "signature"
+                }
+              }
+            }, {
+              "name": "documentFiles",
+              "type": "files",
+              "value": "trustee1.txt,trustee2.txt,trustee3.txt"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }],
+            "status": "new",
+            "type": "signDocument",
+            "userRole": "CUSTOMER"
+          }],
+          "next": {
+            "current": [null, {
+              "name": "investment",
+              "operationId": 4,
+              "params": [null, {
+                "name": "orderId",
+                "value": "order.id"
+              }, {
+                "name": "bankAccount",
+                "type": "bankAccount",
+                "value": 34234234
+              }, {
+                "name": "project",
+                "value": "order.project"
+              }, {
+                "name": "operationId",
+                "value": "operation.operationId"
+              }, {
+                "name": "flowInstance",
+                "value": "flowInstance.id"
+              }],
+              "status": "new",
+              "type": "transferReserved",
+              "userRole": "CUSTOMER"
+            }],
+            "next": {
+              "current": [null, {
+                "name": "investment",
+                "operationId": 5,
+                "params": [null, {
+                  "name": "orderId",
+                  "value": "order.id"
+                }, {
+                  "name": "bankAccount",
+                  "type": "bankAccount",
+                  "value": 34234234
+                }, {
+                  "name": "project",
+                  "value": "order.project"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }],
+                "status": "new",
+                "type": "transferFirstPayment",
+                "userRole": "CUSTOMER"
+              }],
+              "next": {
+                "current": [null, {
+                  "name": "fakeSell",
+                  "operationId": 6,
+                  "status": "new",
+                  "task": {
+                    "params": [null, {
+                      "name": "project",
+                      "value": "order.project"
+                    }, {
+                      "name": "userId",
+                      "value": "order.userId"
+                    }, {
+                      "name": "flowInstance",
+                      "value": "flowInstance.id"
+                    }, {
+                      "name": "operationId",
+                      "value": "operation.operationId"
+                    }],
+                    "type": "projectDemoEnd",
+                    "userRole": "ADMIN"
+                  },
+                  "type": "sellDone",
+                  "userRole": "ADMIN"
+                }]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "sellingAapartment": {
+    "operations": {
+      "current": [null, {
+        "name": "phoneValidation",
+        "operationId": 2,
+        "operationValidation": {
+          "validationTask": "phoneNumberValidation"
+        },
+        "params": [null, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }, {
+          "name": "project",
+          "value": "order.project"
+        }],
+        "status": "new",
+        "type": "validateSmsOperation",
+        "userRole": "CUSTOMER"
+      }, {
+        "name": "phoneValidation",
+        "operationId": 3,
+        "operationValidation": {
+          "validationTask": "phoneNumberValidation"
+        },
+        "params": [null, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }, {
+          "name": "project",
+          "value": "order.project"
+        }],
+        "status": "new",
+        "type": "validateSmsOperation",
+        "userRole": "SELLER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "negotiation",
+          "operationId": 111111,
+          "params": [null, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }, {
+            "name": "orderId",
+            "value": "order.id"
+          }, {
+            "name": "seller",
+            "type": "userRole",
+            "value": "SELLER"
+          }, {
+            "name": "sellerOperationId",
+            "value": 1111112
+          }, {
+            "name": "side",
+            "value": "BUYER"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }],
+          "status": "new",
+          "type": "simpleNegotiation",
+          "userRole": "CUSTOMER"
+        }, {
+          "name": "negotiation",
+          "operationId": 1111112,
+          "params": [null, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }, {
+            "name": "orderId",
+            "value": "order.id"
+          }, {
+            "name": "buyer",
+            "type": "userRole",
+            "value": "CUSTOMER"
+          }, {
+            "name": "buyerOperationId",
+            "value": 111111
+          }, {
+            "name": "side",
+            "value": "SELLER"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }],
+          "status": "new",
+          "type": "simpleNegotiation",
+          "userRole": "SELLER"
+        }],
+        "next": {
+          "current": [null, {
+            "name": "chooseLawyer",
+            "operationId": 222,
+            "params": [null, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "side",
+              "value": "BUYER"
+            }],
+            "status": "new",
+            "type": "selectLawyer",
+            "userRole": "CUSTOMER"
+          }, {
+            "name": "chooseLawyer",
+            "operationId": 123,
+            "params": [null, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "side",
+              "value": "SELLER"
+            }, {
+              "name": "orderId",
+              "value": "order.id"
+            }, {
+              "name": "buyer",
+              "type": "userRole",
+              "value": "CUSTOMER"
+            }],
+            "status": "new",
+            "type": "selectLawyer",
+            "userRole": "SELLER"
+          }],
+          "next": {
+            "current": [null, {
+              "name": "salePropertyDocument",
+              "operationId": 22,
+              "params": [null, {
+                "name": "project",
+                "value": "order.project"
+              }, {
+                "name": "flowInstance",
+                "value": "flowInstance.id"
+              }, {
+                "name": "buyerId",
+                "type": "userRole",
+                "value": "CUSTOMER"
+              }, {
+                "name": "sellerId",
+                "type": "userRole",
+                "value": "SELLER"
+              }, {
+                "name": "sellerLawyerId",
+                "type": "userRole",
+                "value": "LAWYERSELLER"
+              }, {
+                "name": "operationId",
+                "value": "operation.operationId"
+              }],
+              "status": "new",
+              "type": "uploadDocument",
+              "userRole": "LAWYERBUYER"
+            }],
+            "next": {
+              "current": {
+                "2": {
+                  "name": "saleSimpleDealAgrement",
+                  "operationId": 3231231234,
+                  "params": [null, {
+                    "name": "orderId",
+                    "value": "order.id"
+                  }, {
+                    "name": "documentPath",
+                    "type": "operationHtmlDocument",
+                    "value": 22
+                  }, {
+                    "name": "project",
+                    "value": "order.project"
+                  }, null, {
+                    "name": "userRole",
+                    "value": "BUYER"
+                  }, {
+                    "name": "operationId",
+                    "value": "operation.operationId"
+                  }, {
+                    "name": "flowInstance",
+                    "value": "flowInstance.id"
+                  }],
+                  "status": "new",
+                  "type": "signDocument",
+                  "userRole": "CUSTOMER"
+                }
+              },
+              "next": {
+                "current": [null, {
+                  "name": "saleSimpleDealAgrement",
+                  "operationId": 345,
+                  "params": [null, {
+                    "name": "orderId",
+                    "value": "order.id"
+                  }, {
+                    "name": "documentPath",
+                    "type": "operationHtmlDocument",
+                    "value": 22
+                  }, {
+                    "name": "project",
+                    "value": "order.project"
+                  }, null, {
+                    "name": "userRole",
+                    "value": "SELLER"
+                  }, {
+                    "name": "operationId",
+                    "value": "operation.operationId"
+                  }, {
+                    "name": "flowInstance",
+                    "value": "flowInstance.id"
+                  }],
+                  "status": "new",
+                  "type": "signDocument",
+                  "userRole": "SELLER"
+                }],
+                "next": {
+                  "current": [null, {
+                    "name": "sendDocument",
+                    "operationId": 62123,
+                    "status": "new",
+                    "task": {
+                      "params": [null, {
+                        "name": "project",
+                        "value": "order.project"
+                      }, {
+                        "name": "userId",
+                        "value": "order.userId"
+                      }, {
+                        "name": "flowInstance",
+                        "value": "flowInstance.id"
+                      }, {
+                        "name": "operationId",
+                        "value": "operation.operationId"
+                      }, {
+                        "name": "documentPath",
+                        "type": "operationHtmlDocument",
+                        "value": 22
+                      }, {
+                        "name": "orderId",
+                        "value": "order.id"
+                      }],
+                      "type": "sendFinalDocumentTask",
+                      "userRole": "ADMIN"
+                    },
+                    "type": "sellDone",
+                    "userRole": "ADMIN"
+                  }],
+                  "next": {
+                    "current": [null, {
+                      "name": "realSingleEnd",
+                      "operationId": 6777,
+                      "status": "new",
+                      "task": {
+                        "params": [null, {
+                          "name": "project",
+                          "value": "order.project"
+                        }, {
+                          "name": "userId",
+                          "value": "order.userId"
+                        }, {
+                          "name": "flowInstance",
+                          "value": "flowInstance.id"
+                        }, {
+                          "name": "operationId",
+                          "value": "operation.operationId"
+                        }],
+                        "type": "projectSingleBuyer",
+                        "userRole": "ADMIN"
+                      },
+                      "type": "sellDone",
+                      "userRole": "ADMIN"
+                    }]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "standartOffice": {
+    "operations": {
+      "current": [null, {
+        "name": "KYC",
+        "operationId": 1,
+        "operationValidation": {
+          "validationTask": "signKycValidation"
+        },
+        "params": [null, {
+          "name": "document",
+          "type": "document",
+          "value": "document.kyc"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }],
+        "status": "new",
+        "type": "signDocument",
+        "userRole": "CUSTOMER"
+      }, {
+        "name": "phoneValidation",
+        "operationId": 2,
+        "operationValidation": {
+          "validationTask": "phoneNumberValidation"
+        },
+        "params": [null, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }],
+        "status": "new",
+        "type": "validateSmsOperation",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "officeDealAgrement",
+          "operationId": 3,
+          "params": [null, {
+            "name": "orderId",
+            "value": "order.id"
+          }, {
+            "name": "documentPath",
+            "type": "document",
+            "value": "officeAggrement"
+          }, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "formDescriptor",
+            "type": "json",
+            "value": {
+              "address": {
+                "type": "text"
+              },
+              "date": {
+                "fixed": true,
+                "type": "date"
+              },
+              "name": {
+                "type": "text"
+              },
+              "signature": {
+                "type": "signature"
+              }
+            }
+          }, {
+            "name": "documentFiles",
+            "type": "files",
+            "value": "trustee1.txt,trustee2.txt,trustee3.txt"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }],
+          "status": "new",
+          "type": "signDocument",
+          "userRole": "CUSTOMER"
+        }],
+        "next": {
+          "current": [null, {
+            "name": "investment",
+            "operationId": 4,
+            "params": [null, {
+              "name": "orderId",
+              "value": "order.id"
+            }, {
+              "name": "bankAccount",
+              "type": "bankAccount",
+              "value": 34234234
+            }, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }],
+            "status": "new",
+            "type": "transferReserved",
+            "userRole": "CUSTOMER"
+          }],
+          "next": {
+            "current": [null, {
+              "name": "investment",
+              "operationId": 5,
+              "params": [null, {
+                "name": "orderId",
+                "value": "order.id"
+              }, {
+                "name": "bankAccount",
+                "type": "bankAccount",
+                "value": 34234234
+              }, {
+                "name": "project",
+                "value": "order.project"
+              }, {
+                "name": "operationId",
+                "value": "operation.operationId"
+              }, {
+                "name": "flowInstance",
+                "value": "flowInstance.id"
+              }],
+              "status": "new",
+              "type": "transferFirstPayment",
+              "userRole": "CUSTOMER"
+            }],
+            "next": {
+              "current": [null, {
+                "name": "fakeSell",
+                "operationId": 6,
+                "status": "new",
+                "task": {
+                  "params": [null, {
+                    "name": "project",
+                    "value": "order.project"
+                  }, {
+                    "name": "userId",
+                    "value": "order.userId"
+                  }, {
+                    "name": "flowInstance",
+                    "value": "flowInstance.id"
+                  }, {
+                    "name": "operationId",
+                    "value": "operation.operationId"
+                  }],
+                  "type": "projectDemoEnd",
+                  "userRole": "ADMIN"
+                },
+                "type": "sellDone",
+                "userRole": "ADMIN"
+              }]
+            }
+          }
+        }
+      }
+    }
+  },
+  "testDocumentUpload": {
+    "operations": {
+      "current": [null, {
+        "name": "offer",
+        "operationId": 111111,
+        "params": [null, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }],
+        "status": "new",
+        "type": "submitOffer",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "chooseLawyer",
+          "operationId": 222,
+          "params": [null, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }, {
+            "name": "side",
+            "value": "BUYER"
+          }],
+          "status": "new",
+          "type": "selectLawyer",
+          "userRole": "CUSTOMER"
+        }, {
+          "name": "chooseLawyer",
+          "operationId": 123,
+          "params": [null, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }, {
+            "name": "side",
+            "value": "SELLER"
+          }, {
+            "name": "orderId",
+            "value": "order.id"
+          }, {
+            "name": "buyer",
+            "type": "userRole",
+            "value": "CUSTOMER"
+          }],
+          "status": "new",
+          "type": "selectLawyer",
+          "userRole": "SELLER"
+        }],
+        "next": {
+          "current": [null, {
+            "name": "salePropertyDocument",
+            "operationId": 22,
+            "params": [null, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "buyerId",
+              "type": "userRole",
+              "value": "CUSTOMER"
+            }, {
+              "name": "sellerId",
+              "type": "userRole",
+              "value": "SELLER"
+            }, {
+              "name": "sellerLawyerId",
+              "type": "userRole",
+              "value": "LAWYERSELLER"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }],
+            "status": "new",
+            "type": "uploadDocument",
+            "userRole": "LAWYERBUYER"
+          }],
+          "next": {
+            "current": {
+              "2": {
+                "name": "saleSimpleDealAgrement",
+                "operationId": 3,
+                "params": [null, {
+                  "name": "orderId",
+                  "value": "order.id"
+                }, {
+                  "name": "documentPath",
+                  "type": "operationHtmlDocument",
+                  "value": 22
+                }, {
+                  "name": "project",
+                  "value": "order.project"
+                }, null, {
+                  "name": "userRole",
+                  "value": "BUYER"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }],
+                "status": "new",
+                "type": "signDocument",
+                "userRole": "CUSTOMER"
+              }
+            },
+            "next": {
+              "current": [null, {
+                "name": "saleSimpleDealAgrement",
+                "operationId": 345,
+                "params": [null, {
+                  "name": "orderId",
+                  "value": "order.id"
+                }, {
+                  "name": "documentPath",
+                  "type": "operationHtmlDocument",
+                  "value": 22
+                }, {
+                  "name": "project",
+                  "value": "order.project"
+                }, null, {
+                  "name": "userRole",
+                  "value": "SELLER"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }],
+                "status": "new",
+                "type": "signDocument",
+                "userRole": "SELLER"
+              }],
+              "next": {
+                "current": [null, {
+                  "name": "sendDocument",
+                  "operationId": 6,
+                  "status": "new",
+                  "task": {
+                    "params": [null, {
+                      "name": "project",
+                      "value": "order.project"
+                    }, {
+                      "name": "userId",
+                      "value": "order.userId"
+                    }, {
+                      "name": "flowInstance",
+                      "value": "flowInstance.id"
+                    }, {
+                      "name": "operationId",
+                      "value": "operation.operationId"
+                    }, {
+                      "name": "documentPath",
+                      "type": "operationHtmlDocument",
+                      "value": 22
+                    }, {
+                      "name": "orderId",
+                      "value": "order.id"
+                    }],
+                    "type": "sendFinalDocumentTask",
+                    "userRole": "ADMIN"
+                  },
+                  "type": "sellDone",
+                  "userRole": "ADMIN"
+                }]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "testEndFlow": {
+    "operations": {
+      "current": [null, {
+        "name": "offer",
+        "operationId": 111111,
+        "params": [null, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }],
+        "status": "new",
+        "type": "submitOffer",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "realSingleEnd",
+          "operationId": 6,
+          "status": "new",
+          "task": {
+            "params": [null, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "userId",
+              "value": "order.userId"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }],
+            "type": "projectSingleBuyer",
+            "userRole": "ADMIN"
+          },
+          "type": "sellDone",
+          "userRole": "ADMIN"
+        }]
+      }
+    }
+  },
+  "testEndMultiFlow": {
+    "operations": {
+      "current": [null, {
+        "name": "offer",
+        "operationId": 111111,
+        "params": [null, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }],
+        "status": "new",
+        "type": "submitOffer",
+        "userRole": "CUSTOMER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "realMultiEnd",
+          "operationId": 6,
+          "status": "new",
+          "task": {
+            "params": [null, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "userId",
+              "value": "order.userId"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }],
+            "type": "projectMultiBuyers",
+            "userRole": "ADMIN"
+          },
+          "type": "sellDone",
+          "userRole": "ADMIN"
+        }]
+      }
+    }
+  },
+  "testNegotiationFlow": {
+    "operations": {
+      "current": [null, {
+        "name": "negotiation",
+        "operationId": 111111,
+        "params": [null, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "orderId",
+          "value": "order.id"
+        }, {
+          "name": "seller",
+          "type": "userRole",
+          "value": "SELLER"
+        }, {
+          "name": "sellerOperationId",
+          "value": 1111112
+        }, {
+          "name": "side",
+          "value": "BUYER"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }],
+        "status": "new",
+        "type": "simpleNegotiation",
+        "userRole": "CUSTOMER"
+      }, {
+        "name": "negotiation",
+        "operationId": 1111112,
+        "params": [null, {
+          "name": "project",
+          "value": "order.project"
+        }, {
+          "name": "flowInstance",
+          "value": "flowInstance.id"
+        }, {
+          "name": "orderId",
+          "value": "order.id"
+        }, {
+          "name": "buyer",
+          "type": "userRole",
+          "value": "CUSTOMER"
+        }, {
+          "name": "buyerOperationId",
+          "value": 111111
+        }, {
+          "name": "side",
+          "value": "SELLER"
+        }, {
+          "name": "operationId",
+          "value": "operation.operationId"
+        }],
+        "status": "new",
+        "type": "simpleNegotiation",
+        "userRole": "SELLER"
+      }],
+      "next": {
+        "current": [null, {
+          "name": "chooseLawyer",
+          "operationId": 222,
+          "params": [null, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }, {
+            "name": "side",
+            "value": "BUYER"
+          }],
+          "status": "new",
+          "type": "selectLawyer",
+          "userRole": "CUSTOMER"
+        }, {
+          "name": "chooseLawyer",
+          "operationId": 123,
+          "params": [null, {
+            "name": "project",
+            "value": "order.project"
+          }, {
+            "name": "flowInstance",
+            "value": "flowInstance.id"
+          }, {
+            "name": "operationId",
+            "value": "operation.operationId"
+          }, {
+            "name": "side",
+            "value": "SELLER"
+          }, {
+            "name": "orderId",
+            "value": "order.id"
+          }, {
+            "name": "buyer",
+            "type": "userRole",
+            "value": "CUSTOMER"
+          }],
+          "status": "new",
+          "type": "selectLawyer",
+          "userRole": "SELLER"
+        }],
+        "next": {
+          "current": [null, {
+            "name": "salePropertyDocument",
+            "operationId": 22,
+            "params": [null, {
+              "name": "project",
+              "value": "order.project"
+            }, {
+              "name": "flowInstance",
+              "value": "flowInstance.id"
+            }, {
+              "name": "buyerId",
+              "type": "userRole",
+              "value": "CUSTOMER"
+            }, {
+              "name": "sellerId",
+              "type": "userRole",
+              "value": "SELLER"
+            }, {
+              "name": "sellerLawyerId",
+              "type": "userRole",
+              "value": "LAWYERSELLER"
+            }, {
+              "name": "operationId",
+              "value": "operation.operationId"
+            }],
+            "status": "new",
+            "type": "uploadDocument",
+            "userRole": "LAWYERBUYER"
+          }],
+          "next": {
+            "current": {
+              "2": {
+                "name": "saleSimpleDealAgrement",
+                "operationId": 3,
+                "params": [null, {
+                  "name": "orderId",
+                  "value": "order.id"
+                }, {
+                  "name": "documentPath",
+                  "type": "operationHtmlDocument",
+                  "value": 22
+                }, {
+                  "name": "project",
+                  "value": "order.project"
+                }, null, {
+                  "name": "userRole",
+                  "value": "BUYER"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }],
+                "status": "new",
+                "type": "signDocument",
+                "userRole": "CUSTOMER"
+              }
+            },
+            "next": {
+              "current": [null, {
+                "name": "saleSimpleDealAgrement",
+                "operationId": 345,
+                "params": [null, {
+                  "name": "orderId",
+                  "value": "order.id"
+                }, {
+                  "name": "documentPath",
+                  "type": "operationHtmlDocument",
+                  "value": 22
+                }, {
+                  "name": "project",
+                  "value": "order.project"
+                }, null, {
+                  "name": "userRole",
+                  "value": "SELLER"
+                }, {
+                  "name": "operationId",
+                  "value": "operation.operationId"
+                }, {
+                  "name": "flowInstance",
+                  "value": "flowInstance.id"
+                }],
+                "status": "new",
+                "type": "signDocument",
+                "userRole": "SELLER"
+              }],
+              "next": {
+                "current": [null, {
+                  "name": "sendDocument",
+                  "operationId": 6,
+                  "status": "new",
+                  "task": {
+                    "params": [null, {
+                      "name": "project",
+                      "value": "order.project"
+                    }, {
+                      "name": "userId",
+                      "value": "order.userId"
+                    }, {
+                      "name": "flowInstance",
+                      "value": "flowInstance.id"
+                    }, {
+                      "name": "operationId",
+                      "value": "operation.operationId"
+                    }, {
+                      "name": "documentPath",
+                      "type": "operationHtmlDocument",
+                      "value": 22
+                    }, {
+                      "name": "orderId",
+                      "value": "order.id"
+                    }],
+                    "type": "sendFinalDocumentTask",
+                    "userRole": "ADMIN"
+                  },
+                  "type": "sellDone",
+                  "userRole": "ADMIN"
+                }]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

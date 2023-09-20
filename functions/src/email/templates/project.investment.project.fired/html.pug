@@ -1,0 +1,22 @@
+link(rel="stylesheet", href="app.css", data-inline)
+
+p Hi #{name},
+
+h3 Congratulation #{projectName} fired 
+
+p We happy to announce that #{projectName} reach the invetment goals.
+P You just purchust #{units} units in #{projectName} project
+br
+p You can track the project 
+table
+  tr
+    td(class="button")
+      a(href='http://'+ serverURL + '/project/' + projectId)
+        b Track project
+    td(class="button")
+      a(href='http://'+ serverURL + '/Portfolio')
+        b Portfolio
+p
+  | Thanks,#[br]
+  | Brikoin Team
+img(class="logo" src="cid:BrikoinLogo")

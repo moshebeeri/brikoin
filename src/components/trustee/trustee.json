@@ -1,0 +1,50 @@
+{
+  "name": {
+    "type": "bytes32",
+    "name": "name"
+  },
+  "trusteeType": {
+    "type": "bytes32",
+    "name": "Trustee Type"
+  },
+  "licenseNumber": {
+    "type": "bytes32",
+    "name": "License Number"
+  },
+  "country": {
+    "type": "bytes32",
+    "name": "Country"
+  },
+  "address1": {
+    "type": "bytes32",
+    "name": "Address"
+  },
+  "address2": {
+    "type": "bytes32",
+    "name": "Address 2"
+  },
+  "contactFirstName": {
+    "type": "bytes32",
+    "name": "Contact First Name"
+  },
+  "contactSecondName": {
+    "type": "bytes32",
+    "name": "Contact Second Name"
+  },
+  "phoneNumber": {
+    "type": "bytes32",
+    "name": "Phone Number"
+  },
+  "email": {
+    "type": "bytes32",
+    "name": "email"
+  },
+  "url": {
+    "type": "bytes32",
+    "name": "URL to pdf"
+  },
+  "urlMD5": {
+    "type": "bytes32",
+    "name": "pdf md5"
+  }
+}

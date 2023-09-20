@@ -1,0 +1,21 @@
+link(rel="stylesheet", href="app.css", data-inline)
+
+p Hi #{name},
+
+h3 THIS reviewed #{businessName} with the following results
+
+if accepted
+  p We have reviewed your business #{businessName} and your application was accepted
+  p THIS team would like to wish you best and success promoting your business.
+  p Please use the application with respect to all users.
+else
+  p
+    | Case number #{businessId} rejected due to the following reason:#[br]
+    | #{reason} #[br]
+    | please replay with the missing information to this email and the case will be reviewed #[br]
+
+p
+  | Thanks,    #[br]
+  | THIS team
+img(src="cid:THISLogo")
+

@@ -1,0 +1,8 @@
+
+
+sudo certbot -d brikoin.com --manual --preferred-challenges dns certonly
+
+## openssl pkcs12 -export -nodes -inkey privkey.pem -in cert.pem -certfile chain.pem -out pdfsign.pfx
+openssl pkcs12 -export -nodes -inkey privkey.pem -in cert.pem -certfile chain.pem -out pdfsign.p12
+openssl pkcs12 -in pdfsign.p12 -nodes -out temp.pem
+openssl pkcs12 -export -in temp.pem -out nopasssigner.p12

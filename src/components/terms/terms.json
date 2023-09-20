@@ -1,0 +1,30 @@
+{
+  "name": {
+    "type": "bytes32",
+    "name": "name"
+  },
+  "holdingYears": {
+    "type": "bytes32",
+    "name": "License/ID"
+  },
+  "sellPercentage": {
+    "type": "bytes32",
+    "name": "Country"
+  },
+  "rental": {
+    "type": "bytes32",
+    "name": "Address"
+  },
+  "address2": {
+    "type": "bytes32",
+    "name": "Address"
+  },
+  "url": {
+    "type": "bytes32",
+    "name": "URL to PDF"
+  },
+  "urlMD5": {
+    "type": "bytes32",
+    "name": "PDF MD5"
+  }
+}

@@ -1,0 +1,2710 @@
+{
+  "contractName": "TransactionTaxes",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "owners",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "removeOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "isOwnable",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "addOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_stoneCoinAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "taxEntity",
+          "type": "address"
+        }
+      ],
+      "name": "addBuyerTaxes",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBuyerTaxEntitiesLength",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBuyerTaxEntity",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "taxEntity",
+          "type": "address"
+        }
+      ],
+      "name": "addSelleTaxes",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getSellerTaxEntitiesLength",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStoneCoinAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSellerTaxEntity",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060405160208061061d8339810160409081529051336000818152602081905292909220805460ff191660019081179091558054600160a060020a0319908116909317905560048054600160a060020a03909216919092161790556105a38061007a6000396000f3006080604052600436106100cf5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663022914a781146100d457806313af40351461010957806338cc48311461012c57806339a4f7271461015d5780634538f92f1461017e578063666a34271461019357806375f2e4e5146101b4578063785cad0b146101cc5780638d9e55f3146101e45780638da5cb5b1461020b5780639be69835146102205780639fb9e7bd14610241578063e88914de14610256578063f5a55ff614610277575b600080fd5b3480156100e057600080fd5b506100f5600160a060020a0360043516610298565b604080519115158252519081900360200190f35b34801561011557600080fd5b5061012a600160a060020a03600435166102ad565b005b34801561013857600080fd5b506101416102fa565b60408051600160a060020a039092168252519081900360200190f35b34801561016957600080fd5b5061012a600160a060020a03600435166102fe565b34801561018a57600080fd5b5061014161037b565b34801561019f57600080fd5b5061012a600160a060020a036004351661038a565b3480156101c057600080fd5b506101416004356103b4565b3480156101d857600080fd5b506101416004356103e0565b3480156101f057600080fd5b506101f96103f1565b60408051918252519081900360200190f35b34801561021757600080fd5b506101416103f7565b34801561022c57600080fd5b5061012a600160a060020a0360043516610406565b34801561024d57600080fd5b506101f9610483565b34801561026257600080fd5b506100f5600160a060020a0360043516610489565b34801561028357600080fd5b5061012a600160a060020a03600435166104a7565b60006020819052908152604090205460ff1681565b3360009081526020819052604090205460ff1615156102cb57600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b3090565b3360009081526020819052604090205460ff16151561031c57600080fd5b600280546001810182556000919091527f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace01805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600454600160a060020a031690565b3360009081526020819052604090205460ff1615156103a857600080fd5b6103b1816104ce565b50565b60006003828154811015156103c557fe5b600091825260209091200154600160a060020a031692915050565b60006002828154811015156103c557fe5b60025490565b600154600160a060020a031681565b3360009081526020819052604090205460ff16151561042457600080fd5b600380546001810182556000919091527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b01805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60035490565b600160a060020a031660009081526020819052604090205460ff1690565b3360009081526020819052604090205460ff1615156104c557600080fd5b6103b181610504565b600160a060020a03811615156104e357600080fd5b600160a060020a03166000908152602081905260409020805460ff19169055565b600160a060020a038116151561051957600080fd5b600154604051600160a060020a038084169216907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a3600160a060020a03166000908152602081905260409020805460ff191660011790555600a165627a7a723058206e582c01f0ca3b1a752cc29462e63c65f54cff3a4703b3780b9c56a553052ad40029",
+  "deployedBytecode": "0x6080604052600436106100cf5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663022914a781146100d457806313af40351461010957806338cc48311461012c57806339a4f7271461015d5780634538f92f1461017e578063666a34271461019357806375f2e4e5146101b4578063785cad0b146101cc5780638d9e55f3146101e45780638da5cb5b1461020b5780639be69835146102205780639fb9e7bd14610241578063e88914de14610256578063f5a55ff614610277575b600080fd5b3480156100e057600080fd5b506100f5600160a060020a0360043516610298565b604080519115158252519081900360200190f35b34801561011557600080fd5b5061012a600160a060020a03600435166102ad565b005b34801561013857600080fd5b506101416102fa565b60408051600160a060020a039092168252519081900360200190f35b34801561016957600080fd5b5061012a600160a060020a03600435166102fe565b34801561018a57600080fd5b5061014161037b565b34801561019f57600080fd5b5061012a600160a060020a036004351661038a565b3480156101c057600080fd5b506101416004356103b4565b3480156101d857600080fd5b506101416004356103e0565b3480156101f057600080fd5b506101f96103f1565b60408051918252519081900360200190f35b34801561021757600080fd5b506101416103f7565b34801561022c57600080fd5b5061012a600160a060020a0360043516610406565b34801561024d57600080fd5b506101f9610483565b34801561026257600080fd5b506100f5600160a060020a0360043516610489565b34801561028357600080fd5b5061012a600160a060020a03600435166104a7565b60006020819052908152604090205460ff1681565b3360009081526020819052604090205460ff1615156102cb57600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b3090565b3360009081526020819052604090205460ff16151561031c57600080fd5b600280546001810182556000919091527f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace01805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600454600160a060020a031690565b3360009081526020819052604090205460ff1615156103a857600080fd5b6103b1816104ce565b50565b60006003828154811015156103c557fe5b600091825260209091200154600160a060020a031692915050565b60006002828154811015156103c557fe5b60025490565b600154600160a060020a031681565b3360009081526020819052604090205460ff16151561042457600080fd5b600380546001810182556000919091527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b01805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60035490565b600160a060020a031660009081526020819052604090205460ff1690565b3360009081526020819052604090205460ff1615156104c557600080fd5b6103b181610504565b600160a060020a03811615156104e357600080fd5b600160a060020a03166000908152602081905260409020805460ff19169055565b600160a060020a038116151561051957600080fd5b600154604051600160a060020a038084169216907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a3600160a060020a03166000908152602081905260409020805460ff191660011790555600a165627a7a723058206e582c01f0ca3b1a752cc29462e63c65f54cff3a4703b3780b9c56a553052ad40029",
+  "sourceMap": "169:1068:78:-;;;350:116;8:9:-1;5:2;;;30:1;27;20:12;5:2;350:116:78;;;;;;;;;;;;;;;;780:10:42;773:6;:18;;;350:116:78;773:18:42;;;;;;;:25;;-1:-1:-1;;773:25:42;794:4;773:25;;;;;;802:18;;-1:-1:-1;;;;;;802:18:42;;;;;;;;423:16:78;:36;;-1:-1:-1;;;;;423:36:78;;;;;;;;;;169:1068;;;;;;",
+  "deployedSourceMap": "169:1068:78:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;238:39:42;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;238:39:42;-1:-1:-1;;;;;238:39:42;;;;;;;;;;;;;;;;;;;;;;;1325:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1325:79:42;-1:-1:-1;;;;;1325:79:42;;;;;;;459:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;459:78:42;;;;;;;;-1:-1:-1;;;;;459:78:42;;;;;;;;;;;;;;802:102:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;802:102:78;-1:-1:-1;;;;;802:102:78;;;;;1022:98;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1022:98:78;;;;1226:96:42;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1226:96:42;-1:-1:-1;;;;;1226:96:42;;;;;689:107:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;689:107:78;;;;;1125:109;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1125:109:78;;;;;910:107;;8:9:-1;5:2;;;30:1;27;20:12;5:2;910:107:78;;;;;;;;;;;;;;;;;;;;280:21:42;;8:9:-1;5:2;;;30:1;27;20:12;5:2;280:21:42;;;;472:101:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;472:101:78;-1:-1:-1;;;;;472:101:78;;;;;579:105;;8:9:-1;5:2;;;30:1;27;20:12;5:2;579:105:78;;;;539:85:42;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;539:85:42;-1:-1:-1;;;;;539:85:42;;;;;1133:90;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1133:90:42;-1:-1:-1;;;;;1133:90:42;;;;;238:39;;;;;;;;;;;;;;;;:::o;1325:79::-;946:10;939:6;:18;;;;;;;;;;;;;931:27;;;;;;;;1383:5;:17;;-1:-1:-1;;1383:17:42;-1:-1:-1;;;;;1383:17:42;;;;;;;;;;1325:79::o;459:78::-;528:4;459:78;:::o;802:102:78:-;946:10:42;939:6;:18;;;;;;;;;;;;;931:27;;;;;;;;870:11:78;27:10:-1;;39:1;23:18;;45:23;;-1:-1;870:27:78;;;;;;;;-1:-1:-1;;870:27:78;-1:-1:-1;;;;;870:27:78;;;;;;;;;;802:102::o;1022:98::-;1097:16;;-1:-1:-1;;;;;1097:16:78;1022:98;:::o;1226:96:42:-;946:10;939:6;:18;;;;;;;;;;;;;931:27;;;;;;;;1291;1308:9;1291:16;:27::i;:::-;1226:96;:::o;689:107:78:-;748:7;772:10;783:5;772:17;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;772:17:78;;689:107;-1:-1:-1;;689:107:78:o;1125:109::-;1185:7;1209:11;1221:5;1209:18;;;;;;;;;910:107;992:11;:18;910:107;:::o;280:21:42:-;;;-1:-1:-1;;;;;280:21:42;;:::o;472:101:78:-;946:10:42;939:6;:18;;;;;;;;;;;;;931:27;;;;;;;;540:10:78;27::-1;;39:1;23:18;;45:23;;-1:-1;540:26:78;;;;;;;;-1:-1:-1;;540:26:78;-1:-1:-1;;;;;540:26:78;;;;;;;;;;472:101::o;579:105::-;660:10;:17;579:105;:::o;539:85:42:-;-1:-1:-1;;;;;608:12:42;592:4;608:12;;;;;;;;;;;;;;539:85::o;1133:90::-;946:10;939:6;:18;;;;;;;;;;;;;931:27;;;;;;;;1195:24;1209:9;1195:13;:24::i;1712:123::-;-1:-1:-1;;;;;1778:23:42;;;;1770:32;;;;;;-1:-1:-1;;;;;1806:17:42;1826:5;1806:17;;;;;;;;;;:25;;-1:-1:-1;;1806:25:42;;;1712:123::o;1543:166::-;-1:-1:-1;;;;;1606:23:42;;;;1598:32;;;;;;1660:5;;1639:38;;-1:-1:-1;;;;;1639:38:42;;;;1660:5;;1639:38;;1660:5;;1639:38;-1:-1:-1;;;;;1681:17:42;:6;:17;;;;;;;;;;:24;;-1:-1:-1;;1681:24:42;1701:4;1681:24;;;1543:166::o",
+  "source": "pragma solidity ^0.4.0;\nimport 'openzeppelin-solidity/contracts/math/SafeMath.sol';\nimport \"../interfaces/Ownables.sol\";\nimport \"../interfaces/TransactionTaxesInt.sol\";\ncontract TransactionTaxes  is Ownables, TransactionTaxesInt{\n    using SafeMath for uint256;\n    address[] sellerTaxes;\n    address[] buyerTaxes;\n    address stoneCoinAddress;\n\n    constructor (address _stoneCoinAddress\n    ) Ownables() public {\n        stoneCoinAddress = _stoneCoinAddress;\n    }\n\n    function addBuyerTaxes(address taxEntity) public onlyOwner{\n        buyerTaxes.push(taxEntity);\n    }\n\n    function getBuyerTaxEntitiesLength() public view returns(uint256){\n       return buyerTaxes.length;\n    }\n    function getBuyerTaxEntity(uint index) public view returns(address){\n       return buyerTaxes[index];\n    }\n\n    function addSelleTaxes(address taxEntity) public onlyOwner{\n        sellerTaxes.push(taxEntity);\n    }\n\n    function getSellerTaxEntitiesLength() public view returns(uint256){\n       return sellerTaxes.length;\n    }\n    function getStoneCoinAddress() public view returns(address){\n       return stoneCoinAddress;\n    }\n    function getSellerTaxEntity(uint index) public view returns(address){\n       return sellerTaxes[index];\n    }\n\n}\n",
+  "sourcePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/structures/TransactionTaxes.sol",
+  "ast": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/structures/TransactionTaxes.sol",
+    "exportedSymbols": {
+      "TransactionTaxes": [
+        23459
+      ]
+    },
+    "id": 23460,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 23350,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:78"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 23351,
+        "nodeType": "ImportDirective",
+        "scope": 23460,
+        "sourceUnit": 24158,
+        "src": "24:59:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/Ownables.sol",
+        "file": "../interfaces/Ownables.sol",
+        "id": 23352,
+        "nodeType": "ImportDirective",
+        "scope": 23460,
+        "sourceUnit": 15777,
+        "src": "84:36:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/TransactionTaxesInt.sol",
+        "file": "../interfaces/TransactionTaxesInt.sol",
+        "id": 23353,
+        "nodeType": "ImportDirective",
+        "scope": 23460,
+        "sourceUnit": 16715,
+        "src": "121:47:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 23354,
+              "name": "Ownables",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 15776,
+              "src": "199:8:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownables_$15776",
+                "typeString": "contract Ownables"
+              }
+            },
+            "id": 23355,
+            "nodeType": "InheritanceSpecifier",
+            "src": "199:8:78"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 23356,
+              "name": "TransactionTaxesInt",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16714,
+              "src": "209:19:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TransactionTaxesInt_$16714",
+                "typeString": "contract TransactionTaxesInt"
+              }
+            },
+            "id": 23357,
+            "nodeType": "InheritanceSpecifier",
+            "src": "209:19:78"
+          }
+        ],
+        "contractDependencies": [
+          15776,
+          16714
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 23459,
+        "linearizedBaseContracts": [
+          23459,
+          16714,
+          15776
+        ],
+        "name": "TransactionTaxes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 23360,
+            "libraryName": {
+              "contractScope": null,
+              "id": 23358,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24157,
+              "src": "240:8:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$24157",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "234:27:78",
+            "typeName": {
+              "id": 23359,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "253:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 23363,
+            "name": "sellerTaxes",
+            "nodeType": "VariableDeclaration",
+            "scope": 23459,
+            "src": "266:21:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 23361,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "266:7:78",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 23362,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "266:9:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 23366,
+            "name": "buyerTaxes",
+            "nodeType": "VariableDeclaration",
+            "scope": 23459,
+            "src": "293:20:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 23364,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "293:7:78",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 23365,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "293:9:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 23368,
+            "name": "stoneCoinAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 23459,
+            "src": "319:24:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 23367,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "319:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 23379,
+              "nodeType": "Block",
+              "src": "413:53:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 23377,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 23375,
+                      "name": "stoneCoinAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23368,
+                      "src": "423:16:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 23376,
+                      "name": "_stoneCoinAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23370,
+                      "src": "442:17:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "423:36:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 23378,
+                  "nodeType": "ExpressionStatement",
+                  "src": "423:36:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23380,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 23373,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 23372,
+                  "name": "Ownables",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15776,
+                  "src": "395:8:78",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Ownables_$15776_$",
+                    "typeString": "type(contract Ownables)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "395:10:78"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23371,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23370,
+                  "name": "_stoneCoinAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23380,
+                  "src": "363:25:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23369,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "363:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "362:32:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23374,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "413:0:78"
+            },
+            "scope": 23459,
+            "src": "350:116:78",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23393,
+              "nodeType": "Block",
+              "src": "530:43:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 23390,
+                        "name": "taxEntity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23382,
+                        "src": "556:9:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 23387,
+                        "name": "buyerTaxes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23366,
+                        "src": "540:10:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 23389,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "540:15:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 23391,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "540:26:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 23392,
+                  "nodeType": "ExpressionStatement",
+                  "src": "540:26:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23394,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 23385,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 23384,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15694,
+                  "src": "521:9:78",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "521:9:78"
+              }
+            ],
+            "name": "addBuyerTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23383,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23382,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23394,
+                  "src": "495:17:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23381,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "495:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "494:19:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23386,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "530:0:78"
+            },
+            "scope": 23459,
+            "src": "472:101:78",
+            "stateMutability": "nonpayable",
+            "superFunction": 16679,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23402,
+              "nodeType": "Block",
+              "src": "644:40:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 23399,
+                      "name": "buyerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23366,
+                      "src": "660:10:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23400,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "660:17:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 23398,
+                  "id": 23401,
+                  "nodeType": "Return",
+                  "src": "653:24:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23403,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23395,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "613:2:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23397,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23403,
+                  "src": "636:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23396,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "636:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "635:9:78"
+            },
+            "scope": 23459,
+            "src": "579:105:78",
+            "stateMutability": "view",
+            "superFunction": 16684,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23414,
+              "nodeType": "Block",
+              "src": "756:40:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 23410,
+                      "name": "buyerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23366,
+                      "src": "772:10:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23412,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 23411,
+                      "name": "index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23405,
+                      "src": "783:5:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "772:17:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 23409,
+                  "id": 23413,
+                  "nodeType": "Return",
+                  "src": "765:24:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23415,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23406,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23405,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23415,
+                  "src": "716:10:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23404,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "716:4:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "715:12:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23409,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23408,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23415,
+                  "src": "748:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23407,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "748:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "747:9:78"
+            },
+            "scope": 23459,
+            "src": "689:107:78",
+            "stateMutability": "view",
+            "superFunction": 16691,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23428,
+              "nodeType": "Block",
+              "src": "860:44:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 23425,
+                        "name": "taxEntity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23417,
+                        "src": "887:9:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 23422,
+                        "name": "sellerTaxes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23363,
+                        "src": "870:11:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 23424,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "870:16:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 23426,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "870:27:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 23427,
+                  "nodeType": "ExpressionStatement",
+                  "src": "870:27:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23429,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 23420,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 23419,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15694,
+                  "src": "851:9:78",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "851:9:78"
+              }
+            ],
+            "name": "addSelleTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23418,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23417,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23429,
+                  "src": "825:17:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23416,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:19:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23421,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:0:78"
+            },
+            "scope": 23459,
+            "src": "802:102:78",
+            "stateMutability": "nonpayable",
+            "superFunction": 16696,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23437,
+              "nodeType": "Block",
+              "src": "976:41:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 23434,
+                      "name": "sellerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23363,
+                      "src": "992:11:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23435,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "992:18:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 23433,
+                  "id": 23436,
+                  "nodeType": "Return",
+                  "src": "985:25:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23438,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23430,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "945:2:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23433,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23432,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23438,
+                  "src": "968:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23431,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "968:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "967:9:78"
+            },
+            "scope": 23459,
+            "src": "910:107:78",
+            "stateMutability": "view",
+            "superFunction": 16701,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23445,
+              "nodeType": "Block",
+              "src": "1081:39:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 23443,
+                    "name": "stoneCoinAddress",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 23368,
+                    "src": "1097:16:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 23442,
+                  "id": 23444,
+                  "nodeType": "Return",
+                  "src": "1090:23:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23446,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getStoneCoinAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23439,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1050:2:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23441,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23446,
+                  "src": "1073:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23440,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1072:9:78"
+            },
+            "scope": 23459,
+            "src": "1022:98:78",
+            "stateMutability": "view",
+            "superFunction": 16713,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23457,
+              "nodeType": "Block",
+              "src": "1193:41:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 23453,
+                      "name": "sellerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23363,
+                      "src": "1209:11:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23455,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 23454,
+                      "name": "index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23448,
+                      "src": "1221:5:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1209:18:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 23452,
+                  "id": 23456,
+                  "nodeType": "Return",
+                  "src": "1202:25:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23458,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23449,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23448,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23458,
+                  "src": "1153:10:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23447,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1153:4:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1152:12:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23452,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23451,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23458,
+                  "src": "1185:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23450,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1185:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1184:9:78"
+            },
+            "scope": 23459,
+            "src": "1125:109:78",
+            "stateMutability": "view",
+            "superFunction": 16708,
+            "visibility": "public"
+          }
+        ],
+        "scope": 23460,
+        "src": "169:1068:78"
+      }
+    ],
+    "src": "0:1238:78"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/structures/TransactionTaxes.sol",
+    "exportedSymbols": {
+      "TransactionTaxes": [
+        23459
+      ]
+    },
+    "id": 23460,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 23350,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:78"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 23351,
+        "nodeType": "ImportDirective",
+        "scope": 23460,
+        "sourceUnit": 24158,
+        "src": "24:59:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/Ownables.sol",
+        "file": "../interfaces/Ownables.sol",
+        "id": 23352,
+        "nodeType": "ImportDirective",
+        "scope": 23460,
+        "sourceUnit": 15777,
+        "src": "84:36:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/TransactionTaxesInt.sol",
+        "file": "../interfaces/TransactionTaxesInt.sol",
+        "id": 23353,
+        "nodeType": "ImportDirective",
+        "scope": 23460,
+        "sourceUnit": 16715,
+        "src": "121:47:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 23354,
+              "name": "Ownables",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 15776,
+              "src": "199:8:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownables_$15776",
+                "typeString": "contract Ownables"
+              }
+            },
+            "id": 23355,
+            "nodeType": "InheritanceSpecifier",
+            "src": "199:8:78"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 23356,
+              "name": "TransactionTaxesInt",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16714,
+              "src": "209:19:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TransactionTaxesInt_$16714",
+                "typeString": "contract TransactionTaxesInt"
+              }
+            },
+            "id": 23357,
+            "nodeType": "InheritanceSpecifier",
+            "src": "209:19:78"
+          }
+        ],
+        "contractDependencies": [
+          15776,
+          16714
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 23459,
+        "linearizedBaseContracts": [
+          23459,
+          16714,
+          15776
+        ],
+        "name": "TransactionTaxes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 23360,
+            "libraryName": {
+              "contractScope": null,
+              "id": 23358,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24157,
+              "src": "240:8:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$24157",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "234:27:78",
+            "typeName": {
+              "id": 23359,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "253:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 23363,
+            "name": "sellerTaxes",
+            "nodeType": "VariableDeclaration",
+            "scope": 23459,
+            "src": "266:21:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 23361,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "266:7:78",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 23362,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "266:9:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 23366,
+            "name": "buyerTaxes",
+            "nodeType": "VariableDeclaration",
+            "scope": 23459,
+            "src": "293:20:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 23364,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "293:7:78",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 23365,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "293:9:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 23368,
+            "name": "stoneCoinAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 23459,
+            "src": "319:24:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 23367,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "319:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 23379,
+              "nodeType": "Block",
+              "src": "413:53:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 23377,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 23375,
+                      "name": "stoneCoinAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23368,
+                      "src": "423:16:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 23376,
+                      "name": "_stoneCoinAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23370,
+                      "src": "442:17:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "423:36:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 23378,
+                  "nodeType": "ExpressionStatement",
+                  "src": "423:36:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23380,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 23373,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 23372,
+                  "name": "Ownables",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15776,
+                  "src": "395:8:78",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Ownables_$15776_$",
+                    "typeString": "type(contract Ownables)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "395:10:78"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23371,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23370,
+                  "name": "_stoneCoinAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23380,
+                  "src": "363:25:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23369,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "363:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "362:32:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23374,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "413:0:78"
+            },
+            "scope": 23459,
+            "src": "350:116:78",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23393,
+              "nodeType": "Block",
+              "src": "530:43:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 23390,
+                        "name": "taxEntity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23382,
+                        "src": "556:9:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 23387,
+                        "name": "buyerTaxes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23366,
+                        "src": "540:10:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 23389,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "540:15:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 23391,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "540:26:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 23392,
+                  "nodeType": "ExpressionStatement",
+                  "src": "540:26:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23394,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 23385,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 23384,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15694,
+                  "src": "521:9:78",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "521:9:78"
+              }
+            ],
+            "name": "addBuyerTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23383,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23382,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23394,
+                  "src": "495:17:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23381,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "495:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "494:19:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23386,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "530:0:78"
+            },
+            "scope": 23459,
+            "src": "472:101:78",
+            "stateMutability": "nonpayable",
+            "superFunction": 16679,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23402,
+              "nodeType": "Block",
+              "src": "644:40:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 23399,
+                      "name": "buyerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23366,
+                      "src": "660:10:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23400,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "660:17:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 23398,
+                  "id": 23401,
+                  "nodeType": "Return",
+                  "src": "653:24:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23403,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23395,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "613:2:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23397,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23403,
+                  "src": "636:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23396,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "636:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "635:9:78"
+            },
+            "scope": 23459,
+            "src": "579:105:78",
+            "stateMutability": "view",
+            "superFunction": 16684,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23414,
+              "nodeType": "Block",
+              "src": "756:40:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 23410,
+                      "name": "buyerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23366,
+                      "src": "772:10:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23412,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 23411,
+                      "name": "index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23405,
+                      "src": "783:5:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "772:17:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 23409,
+                  "id": 23413,
+                  "nodeType": "Return",
+                  "src": "765:24:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23415,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23406,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23405,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23415,
+                  "src": "716:10:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23404,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "716:4:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "715:12:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23409,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23408,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23415,
+                  "src": "748:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23407,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "748:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "747:9:78"
+            },
+            "scope": 23459,
+            "src": "689:107:78",
+            "stateMutability": "view",
+            "superFunction": 16691,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23428,
+              "nodeType": "Block",
+              "src": "860:44:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 23425,
+                        "name": "taxEntity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23417,
+                        "src": "887:9:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 23422,
+                        "name": "sellerTaxes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 23363,
+                        "src": "870:11:78",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 23424,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "870:16:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 23426,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "870:27:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 23427,
+                  "nodeType": "ExpressionStatement",
+                  "src": "870:27:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23429,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 23420,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 23419,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15694,
+                  "src": "851:9:78",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "851:9:78"
+              }
+            ],
+            "name": "addSelleTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23418,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23417,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23429,
+                  "src": "825:17:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23416,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:19:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23421,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:0:78"
+            },
+            "scope": 23459,
+            "src": "802:102:78",
+            "stateMutability": "nonpayable",
+            "superFunction": 16696,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23437,
+              "nodeType": "Block",
+              "src": "976:41:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 23434,
+                      "name": "sellerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23363,
+                      "src": "992:11:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23435,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "992:18:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 23433,
+                  "id": 23436,
+                  "nodeType": "Return",
+                  "src": "985:25:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23438,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23430,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "945:2:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23433,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23432,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23438,
+                  "src": "968:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23431,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "968:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "967:9:78"
+            },
+            "scope": 23459,
+            "src": "910:107:78",
+            "stateMutability": "view",
+            "superFunction": 16701,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23445,
+              "nodeType": "Block",
+              "src": "1081:39:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 23443,
+                    "name": "stoneCoinAddress",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 23368,
+                    "src": "1097:16:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 23442,
+                  "id": 23444,
+                  "nodeType": "Return",
+                  "src": "1090:23:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23446,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getStoneCoinAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23439,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1050:2:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23441,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23446,
+                  "src": "1073:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23440,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1072:9:78"
+            },
+            "scope": 23459,
+            "src": "1022:98:78",
+            "stateMutability": "view",
+            "superFunction": 16713,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 23457,
+              "nodeType": "Block",
+              "src": "1193:41:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 23453,
+                      "name": "sellerTaxes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23363,
+                      "src": "1209:11:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 23455,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 23454,
+                      "name": "index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23448,
+                      "src": "1221:5:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1209:18:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 23452,
+                  "id": 23456,
+                  "nodeType": "Return",
+                  "src": "1202:25:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 23458,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23449,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23448,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23458,
+                  "src": "1153:10:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23447,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1153:4:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1152:12:78"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 23452,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23451,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23458,
+                  "src": "1185:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23450,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1185:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1184:9:78"
+            },
+            "scope": 23459,
+            "src": "1125:109:78",
+            "stateMutability": "view",
+            "superFunction": 16708,
+            "visibility": "public"
+          }
+        ],
+        "scope": 23460,
+        "src": "169:1068:78"
+      }
+    ],
+    "src": "0:1238:78"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-10-27T14:12:11.132Z"
+}

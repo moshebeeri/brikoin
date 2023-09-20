@@ -1,0 +1,104 @@
+{
+  "property": {
+    "type": "Apartment",
+    "address1": "We-Work Midtown TLV",
+    "country": "Israel",
+    "description": "Looking for shared office space in Tel Aviv’s business center? Occupying the top floors of the modern Midtown Tower, this WeWork location offers 360-degree views from one of the tallest buildings in the region. Whether your team’s focusing in a private office or collaborating in a conference room, find inspiration from vistas of the sea, mountains, and skyline. Conveniently located between Ayalon Highway and Menachem Begin, this new development will soon have stores, restaurants, and a park right on its doorstep. Commuting couldn’t be easier with Hashalom and Savidor Central stations, not to mention onsite parking for cars and bicycles. In addition to our standard suite of amenities, this location is dog-friendly, and includes showers for those who like to get active en route. Where better to empower your employees than from the top of the top, in the heart of central Tel Aviv?",
+    "pictures": [
+      "/Users/roilandshut/projects/real-stone/examples/wework/weWork0.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/wework/wework1.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/wework/wework2.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/wework/wework3.jpg",
+      "/Users/roilandshut/projects/real-stone/examples/wework/wework4.jpg"
+    ],
+    "pictures_names": [
+      "weWork0.jpg",
+      "wework1.jpg",
+      "wework2.jpg",
+      "wework3.jpg",
+      "wework4.jpg"
+    ],
+    "name": "Ein Ya'akov"
+  },
+  "trustee": {
+    "address1": "tel-aviv rotchild 5",
+    "contactFirstName": "narda",
+    "contactSecondName": "fishman",
+    "country": "israel",
+    "email": "narda@gmail,com",
+    "licenseNumber": "23424324",
+    "name": "fishmans",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0545543321"
+  },
+  "project": {
+    "description": "Looking for shared office space in Tel Aviv’s business center? Occupying the top floors of the modern Midtown Tower, this WeWork location offers 360-degree views from one of the tallest buildings in the region. Whether your team’s focusing in a private office or collaborating in a conference room, find inspiration from vistas of the sea, mountains, and skyline. Conveniently located between Ayalon Highway and Menachem Begin, this new development will soon have stores, restaurants, and a park right on its doorstep. Commuting couldn’t be easier with Hashalom and Savidor Central stations, not to mention onsite parking for cars and bicycles. In addition to our standard suite of amenities, this location is dog-friendly, and includes showers for those who like to get active en route. Where better to empower your employees than from the top of the top, in the heart of central Tel Aviv?",
+    "durationSecond": "2018-07-05",
+    "name": "We-Work Midtown TLV",
+    "startTimestamp": "2018-06-05",
+    "symbol": "WRK",
+    "target": "10000000",
+    "reservedBid": "500000000",
+    "tradeMethod": "",
+    "maxOwners": 50,
+    "tradeDurationMonth": 3,
+    "structure": "Office",
+    "currency": "ILS",
+    "location": {
+      "lat": 32.076932,
+      "lng": 34.792706
+    },
+    "features": {
+      "floor": 48,
+      "Sqrt": 1000
+    },
+    "lang": {
+      "He": {
+        "description": "מחפש משרדים משותפים במרכז העסקים של תל אביב? מלון וורקס (WeWork) שוכן בקומות העליונות של מגדל מידטאון המודרני, ומציע נוף של 360 מעלות מאחד המבנים הגבוהים ביותר באזור. בין אם הצוות שלך מתמקד במשרד פרטי או משתף פעולה בחדר ישיבות, מצא השראה מנופים של הים, ההרים וקו הרקיע. מיקום נוח בין כביש איילון למנחם בגין, פיתוח חדש זה בקרוב יש חנויות, מסעדות ופארק ממש על סף הדלת. היוממות לא יכלו להיות קלים יותר עם התחנות של השלום ושל סווידור סנטר, שלא לדבר על החנייה באתר למכוניות ולאופניים. בנוסף לחבילת השירותים הסטנדרטית שלנו, מיקום זה הינו ידידותי לכלבים, והוא כולל מקלחות עבור מי שאוהב להגיע לפעילות באופן פעיל. איפה טוב יותר להעצים את העובדים שלך מאשר מלמעלה, בלב מרכז תל אביב?",
+        "name": "משרדי We Work"
+      }
+    }
+  },
+  "estimation": {
+    "currency": "USD",
+    "email": "joha.vik@gmail.com",
+    "estimatorFirstName": "John",
+    "estimatorName": "Viskonsin Estimation s LTD",
+    "estimatorSecondName": "Viskonsin",
+    "expectedYield": "6500",
+    "name": "Sunnyside Ave N",
+    "phoneNumber": "543133943",
+    "price": "10000000",
+    "rental": "189000",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857"
+  },
+  "term": {
+    "holdingYears": "30",
+    "name": "Sunnyside Ave N",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "rental": 0,
+    "sellPercentage": 0
+  },
+  "manager": {
+    "address1": "tel aviv pinkas 12",
+    "contactFirstName": "michael",
+    "contactSecondName": "herskoviz",
+    "country": "israel",
+    "email": "michael@neman.fox",
+    "name": "herchog fox neeman",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "phoneNumber": "0553322234"
+  },
+  "registrar": {
+    "address1": "101 COB 39 W. Main St.",
+    "address2": "Rochester, NY 14614",
+    "country": "israel",
+    "email": "Tabu.gov",
+    "pdf": "https://firebasestorage.googleapis.com/v0/b/cornerstone-1.appspot.com/o/Untitled%20document.pdf?alt=media&token=ad672452-f90f-4299-a341-a8c70ade2857",
+    "faxNumber": "585 753-1650",
+    "licenseNumber": "6y4723466",
+    "name": "Israel Tabuo",
+    "phoneNumber": "585 753-1600",
+    "url": "https://www2.monroecounty.gov/clerk-index.php"
+  }
+}

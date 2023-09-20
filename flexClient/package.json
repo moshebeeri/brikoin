@@ -1,0 +1,52 @@
+{
+  "name": "twilio-react",
+  "version": "1.0.0",
+  "description": "Simple Video Chat app Using React",
+  "main": "index.js",
+  "repository": "git@github.com:kimobrian/TwilioReact.git",
+  "author": "O'Brian Kim",
+  "license": "MIT",
+  "dependencies": {
+    "@twilio/flex-webchat-ui": "^2.0.0",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "firebase": "^5.9.2",
+    "material-ui": "^0.20.0",
+    "react": "^16.2.0",
+    "react-chat-window": "^1.2.1",
+    "react-dom": "^16.2.0",
+    "react-redux": "^6.0.1",
+    "react-redux-firebase": "^2.2.6",
+    "react-scripts": "^2.1.8",
+    "react-tap-event-plugin": "^3.0.2",
+    "redux-firestore": "^0.7.2",
+    "redux-persist": "^5.10.0",
+    "redux-saga": "^1.0.2",
+    "redux-saga-firebase": "^0.15.0",
+    "twilio": "^3.28.0",
+    "twilio-chat": "^3.2.2",
+    "twilio-video": "^1.15.1"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "start": "node server",
+    "start:prod": "npm run build && node server.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-hot-middleware": "^2.21.0"
+  }
+}

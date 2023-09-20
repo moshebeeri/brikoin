@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: white;
+  margin-top: 10px;
+}
+
+.flex-item {
+  margin: 5px;
+}
+
+.flex-item:first-child {
+  /* background-color: aqua; */
+  flex: 2;
+}
+
+.flex-item:nth-child(2) {
+  /* background-color: blueviolet; */
+  flex: 1;
+}
+
+.flex-item:last-child {
+  background-color: beige;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+#remote-media video {
+  width: inherit;
+  height: 200px;
+}

@@ -1,0 +1,32 @@
+link(rel="stylesheet", href="app.css", data-inline)
+
+p Hi #{name},
+
+h3 please review #{businessName} _id: #{businessId}
+p address                 : #{address}
+p address2                : #{address2}
+p city                    : #{city}
+p country                 : #{country}
+p category                : #{category}
+p subcategory             : #{subcategory}
+p state                   : #{state}
+p main_phone_number       : #{main_phone_number}
+p email                   : #{email}
+p letterOfIncorporation   : #[a(href=''+letterOfIncorporation) letterOfIncorporation]
+p identificationCard      : #[a(href=''+identificationCard   ) identificationCard   ]
+
+table
+  tr
+    td(class="button")
+      a(href='http://'+ serverURL + '/api/businesses/review/' + businessId + '/accepted' )
+        b ACCEPT
+    td(class="button")
+      a(href='http://'+ serverURL + '/api/businesses/review/' + businessId + '/declined')
+        b DECLINE
+
+p
+  | Thanks,    #[br]
+  | THIS team
+img(src="cid:THISLogo")
+
+

@@ -1,0 +1,20 @@
+link(rel="stylesheet", href="app.css", data-inline)
+
+p Hi #{name},
+
+h3 Payment confirmation
+p We hereby to confirm reciving the amount of #{amount}#{currency} for your investment in #{projectName}.
+br
+p You can view your purchuse status at any time on the following link
+table
+  tr
+    td(class="button")
+      a(href='http://'+ serverURL + '/project/status/' + projectId)
+        b Validate
+
+p #[ or use this] #[a(hrhref='http://'+ serverURL + '/project/status/' + projectId) link] #[ in case the button don't work]
+
+p
+  | Thanks,#[br]
+  | Brikoin Team
+img(class="logo" src="cid:BrikoinLogo")

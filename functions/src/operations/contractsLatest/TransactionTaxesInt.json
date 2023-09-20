@@ -1,0 +1,1122 @@
+{
+  "contractName": "TransactionTaxesInt",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "taxEntity",
+          "type": "address"
+        }
+      ],
+      "name": "addBuyerTaxes",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBuyerTaxEntitiesLength",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBuyerTaxEntity",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "taxEntity",
+          "type": "address"
+        }
+      ],
+      "name": "addSelleTaxes",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getSellerTaxEntitiesLength",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSellerTaxEntity",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStoneCoinAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.0;\nimport 'openzeppelin-solidity/contracts/math/SafeMath.sol';\ncontract TransactionTaxesInt  {\n\n\n    function addBuyerTaxes(address taxEntity) public ;\n    function getBuyerTaxEntitiesLength() public view returns(uint256);\n    function getBuyerTaxEntity(uint index) public view returns(address);\n    function addSelleTaxes(address taxEntity) public;\n    function getSellerTaxEntitiesLength() public view returns(uint256);\n    function getSellerTaxEntity(uint index) public view returns(address);\n    function getStoneCoinAddress() public view returns(address);\n\n\n    }\n",
+  "sourcePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/TransactionTaxesInt.sol",
+  "ast": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/TransactionTaxesInt.sol",
+    "exportedSymbols": {
+      "TransactionTaxesInt": [
+        16714
+      ]
+    },
+    "id": 16715,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16673,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:52"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 16674,
+        "nodeType": "ImportDirective",
+        "scope": 16715,
+        "sourceUnit": 24158,
+        "src": "24:59:52",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 16714,
+        "linearizedBaseContracts": [
+          16714
+        ],
+        "name": "TransactionTaxesInt",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16679,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addBuyerTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16677,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16676,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16679,
+                  "src": "145:17:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16675,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "144:19:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16678,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "171:0:52"
+            },
+            "scope": 16714,
+            "src": "122:50:52",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16684,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16680,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "211:2:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16683,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16682,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16684,
+                  "src": "234:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16681,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "234:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "233:9:52"
+            },
+            "scope": 16714,
+            "src": "177:66:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16691,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16687,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16686,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16691,
+                  "src": "275:10:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16685,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:4:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "274:12:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16690,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16689,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16691,
+                  "src": "307:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16688,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "306:9:52"
+            },
+            "scope": 16714,
+            "src": "248:68:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16696,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addSelleTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16694,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16693,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16696,
+                  "src": "344:17:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16692,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "343:19:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16695,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "369:0:52"
+            },
+            "scope": 16714,
+            "src": "321:49:52",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16701,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16697,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "410:2:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16699,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16701,
+                  "src": "433:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16698,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "433:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "432:9:52"
+            },
+            "scope": 16714,
+            "src": "375:67:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16708,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16703,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16708,
+                  "src": "475:10:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16702,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:4:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:12:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16707,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16706,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16708,
+                  "src": "507:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16705,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:9:52"
+            },
+            "scope": 16714,
+            "src": "447:69:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16713,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getStoneCoinAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16709,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "549:2:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16712,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16711,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16713,
+                  "src": "572:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16710,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "572:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "571:9:52"
+            },
+            "scope": 16714,
+            "src": "521:60:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16715,
+        "src": "84:505:52"
+      }
+    ],
+    "src": "0:590:52"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/TransactionTaxesInt.sol",
+    "exportedSymbols": {
+      "TransactionTaxesInt": [
+        16714
+      ]
+    },
+    "id": 16715,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16673,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:52"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 16674,
+        "nodeType": "ImportDirective",
+        "scope": 16715,
+        "sourceUnit": 24158,
+        "src": "24:59:52",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 16714,
+        "linearizedBaseContracts": [
+          16714
+        ],
+        "name": "TransactionTaxesInt",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16679,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addBuyerTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16677,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16676,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16679,
+                  "src": "145:17:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16675,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "144:19:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16678,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "171:0:52"
+            },
+            "scope": 16714,
+            "src": "122:50:52",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16684,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16680,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "211:2:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16683,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16682,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16684,
+                  "src": "234:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16681,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "234:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "233:9:52"
+            },
+            "scope": 16714,
+            "src": "177:66:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16691,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBuyerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16687,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16686,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16691,
+                  "src": "275:10:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16685,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:4:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "274:12:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16690,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16689,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16691,
+                  "src": "307:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16688,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "306:9:52"
+            },
+            "scope": 16714,
+            "src": "248:68:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16696,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addSelleTaxes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16694,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16693,
+                  "name": "taxEntity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16696,
+                  "src": "344:17:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16692,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "343:19:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16695,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "369:0:52"
+            },
+            "scope": 16714,
+            "src": "321:49:52",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16701,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntitiesLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16697,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "410:2:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16699,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16701,
+                  "src": "433:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16698,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "433:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "432:9:52"
+            },
+            "scope": 16714,
+            "src": "375:67:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16708,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getSellerTaxEntity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16703,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16708,
+                  "src": "475:10:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16702,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:4:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:12:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16707,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16706,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16708,
+                  "src": "507:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16705,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:9:52"
+            },
+            "scope": 16714,
+            "src": "447:69:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16713,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getStoneCoinAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16709,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "549:2:52"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16712,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16711,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16713,
+                  "src": "572:7:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16710,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "572:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "571:9:52"
+            },
+            "scope": 16714,
+            "src": "521:60:52",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16715,
+        "src": "84:505:52"
+      }
+    ],
+    "src": "0:590:52"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-10-27T14:12:11.046Z"
+}

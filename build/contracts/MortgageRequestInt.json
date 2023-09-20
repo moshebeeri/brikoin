@@ -1,0 +1,1780 @@
+{
+  "contractName": "MortgageRequestInt",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "approveByAdmin",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "approve",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "validateContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "disable",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "enable",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isEnabled",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isApproved",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRequester",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMortgageCondition",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMortgagee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTotalLoan",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLongTermMonth",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDownPayment",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDownPaymentPercentMill",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMortgageApprove",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\nimport 'openzeppelin-solidity/contracts/ownership/Ownable.sol';\nimport 'openzeppelin-solidity/contracts/math/SafeMath.sol';\n\ncontract MortgageRequestInt {\n\n  function approveByAdmin() public ;\n  function approve() public ;\n\n  function validateContract() public view returns(bool);\n\n  function disable() public ;\n\n  function enable() public ;\n\n  function isEnabled() public view returns(bool);\n\n  function isApproved() public view returns(bool);\n  function getRequester() public view returns(address) ;\n  function getMortgageCondition() public view returns(address);\n\n  function getMortgagee() public view returns(address);\n\n  function getTotalLoan() public view returns(uint256);\n  function getLongTermMonth() public view returns(uint256) ;\n  function getDownPayment() public view returns(uint256);\n  function getDownPaymentPercentMill() public view returns(uint256) ;\n\n  function getMortgageApprove()public view returns(address) ;\n\n\n}\n",
+  "sourcePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/MortgageRequestInt.sol",
+  "ast": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/MortgageRequestInt.sol",
+    "exportedSymbols": {
+      "MortgageRequestInt": [15033]
+    },
+    "id": 15034,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14963,
+        "literals": ["solidity", "^", "0.4", ".24"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:39"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 14964,
+        "nodeType": "ImportDirective",
+        "scope": 15034,
+        "sourceUnit": 24244,
+        "src": "25:63:39",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 14965,
+        "nodeType": "ImportDirective",
+        "scope": 15034,
+        "sourceUnit": 24158,
+        "src": "89:59:39",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 15033,
+        "linearizedBaseContracts": [15033],
+        "name": "MortgageRequestInt",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14968,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "approveByAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14966,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "206:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14967,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "216:0:39"
+            },
+            "scope": 15033,
+            "src": "183:34:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14971,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "approve",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14969,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "236:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14970,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "246:0:39"
+            },
+            "scope": 15033,
+            "src": "220:27:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14976,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "validateContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14972,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "276:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14975,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14974,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14976,
+                  "src": "299:4:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14973,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:4:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "298:6:39"
+            },
+            "scope": 15033,
+            "src": "251:54:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14979,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "disable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14977,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "325:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14978,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "335:0:39"
+            },
+            "scope": 15033,
+            "src": "309:27:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14982,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "enable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14980,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "355:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14981,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "365:0:39"
+            },
+            "scope": 15033,
+            "src": "340:26:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14987,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isEnabled",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14983,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "388:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14986,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14985,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14987,
+                  "src": "411:4:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14984,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "411:4:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "410:6:39"
+            },
+            "scope": 15033,
+            "src": "370:47:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14992,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isApproved",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14988,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "440:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14991,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14990,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14992,
+                  "src": "463:4:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14989,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "463:4:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "462:6:39"
+            },
+            "scope": 15033,
+            "src": "421:48:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14997,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getRequester",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14993,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "493:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14996,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14995,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14997,
+                  "src": "516:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14994,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "516:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "515:9:39"
+            },
+            "scope": 15033,
+            "src": "472:54:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15002,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMortgageCondition",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14998,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "558:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15001,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15000,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15002,
+                  "src": "581:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14999,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:9:39"
+            },
+            "scope": 15033,
+            "src": "529:61:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15007,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMortgagee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15003,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "615:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15006,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15005,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15007,
+                  "src": "638:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15004,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "638:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "637:9:39"
+            },
+            "scope": 15033,
+            "src": "594:53:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15012,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getTotalLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15008,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "672:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15011,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15010,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15012,
+                  "src": "695:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15009,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "695:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "694:9:39"
+            },
+            "scope": 15033,
+            "src": "651:53:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15017,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getLongTermMonth",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15013,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "732:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15016,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15015,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15017,
+                  "src": "755:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15014,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "755:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "754:9:39"
+            },
+            "scope": 15033,
+            "src": "707:58:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15022,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getDownPayment",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15018,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "791:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15021,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15020,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15022,
+                  "src": "814:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15019,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "814:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "813:9:39"
+            },
+            "scope": 15033,
+            "src": "768:55:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15027,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getDownPaymentPercentMill",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15023,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15026,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15025,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15027,
+                  "src": "883:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15024,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "883:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "882:9:39"
+            },
+            "scope": 15033,
+            "src": "826:67:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15032,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMortgageApprove",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15028,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "924:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15031,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15030,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15032,
+                  "src": "946:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15029,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "946:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "945:9:39"
+            },
+            "scope": 15033,
+            "src": "897:59:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15034,
+        "src": "150:810:39"
+      }
+    ],
+    "src": "0:961:39"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/interfaces/MortgageRequestInt.sol",
+    "exportedSymbols": {
+      "MortgageRequestInt": [15033]
+    },
+    "id": 15034,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14963,
+        "literals": ["solidity", "^", "0.4", ".24"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:39"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 14964,
+        "nodeType": "ImportDirective",
+        "scope": 15034,
+        "sourceUnit": 24244,
+        "src": "25:63:39",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 14965,
+        "nodeType": "ImportDirective",
+        "scope": 15034,
+        "sourceUnit": 24158,
+        "src": "89:59:39",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 15033,
+        "linearizedBaseContracts": [15033],
+        "name": "MortgageRequestInt",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14968,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "approveByAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14966,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "206:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14967,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "216:0:39"
+            },
+            "scope": 15033,
+            "src": "183:34:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14971,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "approve",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14969,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "236:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14970,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "246:0:39"
+            },
+            "scope": 15033,
+            "src": "220:27:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14976,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "validateContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14972,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "276:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14975,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14974,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14976,
+                  "src": "299:4:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14973,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:4:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "298:6:39"
+            },
+            "scope": 15033,
+            "src": "251:54:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14979,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "disable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14977,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "325:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14978,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "335:0:39"
+            },
+            "scope": 15033,
+            "src": "309:27:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14982,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "enable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14980,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "355:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14981,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "365:0:39"
+            },
+            "scope": 15033,
+            "src": "340:26:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14987,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isEnabled",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14983,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "388:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14986,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14985,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14987,
+                  "src": "411:4:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14984,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "411:4:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "410:6:39"
+            },
+            "scope": 15033,
+            "src": "370:47:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14992,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isApproved",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14988,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "440:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14991,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14990,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14992,
+                  "src": "463:4:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14989,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "463:4:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "462:6:39"
+            },
+            "scope": 15033,
+            "src": "421:48:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14997,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getRequester",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14993,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "493:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14996,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14995,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14997,
+                  "src": "516:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14994,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "516:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "515:9:39"
+            },
+            "scope": 15033,
+            "src": "472:54:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15002,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMortgageCondition",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14998,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "558:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15001,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15000,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15002,
+                  "src": "581:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14999,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:9:39"
+            },
+            "scope": 15033,
+            "src": "529:61:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15007,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMortgagee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15003,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "615:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15006,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15005,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15007,
+                  "src": "638:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15004,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "638:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "637:9:39"
+            },
+            "scope": 15033,
+            "src": "594:53:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15012,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getTotalLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15008,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "672:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15011,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15010,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15012,
+                  "src": "695:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15009,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "695:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "694:9:39"
+            },
+            "scope": 15033,
+            "src": "651:53:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15017,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getLongTermMonth",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15013,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "732:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15016,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15015,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15017,
+                  "src": "755:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15014,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "755:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "754:9:39"
+            },
+            "scope": 15033,
+            "src": "707:58:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15022,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getDownPayment",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15018,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "791:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15021,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15020,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15022,
+                  "src": "814:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15019,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "814:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "813:9:39"
+            },
+            "scope": 15033,
+            "src": "768:55:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15027,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getDownPaymentPercentMill",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15023,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15026,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15025,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15027,
+                  "src": "883:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15024,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "883:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "882:9:39"
+            },
+            "scope": 15033,
+            "src": "826:67:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15032,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMortgageApprove",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15028,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "924:2:39"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15031,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15030,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15032,
+                  "src": "946:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15029,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "946:7:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "945:9:39"
+            },
+            "scope": 15033,
+            "src": "897:59:39",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15034,
+        "src": "150:810:39"
+      }
+    ],
+    "src": "0:961:39"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-10-27T14:12:11.030Z"
+}

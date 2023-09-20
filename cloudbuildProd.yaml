@@ -1,0 +1,30 @@
+steps:
+  - name: "gcr.io/cloud-builders/git"
+    args:
+      ["clone", "https://roiland:roi13906@bitbucket.org/stonecoin/brikoin.git"]
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["install"]
+  - name: "ubuntu"
+    args: ["bash", "./buildProd.sh"]
+  - name: "gcr.io/cloud-builders/yarn"
+    args: ["build"]
+  - name: "gcr.io/brikoinprod/firebase"
+    args:
+      [
+        "deploy",
+        "-P",
+        "brikoinprod",
+        "--token",
+        "1/mCIZ1Ay2AChchKErdGuPhHR-7k0cy1v3--8Exxo-sVYCJtvJ7LUN457oo_Necs7Q",
+        "--only",
+        "hosting",
+      ]
+#- name: 'gcr.io/brikoinprod/firebase'
+#  args: [ 'deploy', '-P', 'brikoinprod', '--token', '1/mCIZ1Ay2AChchKErdGuPhHR-7k0cy1v3--8Exxo-sVYCJtvJ7LUN457oo_Necs7Q', '--only','functions']
+
+#
+#steps:
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: [ 'build', '-t', 'gcr.io/brikoinprod/firebase', '.' ]
+#images:
+#- 'gcr.io/brikoinprod/firebase'

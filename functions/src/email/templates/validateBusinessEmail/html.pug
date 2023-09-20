@@ -1,0 +1,19 @@
+link(rel="stylesheet", href="app.css", data-inline)
+
+p Hi #{name},
+
+h3 Thank you for connecting #{businessName} to THIS network.
+p To validate your email address, Use the button bellow
+
+table
+  tr
+    td(class="button")
+      a(href='http://'+ serverURL + '/api/businesses/validate/email/' + businessId + '/' + validationCode)
+        b Validate
+
+p #[ or use this] #[a(href='http://' + serverURL + '/api/businesses/validate/email/' + businessId + '/' + validationCode) link] #[ in case the button don't work]
+
+p
+  | Thanks,    #[br]
+  | THIS team
+img(src="cid:THISLogo")

@@ -1,0 +1,20 @@
+link(rel="stylesheet", href="app.css", data-inline)
+
+p Hi #{name},
+
+h3 Payment due notice
+p We hereby to remained you that the payment due date has passed please deposite the amount of #{amount}#{currency} for your investment in #{projectName}.
+br
+p In order to prevent inconvinence, please pay now
+table
+  tr
+    td(class="button")
+      a(href='http://'+ serverURL + '/project/payment/' + projectId + '/' + paymentId)
+        b Pay Now
+
+p #[ or use this] #[a(href='http://'+ serverURL + '/project/payment/' + projectId + '/' + paymentId) link] #[ in case the button don't work]
+
+p
+  | Thanks,#[br]
+  | Brikoin Team
+img(class="logo" src="cid:BrikoinLogo")

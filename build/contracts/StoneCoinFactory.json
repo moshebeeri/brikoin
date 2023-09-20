@@ -1,0 +1,2181 @@
+{
+  "contractName": "StoneCoinFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "stoneCoinContractsRoles",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "stoneCoinContracts",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "_stoneCoin",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "stoneCoin",
+          "type": "address"
+        }
+      ],
+      "name": "StoneCoinRoleCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "stoneCoin",
+          "type": "address"
+        }
+      ],
+      "name": "StoneCoinCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_stoneCoinAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addStoneCoinRole",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008054600160a060020a031916331790556103a8806100256000396000f3006080604052600436106100825763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a681146100875780638da5cb5b1461009e5780638e99e175146100cf5780639ac2de1514610104578063ad5392ee14610125578063bf9c1ff414610158578063f2fde38b1461016d575b600080fd5b34801561009357600080fd5b5061009c61018e565b005b3480156100aa57600080fd5b506100b36101fa565b60408051600160a060020a039092168252519081900360200190f35b3480156100db57600080fd5b506100f0600160a060020a0360043516610209565b604080519115158252519081900360200190f35b34801561011057600080fd5b5061009c600160a060020a036004351661021e565b34801561013157600080fd5b50610146600160a060020a03600435166102bb565b60408051918252519081900360200190f35b34801561016457600080fd5b506100b36102cd565b34801561017957600080fd5b5061009c600160a060020a03600435166102dc565b600054600160a060020a031633146101a557600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b60026020526000908152604090205460ff1681565b600054600160a060020a0316331461023557600080fd5b600160a060020a03811660009081526002602052604090205460ff1615156001141561026057600080fd5b600160a060020a038116600081815260026020908152604091829020805460ff19166001179055815192835290517fc986c2c94a54819926a3189283b7ea75ff69bd7fa71e224cf2b8da99da7e63969281900390910190a150565b60016020526000908152604090205481565b600354600160a060020a031681565b600054600160a060020a031633146102f357600080fd5b6102fc816102ff565b50565b600160a060020a038116151561031457600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820a07010ea1599e4522cd8e3b830bf7a106ee256e17c92855ccee56c28064b43ce0029",
+  "deployedBytecode": "0x6080604052600436106100825763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a681146100875780638da5cb5b1461009e5780638e99e175146100cf5780639ac2de1514610104578063ad5392ee14610125578063bf9c1ff414610158578063f2fde38b1461016d575b600080fd5b34801561009357600080fd5b5061009c61018e565b005b3480156100aa57600080fd5b506100b36101fa565b60408051600160a060020a039092168252519081900360200190f35b3480156100db57600080fd5b506100f0600160a060020a0360043516610209565b604080519115158252519081900360200190f35b34801561011057600080fd5b5061009c600160a060020a036004351661021e565b34801561013157600080fd5b50610146600160a060020a03600435166102bb565b60408051918252519081900360200190f35b34801561016457600080fd5b506100b36102cd565b34801561017957600080fd5b5061009c600160a060020a03600435166102dc565b600054600160a060020a031633146101a557600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b60026020526000908152604090205460ff1681565b600054600160a060020a0316331461023557600080fd5b600160a060020a03811660009081526002602052604090205460ff1615156001141561026057600080fd5b600160a060020a038116600081815260026020908152604091829020805460ff19166001179055815192835290517fc986c2c94a54819926a3189283b7ea75ff69bd7fa71e224cf2b8da99da7e63969281900390910190a150565b60016020526000908152604090205481565b600354600160a060020a031681565b600054600160a060020a031633146102f357600080fd5b6102fc816102ff565b50565b600160a060020a038116151561031457600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820a07010ea1599e4522cd8e3b830bf7a106ee256e17c92855ccee56c28064b43ce0029",
+  "sourceMap": "118:714:26:-;;;567:5:82;:18;;-1:-1:-1;;;;;;567:18:82;575:10;567:18;;;118:714:26;;;;;;",
+  "deployedSourceMap": "118:714:26:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:111:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:82;;;;;;238:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:82;;;;;;;;-1:-1:-1;;;;;238:20:82;;;;;;;;;;;;;;220:55:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;220:55:26;-1:-1:-1;;;;;220:55:26;;;;;;;;;;;;;;;;;;;;;;;571:259;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;571:259:26;-1:-1:-1;;;;;571:259:26;;;;;161:53;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;161:53:26;-1:-1:-1;;;;;161:53:26;;;;;;;;;;;;;;;;;;;;;379:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;379:25:26;;;;1274:103:82;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1274:103:82;-1:-1:-1;;;;;1274:103:82;;;;;1001:111;719:5;;-1:-1:-1;;;;;719:5:82;705:10;:19;697:28;;;;;;1077:5;;;1058:25;;-1:-1:-1;;;;;1077:5:82;;;;1058:25;;;1105:1;1089:18;;-1:-1:-1;;1089:18:82;;;1001:111::o;238:20::-;;;-1:-1:-1;;;;;238:20:82;;:::o;220:55:26:-;;;;;;;;;;;;;;;:::o;571:259::-;719:5:82;;-1:-1:-1;;;;;719:5:82;705:10;:19;697:28;;;;;;-1:-1:-1;;;;;659:42:26;;;;;;:23;:42;;;;;;;;:50;;:42;:50;;651:59;;;;;;-1:-1:-1;;;;;720:42:26;;;;;;:23;:42;;;;;;;;;:49;;-1:-1:-1;;720:49:26;765:4;720:49;;;784:39;;;;;;;;;;;;;;;;;571:259;:::o;161:53::-;;;;;;;;;;;;;:::o;379:25::-;;;-1:-1:-1;;;;;379:25:26;;:::o;1274:103:82:-;719:5;;-1:-1:-1;;;;;719:5:82;705:10;:19;697:28;;;;;;1343:29;1362:9;1343:18;:29::i;:::-;1274:103;:::o;1512:171::-;-1:-1:-1;;;;;1582:23:82;;;;1574:32;;;;;;1638:5;;;1617:38;;-1:-1:-1;;;;;1617:38:82;;;;1638:5;;;1617:38;;;1661:5;:17;;-1:-1:-1;;1661:17:82;-1:-1:-1;;;;;1661:17:82;;;;;;;;;;1512:171::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"openzeppelin-solidity/contracts/ownership/Ownable.sol\";\nimport \"../StoneCoin.sol\";\n\ncontract StoneCoinFactory is Ownable {\n    mapping(address => bytes32) public stoneCoinContracts;\n    mapping(address => bool) public stoneCoinContractsRoles;\n    event StoneCoinRoleCreated(address stoneCoin);\n    event StoneCoinCreated(address stoneCoin);\n    address public _stoneCoin;\n    bytes32 version;\n\n    modifier onlyStoneCoinRole() {\n        require(stoneCoinContractsRoles[msg.sender] == true ||  owner == msg.sender);\n        _;\n    }\n\n    function addStoneCoinRole(address _stoneCoinAddress) public onlyOwner {\n        require(stoneCoinContractsRoles[_stoneCoinAddress] != true);\n        stoneCoinContractsRoles[_stoneCoinAddress] = true;\n        emit StoneCoinRoleCreated(_stoneCoinAddress);\n    }\n}\n",
+  "sourcePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/StoneCoinFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/StoneCoinFactory.sol",
+    "exportedSymbols": {
+      "StoneCoinFactory": [13220]
+    },
+    "id": 13221,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13151,
+        "literals": ["solidity", "^", "0.4", ".24"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:26"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 13152,
+        "nodeType": "ImportDirective",
+        "scope": 13221,
+        "sourceUnit": 24244,
+        "src": "26:63:26",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/StoneCoin.sol",
+        "file": "../StoneCoin.sol",
+        "id": 13153,
+        "nodeType": "ImportDirective",
+        "scope": 13221,
+        "sourceUnit": 10912,
+        "src": "90:26:26",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13154,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24243,
+              "src": "147:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$24243",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 13155,
+            "nodeType": "InheritanceSpecifier",
+            "src": "147:7:26"
+          }
+        ],
+        "contractDependencies": [24243],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 13220,
+        "linearizedBaseContracts": [13220, 24243],
+        "name": "StoneCoinFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 13159,
+            "name": "stoneCoinContracts",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "161:53:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
+              "typeString": "mapping(address => bytes32)"
+            },
+            "typeName": {
+              "id": 13158,
+              "keyType": {
+                "id": 13156,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "169:7:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "161:27:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
+                "typeString": "mapping(address => bytes32)"
+              },
+              "valueType": {
+                "id": 13157,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "180:7:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 13163,
+            "name": "stoneCoinContractsRoles",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "220:55:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 13162,
+              "keyType": {
+                "id": 13160,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "228:7:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "220:24:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 13161,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "239:4:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13167,
+            "name": "StoneCoinRoleCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13166,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13165,
+                  "indexed": false,
+                  "name": "stoneCoin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13167,
+                  "src": "308:17:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13164,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:19:26"
+            },
+            "src": "281:46:26"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13171,
+            "name": "StoneCoinCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13170,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13169,
+                  "indexed": false,
+                  "name": "stoneCoin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13171,
+                  "src": "355:17:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13168,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "355:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "354:19:26"
+            },
+            "src": "332:42:26"
+          },
+          {
+            "constant": false,
+            "id": 13173,
+            "name": "_stoneCoin",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "379:25:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 13172,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "379:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 13175,
+            "name": "version",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "410:15:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 13174,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "410:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 13192,
+              "nodeType": "Block",
+              "src": "461:104:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 13188,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "id": 13183,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 13178,
+                              "name": "stoneCoinContractsRoles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13163,
+                              "src": "479:23:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                                "typeString": "mapping(address => bool)"
+                              }
+                            },
+                            "id": 13181,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 13179,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 24676,
+                                "src": "503:3:26",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 13180,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "503:10:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "479:35:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "74727565",
+                            "id": 13182,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "518:4:26",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "true"
+                          },
+                          "src": "479:43:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 13187,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 13184,
+                            "name": "owner",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24161,
+                            "src": "527:5:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 13185,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 24676,
+                              "src": "536:3:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 13186,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "536:10:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "527:19:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "479:67:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 13177,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [24679, 24680],
+                      "referencedDeclaration": 24679,
+                      "src": "471:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 13189,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "471:76:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13190,
+                  "nodeType": "ExpressionStatement",
+                  "src": "471:76:26"
+                },
+                {
+                  "id": 13191,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "557:1:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13193,
+            "name": "onlyStoneCoinRole",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 13176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "458:2:26"
+            },
+            "src": "432:133:26",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 13218,
+              "nodeType": "Block",
+              "src": "641:189:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 13205,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 13201,
+                            "name": "stoneCoinContractsRoles",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13163,
+                            "src": "659:23:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 13203,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 13202,
+                            "name": "_stoneCoinAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13195,
+                            "src": "683:17:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "659:42:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 13204,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "705:4:26",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "src": "659:50:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 13200,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [24679, 24680],
+                      "referencedDeclaration": 24679,
+                      "src": "651:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 13206,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "651:59:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13207,
+                  "nodeType": "ExpressionStatement",
+                  "src": "651:59:26"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 13208,
+                        "name": "stoneCoinContractsRoles",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13163,
+                        "src": "720:23:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 13210,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 13209,
+                        "name": "_stoneCoinAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13195,
+                        "src": "744:17:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "720:42:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 13211,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "765:4:26",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "720:49:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 13213,
+                  "nodeType": "ExpressionStatement",
+                  "src": "720:49:26"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13215,
+                        "name": "_stoneCoinAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13195,
+                        "src": "805:17:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13214,
+                      "name": "StoneCoinRoleCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13167,
+                      "src": "784:20:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 13216,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "784:39:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13217,
+                  "nodeType": "EmitStatement",
+                  "src": "779:44:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13219,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 13198,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 13197,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 24191,
+                  "src": "631:9:26",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "631:9:26"
+              }
+            ],
+            "name": "addStoneCoinRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13195,
+                  "name": "_stoneCoinAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13219,
+                  "src": "597:25:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13194,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "597:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:27:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13199,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "641:0:26"
+            },
+            "scope": 13220,
+            "src": "571:259:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13221,
+        "src": "118:714:26"
+      }
+    ],
+    "src": "0:833:26"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/factory/StoneCoinFactory.sol",
+    "exportedSymbols": {
+      "StoneCoinFactory": [13220]
+    },
+    "id": 13221,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13151,
+        "literals": ["solidity", "^", "0.4", ".24"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:26"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 13152,
+        "nodeType": "ImportDirective",
+        "scope": 13221,
+        "sourceUnit": 24244,
+        "src": "26:63:26",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/roilandshut/projects/brikoin/brikoin/contracts/StoneCoin.sol",
+        "file": "../StoneCoin.sol",
+        "id": 13153,
+        "nodeType": "ImportDirective",
+        "scope": 13221,
+        "sourceUnit": 10912,
+        "src": "90:26:26",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13154,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24243,
+              "src": "147:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$24243",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 13155,
+            "nodeType": "InheritanceSpecifier",
+            "src": "147:7:26"
+          }
+        ],
+        "contractDependencies": [24243],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 13220,
+        "linearizedBaseContracts": [13220, 24243],
+        "name": "StoneCoinFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 13159,
+            "name": "stoneCoinContracts",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "161:53:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
+              "typeString": "mapping(address => bytes32)"
+            },
+            "typeName": {
+              "id": 13158,
+              "keyType": {
+                "id": 13156,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "169:7:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "161:27:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
+                "typeString": "mapping(address => bytes32)"
+              },
+              "valueType": {
+                "id": 13157,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "180:7:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 13163,
+            "name": "stoneCoinContractsRoles",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "220:55:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 13162,
+              "keyType": {
+                "id": 13160,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "228:7:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "220:24:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 13161,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "239:4:26",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13167,
+            "name": "StoneCoinRoleCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13166,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13165,
+                  "indexed": false,
+                  "name": "stoneCoin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13167,
+                  "src": "308:17:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13164,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:19:26"
+            },
+            "src": "281:46:26"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13171,
+            "name": "StoneCoinCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13170,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13169,
+                  "indexed": false,
+                  "name": "stoneCoin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13171,
+                  "src": "355:17:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13168,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "355:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "354:19:26"
+            },
+            "src": "332:42:26"
+          },
+          {
+            "constant": false,
+            "id": 13173,
+            "name": "_stoneCoin",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "379:25:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 13172,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "379:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 13175,
+            "name": "version",
+            "nodeType": "VariableDeclaration",
+            "scope": 13220,
+            "src": "410:15:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 13174,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "410:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 13192,
+              "nodeType": "Block",
+              "src": "461:104:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 13188,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "id": 13183,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 13178,
+                              "name": "stoneCoinContractsRoles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13163,
+                              "src": "479:23:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                                "typeString": "mapping(address => bool)"
+                              }
+                            },
+                            "id": 13181,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 13179,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 24676,
+                                "src": "503:3:26",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 13180,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "503:10:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "479:35:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "74727565",
+                            "id": 13182,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "518:4:26",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "true"
+                          },
+                          "src": "479:43:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 13187,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 13184,
+                            "name": "owner",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24161,
+                            "src": "527:5:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 13185,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 24676,
+                              "src": "536:3:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 13186,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "536:10:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "527:19:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "479:67:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 13177,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [24679, 24680],
+                      "referencedDeclaration": 24679,
+                      "src": "471:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 13189,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "471:76:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13190,
+                  "nodeType": "ExpressionStatement",
+                  "src": "471:76:26"
+                },
+                {
+                  "id": 13191,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "557:1:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13193,
+            "name": "onlyStoneCoinRole",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 13176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "458:2:26"
+            },
+            "src": "432:133:26",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 13218,
+              "nodeType": "Block",
+              "src": "641:189:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 13205,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 13201,
+                            "name": "stoneCoinContractsRoles",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13163,
+                            "src": "659:23:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 13203,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 13202,
+                            "name": "_stoneCoinAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13195,
+                            "src": "683:17:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "659:42:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 13204,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "705:4:26",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "src": "659:50:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 13200,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [24679, 24680],
+                      "referencedDeclaration": 24679,
+                      "src": "651:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 13206,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "651:59:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13207,
+                  "nodeType": "ExpressionStatement",
+                  "src": "651:59:26"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 13208,
+                        "name": "stoneCoinContractsRoles",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13163,
+                        "src": "720:23:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 13210,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 13209,
+                        "name": "_stoneCoinAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13195,
+                        "src": "744:17:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "720:42:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 13211,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "765:4:26",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "720:49:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 13213,
+                  "nodeType": "ExpressionStatement",
+                  "src": "720:49:26"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 13215,
+                        "name": "_stoneCoinAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13195,
+                        "src": "805:17:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 13214,
+                      "name": "StoneCoinRoleCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13167,
+                      "src": "784:20:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 13216,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "784:39:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 13217,
+                  "nodeType": "EmitStatement",
+                  "src": "779:44:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13219,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 13198,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 13197,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 24191,
+                  "src": "631:9:26",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "631:9:26"
+              }
+            ],
+            "name": "addStoneCoinRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13195,
+                  "name": "_stoneCoinAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13219,
+                  "src": "597:25:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13194,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "597:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:27:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13199,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "641:0:26"
+            },
+            "scope": 13220,
+            "src": "571:259:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13221,
+        "src": "118:714:26"
+      }
+    ],
+    "src": "0:833:26"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "1539850201869": {
+      "events": {},
+      "links": {},
+      "address": "0xaede5c0ce53d50205e80e965de38a080cdc865d2",
+      "transactionHash": "0x2a4104bf44693c4e05472f2d75b1a0a95156262c0595fbc6ac78d7b235683d39"
+    },
+    "1539851972827": {
+      "events": {},
+      "links": {},
+      "address": "0x96976e6858062b187ea6a575a240999344169c49",
+      "transactionHash": "0x37f7b2f7122b13bdceef88a0190e40fa6c490142ec082e1caed5f3df7556d145"
+    },
+    "1539864054456": {
+      "events": {},
+      "links": {},
+      "address": "0x3f8bcc4e31b13190db3e4f8d303fcc57f4590122",
+      "transactionHash": "0x37f7b2f7122b13bdceef88a0190e40fa6c490142ec082e1caed5f3df7556d145"
+    },
+    "1540103616690": {
+      "events": {},
+      "links": {},
+      "address": "0x7a84578a4bacc4c79bea73546b4f7a444b86a75c",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540103742973": {
+      "events": {},
+      "links": {},
+      "address": "0x76b0662c371b39043de6f773f5080b171669fadf",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540104784043": {
+      "events": {},
+      "links": {},
+      "address": "0xfbd29341f1024c3de5dcd4837bda13b8fd448e38",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540104908192": {
+      "events": {},
+      "links": {},
+      "address": "0xc662a925d882357b5c0e605b23030d7f051ff651",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540105766271": {
+      "events": {},
+      "links": {},
+      "address": "0xb6013bc866b58f04081935f1c2fe98dd95f2d7d6",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540108185901": {
+      "events": {},
+      "links": {},
+      "address": "0x8e0ee6018fb79ffea4dc2ef023abd9d56d904c89",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540108661277": {
+      "events": {},
+      "links": {},
+      "address": "0x6d80221d19c84b957c2905335ec56cc76a2584c7",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540191192350": {
+      "events": {},
+      "links": {},
+      "address": "0x2a20616c4597e418368e48139a43893e60931c3f",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540443932376": {
+      "events": {},
+      "links": {},
+      "address": "0x24117b391d92650e67a8f8ee9fe0447519dc493f",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540446429330": {
+      "events": {},
+      "links": {},
+      "address": "0x820daa7f7c6f6390f076a1958c5419e8e8a1e0a7",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540446889248": {
+      "events": {},
+      "links": {},
+      "address": "0x0d4728000f6ca3ec329c641ecb157aa0ab069d04",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540447669110": {
+      "events": {},
+      "links": {},
+      "address": "0xcc6a27b5040d527ce46c6d566f9934a43813fc45",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540449165619": {
+      "events": {},
+      "links": {},
+      "address": "0x81ddf106bb23180b9e92509ec0190a09d63260f1",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540450221185": {
+      "events": {},
+      "links": {},
+      "address": "0x0234a0ead1680159721b7e17d83665e4e78018ba",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540451367928": {
+      "events": {},
+      "links": {},
+      "address": "0x11ca10309ecd3dabf730f8a0b2bee491a68556e4",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540454618268": {
+      "events": {},
+      "links": {},
+      "address": "0xf16fbef1401c5e2d118c46ad63683a9846a9f2b3",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540455801954": {
+      "events": {},
+      "links": {},
+      "address": "0xaa29b9072a75135ff4d46baad22a88867433aaba",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540456902003": {
+      "events": {},
+      "links": {},
+      "address": "0xb412cd8ebcd1ce701ad6cb498624bbc798e900d0",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1540754292670": {
+      "events": {},
+      "links": {},
+      "address": "0x8f9754a0dbdf6fa028d041c9472d114eb7c1bcfe",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1541329441155": {
+      "events": {},
+      "links": {},
+      "address": "0x22b92f3d021ef1b161d97059dbd6db125cb514ea",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1541329572547": {
+      "events": {},
+      "links": {},
+      "address": "0x60358dc67ff4074b8eb005a9c2528ed7ee1868fc",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1541331028810": {
+      "events": {},
+      "links": {},
+      "address": "0x1817fb05a2cd3cbbd886f308e20335d7ba0d232b",
+      "transactionHash": "0xb1de1c71c8966ab8d01d2ea3ecc7ff8b7ef2c809e8ff5ec4361aacce5a0e2007"
+    },
+    "1541779207684": {
+      "events": {},
+      "links": {},
+      "address": "0xbe347457c84958811328335e164461018c20d2f3",
+      "transactionHash": "0x663390350fe690ceaa35dff2cc3a69429598f5e988808e377c8d7ed3356cbe6f"
+    },
+    "1542035718254": {
+      "events": {},
+      "links": {},
+      "address": "0x146b403335e632adc249b797152b49fc1f97ed60",
+      "transactionHash": "0x663390350fe690ceaa35dff2cc3a69429598f5e988808e377c8d7ed3356cbe6f"
+    },
+    "1542039244742": {
+      "events": {},
+      "links": {},
+      "address": "0xfa4bd5b50c9ee390c18ff8df4c025dc01d3f55b2",
+      "transactionHash": "0x663390350fe690ceaa35dff2cc3a69429598f5e988808e377c8d7ed3356cbe6f"
+    },
+    "1542286740204": {
+      "events": {},
+      "links": {},
+      "address": "0xb678973b8e67e777da01f3b58e80e53e0769f3c0",
+      "transactionHash": "0x663390350fe690ceaa35dff2cc3a69429598f5e988808e377c8d7ed3356cbe6f"
+    },
+    "1542286871891": {
+      "events": {},
+      "links": {},
+      "address": "0x221da6ec809b4e37e1927d0dc25447c5ecafbcee",
+      "transactionHash": "0x9578a16a11e18b89d5dedd503d25c8f42fbcfbc4c4818833f7984ffc1a975009"
+    },
+    "1542292100556": {
+      "events": {},
+      "links": {},
+      "address": "0x313f7274b5af914749258aa4b2ac239d34c3002e",
+      "transactionHash": "0x9578a16a11e18b89d5dedd503d25c8f42fbcfbc4c4818833f7984ffc1a975009"
+    },
+    "1542902659735": {
+      "events": {},
+      "links": {},
+      "address": "0xadaa7c71ddb2badb87216cc018d7a8b6c2d15e82",
+      "transactionHash": "0xef18d93bd437734d1323d81ed4656e913d397b7fa9c1ad52d209ae13d7314f94"
+    },
+    "1543409395515": {
+      "events": {},
+      "links": {},
+      "address": "0x9654df59a6d914f504a60bf0d6916f19cbd382e6",
+      "transactionHash": "0xef18d93bd437734d1323d81ed4656e913d397b7fa9c1ad52d209ae13d7314f94"
+    },
+    "1543737497290": {
+      "events": {},
+      "links": {},
+      "address": "0x7cb2f360a8c6730151877f19cead9575147a606c",
+      "transactionHash": "0xe00bdaf7ca489e37322357377f4984d2375e561c9c025cc388d22871bf053e3d"
+    },
+    "1543758396406": {
+      "events": {},
+      "links": {},
+      "address": "0x7747089b64d5bacd1f65ede4be037dd4c004e8bc",
+      "transactionHash": "0xe00bdaf7ca489e37322357377f4984d2375e561c9c025cc388d22871bf053e3d"
+    },
+    "1544075430083": {
+      "events": {},
+      "links": {},
+      "address": "0xa466e72562cea1302d0da7f8196c07f826952fc5",
+      "transactionHash": "0xe00bdaf7ca489e37322357377f4984d2375e561c9c025cc388d22871bf053e3d"
+    },
+    "1544420482702": {
+      "events": {},
+      "links": {},
+      "address": "0x46ac73a1c43a64e766263d27b09979671d643b5e",
+      "transactionHash": "0x48b680a13c382fcc4ce7874ddb3987d813bf12aa8fc58712e0541783a2721296"
+    },
+    "1545311010723": {
+      "events": {},
+      "links": {},
+      "address": "0x2a59949b4977454d3bd1a90f50f0059782835f88",
+      "transactionHash": "0x8a79a9cc2b4727c252a709d99e582bd87c9c58c9c2ed27300ced2bbfc80412fb"
+    },
+    "1545311507411": {
+      "events": {},
+      "links": {},
+      "address": "0x495a14bf822e0f2d63d2155e92a60cf47a033797",
+      "transactionHash": "0x8a79a9cc2b4727c252a709d99e582bd87c9c58c9c2ed27300ced2bbfc80412fb"
+    },
+    "1545315286659": {
+      "events": {},
+      "links": {},
+      "address": "0xf338db3337494a473717b37218a0bcf0fab3b945",
+      "transactionHash": "0x8a79a9cc2b4727c252a709d99e582bd87c9c58c9c2ed27300ced2bbfc80412fb"
+    },
+    "1545315439070": {
+      "events": {},
+      "links": {},
+      "address": "0xda6a4ae4593c0d3695049ce8ef686044ee25d20e",
+      "transactionHash": "0x8a79a9cc2b4727c252a709d99e582bd87c9c58c9c2ed27300ced2bbfc80412fb"
+    },
+    "1545380710389": {
+      "events": {},
+      "links": {},
+      "address": "0x98ad7aaae8c5e4eecba28a9017d903aeb0065b9d",
+      "transactionHash": "0x8a79a9cc2b4727c252a709d99e582bd87c9c58c9c2ed27300ced2bbfc80412fb"
+    },
+    "1547106567857": {
+      "events": {},
+      "links": {},
+      "address": "0x1543f1ce46bf964081a918c3c29803394b989ec6",
+      "transactionHash": "0x8a79a9cc2b4727c252a709d99e582bd87c9c58c9c2ed27300ced2bbfc80412fb"
+    },
+    "1568816181260": {
+      "events": {},
+      "links": {},
+      "address": "0x8de4461e3bb8d9ddaf6e4f14be5282cb6345a109",
+      "transactionHash": "0x8716b0f4833afba009b80ccd70b51375ba9958f43d3e9937f6326d7e7cb81420"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-10-27T14:12:11.007Z"
+}
