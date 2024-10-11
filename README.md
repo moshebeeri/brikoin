@@ -1,8 +1,7 @@
-Based on [this github project](https://github.com/n6g7/redux-saga-firebase/tree/master/example)
+#Brikoin
 
-# redux-saga-firebase example
+This project implements Realestate trading in fractions using Ethereum, React, and Firebase.
 
-Try it at: [https://redux-saga-firebase.firebaseapp.com/](https://redux-saga-firebase.firebaseapp.com/)
 
 ## How to:
 
@@ -11,10 +10,3 @@ Try it at: [https://redux-saga-firebase.firebaseapp.com/](https://redux-saga-fir
 - build: `yarn build`
 - deploy: `yarn deploy`
 
-## Research
-
-### [Trading Book](https://github.com/rongierlach/react-trading-ui)
-
-## [limit-order-book](https://github.com/rhodey/limit-order-book)
-
-### [JSOrderBook](https://github.com/glinscott/JSOrderbook/tree/master/trade-server/book)
